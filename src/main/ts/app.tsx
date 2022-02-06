@@ -1,0 +1,53 @@
+import { useEffect, useState } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import client from './client';
+
+interface Employee {
+    id: number;
+    firstName: number;
+    lastName: string;
+    description: string;
+}
+
+function App() {
+    const [employees, setEmployees] = useState<Employee[]>([]);
+
+    useEffect(() => {
+        client({ method: 'GET', path: '/api/employees' }).then((response: any) => {
+            setEmployees(response.entity._embedded.employees);
+        })
+    });
+
+    return (
+        <EmployeeList employees={employees} />
+    );
+}
+
+function EmployeeList(props: { employees: Employee[] }) {
+    const organisms = props.employees.map((organism: Employee) => <Employee key={organism.id} organism={organism} />);
+    return (
+        <table>
+            <tbody>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Description</th>
+                </tr>
+                {organisms}
+            </tbody>
+        </table>
+    );
+}
+
+function Employee(props: { organism: Employee }) {
+    return (
+        <tr>
+            <td>{props.organism.firstName}</td>
+            <td>{props.organism.lastName}</td>
+            <td>{props.organism.description}</td>
+        </tr>
+    );
+}
+
+ReactDOM.render(<App />, document.getElementById('react'));

@@ -1,15 +1,15 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Welcome to CARIN project!
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
+This project has been created using **Spring Boot**, you can now run
 
 ```
 yarn build
 ```
 
-to bundle your application
+then
+
+```
+mvnw sprint-boot:run
+```
+
+to run application

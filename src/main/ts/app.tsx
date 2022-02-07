@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import client from './client';
+import axios from 'axios';
 
 interface Employee {
     id: number;
@@ -14,9 +14,10 @@ function App() {
     const [employees, setEmployees] = useState<Employee[]>([]);
 
     useEffect(() => {
-        client({ method: 'GET', path: '/api/employees' }).then((response: any) => {
-            setEmployees(response.entity._embedded.employees);
-        })
+        axios.get('/api/employees').then((response:any) => {
+            console.log(response);
+            setEmployees(response.data._embedded.employees);
+        });
     });
 
     return (

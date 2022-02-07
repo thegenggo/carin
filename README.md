@@ -3,6 +3,12 @@
 This project has been created using **Spring Boot**, you can now run
 
 ```
+yarn install
+```
+
+then
+
+```
 yarn build
 ```
 

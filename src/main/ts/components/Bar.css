@@ -1,0 +1,41 @@
+@font-face {
+    font-family: Short Stack;
+    src: url('./fonts/ShortStack-Regular.ttf');
+}
+
+#Bar {
+    position: absolute;
+    width: 1920px;
+    height: 120px;
+    left: 0px;
+    top: 0px;
+}
+
+#bar {
+    position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+}
+
+#antibodyCreditIcon {
+    position: absolute;
+    left: 4.95%;
+    right: 92.55%;
+    top: 2.5%;
+    bottom: 17.5%;
+}
+
+#antibodyCreditText {
+    font-family: Short Stack;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 89px;
+    position: absolute;
+    left: 8.33%;
+    right: 80.31%;
+    top: 15%;
+    bottom: 17.5%;
+}

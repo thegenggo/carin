@@ -1,0 +1,9 @@
+declare module "*.jpg";
+declare module "*.png";
+declare module "*.jpeg";
+declare module "*.gif";
+declare module "*.svg";
+declare module "*.json";
+declare module "*.md";
+declare module "*.html";
+declare module "*.css";

@@ -39,3 +39,51 @@
     top: 15%;
     bottom: 17.5%;
 }
+
+#shopButton {
+    position: absolute;
+    left: 26.35%;
+    right: 69.53%;
+    top: 5.83%;
+    bottom: 10.83%;
+}
+
+#decreaseSpdButton {
+    position: absolute; 
+    left: 62.08%;
+    right: 33.49%;
+    top: 20%;
+    bottom: 15%;
+}
+
+#increaseSpdButton {
+    position: absolute;
+    left: 82.19%;
+    right: 13.49%;
+    top: 20.83%;
+    bottom: 15%;
+}
+
+#pauseButton {
+    position: absolute;
+    left: 72.14%;
+    right: 23.44%;
+    top: 19.17%;
+    bottom: 15%;
+}
+
+#playButton {
+    position: absolute;
+    left: 72.14%;
+    right: 23.44%;
+    top: 19.17%;
+    bottom: 15%;
+}
+
+#replayButton {
+position: absolute;
+left: 92.14%;
+right: 3.44%;
+top: 19.17%;
+bottom: 15%;
+}

@@ -14,7 +14,7 @@ public class WhileStatement implements Statement {
     }
 
     public void execute(Map<String, Integer> variables, Organism organism) {
-        while (condition.eval(variables, organism ) > 0) {
+        for (int counter = 0; counter < 1000 && condition.eval(variables, organism) > 0; counter++) {
             body.execute(variables, organism);
         }
     }

@@ -1,4 +1,4 @@
-package com.kwp.carin.controller;
+package com.kwp.carin;
 
 import com.kwp.util.Pair;
 
@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class Configuration {
     private int antibodyAttackDamage, antibodyKillGain;
     private int antibodyMoveCost;
     private Configuration() {
-        Path path = Paths.get("src/configuration.txt");
+        Path path = Paths.get("src/main/java/com/kwp/carin/configuration.txt");
         Charset charset = StandardCharsets.US_ASCII;
         try (BufferedReader reader = Files.newBufferedReader(path, charset); Scanner scanner = new Scanner(reader)) {
             m = scanner.nextInt(); n = scanner.nextInt();
@@ -32,7 +33,7 @@ public class Configuration {
             antibodyAttackDamage = scanner.nextInt(); antibodyKillGain = scanner.nextInt();
             antibodyMoveCost = scanner.nextInt();
             if (antibodyMoveCost > initialAntibodyCredit) System.out.println("Warning: Antibody Move Cost should be no more than the initial antibody credits");
-        } catch (FileNotFoundException e) {
+        } catch (NoSuchFileException e) {
             System.out.println("File not found");
         } catch (IOException e) {
             e.printStackTrace();

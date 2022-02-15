@@ -13,6 +13,7 @@ public class Program {
 
     public Program() {
         statements = new LinkedList<>();
+        variables = new HashMap<>();
     }
 
     public void addStatement(Statement statement) {

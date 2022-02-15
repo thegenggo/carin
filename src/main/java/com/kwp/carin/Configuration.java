@@ -44,52 +44,49 @@ public class Configuration {
         return new Pair<Integer, Integer>(m, n);
     }
 
-    public float getVirusSpawnRate() {
-        return virusSpawnRate;
+    public static float getVirusSpawnRate() {
+        return instance.virusSpawnRate;
     }
 
-    public int getInitialAntibodyCredit() {
-        return initialAntibodyCredit;
+    public static int getInitialAntibodyCredit() {
+        return instance.initialAntibodyCredit;
     }
 
-    public int getAntibodyPlacementCost() {
-        return antibodyPlacementCost;
+    public static int getAntibodyPlacementCost() {
+        return instance.antibodyPlacementCost;
     }
 
-    public int getVirusHealth() {
-        return virusHealth;
+    public static int getVirusHealth() {
+        return instance.virusHealth;
     }
 
-    public int getAntibodyHealth() {
-        return antibodyHealth;
+    public static int getAntibodyHealth() {
+        return instance.antibodyHealth;
     }
 
-    public int getVirusAttackDamage() {
-        return virusAttackDamage;
+    public static int getVirusAttackDamage() {
+        return instance.virusAttackDamage;
     }
 
-    public int getVirusAttackGain() {
-        return virusAttackGain;
+    public static int getVirusAttackGain() {
+        return instance.virusAttackGain;
     }
 
-    public int getAntibodyAttackDamage() {
-        return antibodyAttackDamage;
+    public static int getAntibodyAttackDamage() {
+        return instance.antibodyAttackDamage;
     }
 
-    public int getAntibodyKillGain() {
-        return antibodyKillGain;
+    public static int getAntibodyKillGain() {
+        return instance.antibodyKillGain;
     }
 
-    public int getAntibodyMoveCost() {
-        return antibodyMoveCost;
+    public static int getAntibodyMoveCost() {
+        return instance.antibodyMoveCost;
     }
 
-    private static Configuration instance;
+    private static final Configuration instance = new Configuration();
 
     public static Configuration getInstance() {
-        if (instance == null) {
-            instance = new Configuration();
-        }
         return instance;
     }
 }

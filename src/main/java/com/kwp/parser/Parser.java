@@ -10,9 +10,11 @@ import java.util.Set;
 public class Parser {
     private final Tokenizer tokenizer;
     private static final Set<String> reservedWords = new HashSet<>();
+    private final GeneticCode geneticCode;
 
-    public Parser(String source) {
-        tokenizer = new Tokenizer(source);
+    public Parser(GeneticCode geneticCode) {
+        this.geneticCode = geneticCode;
+        tokenizer = new Tokenizer(geneticCode.getCode());
         String[] reservedWordsArrays = {"antibody", "down", "downleft", "downright", "else", "if",
                 "left", "move", "nearby", "right", "shoot", "then", "up", "upleft", "upright", "virus", "while"};
         Collections.addAll(reservedWords, reservedWordsArrays);
@@ -29,7 +31,7 @@ public class Parser {
     }
 
     private Program parseProgram() {
-        Program program = new Program();
+        Program program = Program.getInstance(geneticCode);
         while (tokenizer.hasNext()) {
             program.addStatement(parseStatement());
         }

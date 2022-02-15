@@ -33,8 +33,9 @@ public class Program {
             instances = new HashMap<>();
         }
         if (!instances.containsKey(code)) {
-            Parser parser = new Parser(code.getCode());
+            Parser parser = new Parser(code);
             instances.put(code, new Program());
+            parser.parse();
         }
         return instances.get(code);
     }

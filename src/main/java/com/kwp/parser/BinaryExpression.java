@@ -5,9 +5,9 @@ import com.kwp.carin.Organism;
 import java.util.Map;
 
 public class BinaryExpression implements Expression {
-    private Expression left;
-    private Expression right;
-    private String operator;
+    private final Expression left;
+    private final Expression right;
+    private final String operator;
 
     public BinaryExpression(Expression left, String operator, Expression right) {
         this.left = left;
@@ -16,6 +16,14 @@ public class BinaryExpression implements Expression {
     }
 
     public int eval(Map<String, Integer> variables, Organism organism) {
-        return 0;
+        return switch (operator) {
+            case "+" -> left.eval(variables, organism) + right.eval(variables, organism);
+            case "-" -> left.eval(variables, organism) - right.eval(variables, organism);
+            case "*" -> left.eval(variables, organism) * right.eval(variables, organism);
+            case "/" -> left.eval(variables, organism) / right.eval(variables, organism);
+            case "%" -> left.eval(variables, organism) % right.eval(variables, organism);
+            case "^" -> (int) Math.pow(left.eval(variables, organism), right.eval(variables, organism));
+            default -> throw new IllegalArgumentException("Unknown operator: " + operator);
+        };
     }
 }

@@ -1,5 +1,7 @@
 package com.kwp.carin;
 
+import java.util.Objects;
+
 public class GeneticCode {
     private final String code;
 
@@ -9,6 +11,17 @@ public class GeneticCode {
 
     public String getCode() {
         return code;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GeneticCode that = (GeneticCode) o;
+        return code.equals(that.code);
+    }
+
+    public int hashCode() {
+        return Objects.hash(code);
     }
 
     public static GeneticCode getTest0() {
@@ -46,6 +59,94 @@ public class GeneticCode {
                 "  else if (dir) then move upright\n" +
                 "  else move up\n" +
                 "}\n";
+        return new GeneticCode(code);
+    }
+
+    public static GeneticCode getTest01() {
+        String code = "t = t + 1\n" +
+                "virusLoc = virus\n" +
+                "if (virusLoc / 10 - 1)\n" +
+                "then\n" +
+                "  if (virusLoc % 10 - 7) then move upleft\n" +
+                "  else if (virusLoc % 10 - 6) then move left\n" +
+                "  else if (virusLoc % 10 - 5) then move downleft\n" +
+                "  else if (virusLoc % 10 - 4) then move down\n" +
+                "  else if (virusLoc % 10 - 3) then move downright\n" +
+                "  else if (virusLoc % 10 - 2) then move right\n" +
+                "  else if (virusLoc % 10 - 1) then move upright\n" +
+                "  else move up\n" +
+                "else if (virusLoc)\n" +
+                "then\n" +
+                "  if (virusLoc % 10 - 7) then shoot upleft\n" +
+                "  else if (virusLoc % 10 - 6) then shoot left\n" +
+                "  else if (virusLoc % 10 - 5) then shoot downleft\n" +
+                "  else if (virusLoc % 10 - 4) then shoot down\n" +
+                "  else if (virusLoc % 10 - 3) then shoot downright\n" +
+                "  else if (virusLoc % 10 - 2) then shoot right\n" +
+                "  else if (virusLoc % 10 - 1) then shoot upright\n" +
+                "  else shoot up\n" +
+                "else\n" +
+                "{\n" +
+                "  if (dir - 6) then move upleft\n" +
+                "  else if (dir - 5) then move left\n" +
+                "  else if (dir - 4) then move downleft\n" +
+                "  else if (dir - 3) then move down\n" +
+                "  else if (dir - 2) then move downright\n" +
+                "  else if (dir - 1) then move right\n" +
+                "  else if (dir) then move upright\n" +
+                "  else move up\n" +
+                "}\n" +
+                "while (virus)\n" +
+                "if(virus) then shoot up\n" +
+                "else if(virus) then shoot up\n" +
+                "else if(virus) then move up\n" +
+                "else if(virus) then move upright\n" +
+                "else if(virus) then move up\n" +
+                "else move down\n";
+        return new GeneticCode(code);
+    }
+
+    public static GeneticCode getTest02() {
+        String code = "t = t + 1\n" +
+                "virusLoc = virus\n" +
+                "if (virusLoc / 10 - 1)\n" +
+                "then\n" +
+                "  if (virusLoc % 10 - 7) then move upleft\n" +
+                "  else if (virusLoc % 10 - 6) then move left\n" +
+                "  else if (virusLoc % 10 - 5) then move downleft\n" +
+                "  else if (virusLoc % 10 - 4) then move down\n" +
+                "  else if (virusLoc % 10 - 3) then move downright\n" +
+                "  else if (virusLoc % 10 - 2) then move right\n" +
+                "  else if (virusLoc % 10 - 1) then move upright\n" +
+                "  else move up\n" +
+                "else if (virusLoc)\n" +
+                "then\n" +
+                "  if (virusLoc % 10 - 7) then shoot upleft\n" +
+                "  else if (virusLoc % 10 - 6) then shoot left\n" +
+                "  else if (virusLoc % 10 - 5) then shoot downleft\n" +
+                "  else if (virusLoc % 10 - 4) then shoot down\n" +
+                "  else if (virusLoc % 10 - 3) then shoot downright\n" +
+                "  else if (virusLoc % 10 - 2) then shoot right\n" +
+                "  else if (virusLoc % 10 - 1) then shoot upright\n" +
+                "  else shoot up\n" +
+                "else\n" +
+                "{\n" +
+                "  dir = random % 8\n" +
+                "  if (dir - 6) then move upleft\n" +
+                "  else if (dir - 5) then move left\n" +
+                "  else if (dir - 4) then move downleft\n" +
+                "  else if (dir - 3) then move down\n" +
+                "  else if (dir - 2) then move downright\n" +
+                "  else if (dir - 1) then move right\n" +
+                "  else if (dir) then move upright\n" +
+                "  else move up\n" +
+                "}\n" +
+                "while (virus)\n" +
+                "if(virus) then shoot up\n" +
+                "if(virus) then shoot up\n" +
+                "if(virus) then move up\n" +
+                "if(virus) then move upright\n" +
+                "else then if(virus) then move";
         return new GeneticCode(code);
     }
 }

@@ -9,13 +9,17 @@ import replayButton from "./images/replayButton.png";
 import "./Bar.css";
 
 function Bar() {
+    const testButton = () => {
+        fetch("/test/print")
+    }
+
     return (<div id="Bar">
         <img id="bar" src={image}></img>
         <img id="antibodyCreditIcon" src={creditIcon}></img>
         <div id="antibodyCreditText">
             {12345}
         </div>
-        <img id="shopButton" src={shopButton}></img>
+        <img id="shopButton" src={shopButton} onClick={testButton}></img>
         <img id="decreaseSpdButton" src={decreaseSpdButton}></img>
         <img id="pauseButton" src={pauseButton}></img>
         <img id="replayButton" src={replayButton}></img>

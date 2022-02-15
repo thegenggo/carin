@@ -10,6 +10,7 @@ public class Game extends Thread {
     private final float virusSpawnRate;
     private int speedModifier;
     private int antibodyCredit;
+    private final int antibodyPlacementCost;
     private boolean started;
     private boolean isPlaying;
     private Antibody selectedAntibody;
@@ -17,9 +18,10 @@ public class Game extends Thread {
     private Game() {
         humanBody = HumanBody.getInstance();
         virusSpawnRate = Configuration.getVirusSpawnRate();
+        antibodyCredit = Configuration.getInitialAntibodyCredit();
+        antibodyPlacementCost = Configuration.getAntibodyPlacementCost();
         isPlaying = true;
         speedModifier = 1;
-        antibodyCredit = Configuration.getInitialAntibodyCredit();
     }
 
     public static Game getInstance() {
@@ -33,17 +35,33 @@ public class Game extends Thread {
         return antibodyCredit;
     }
 
+    public HumanBody getHumanBody() {
+        return humanBody;
+    }
+
+    public void buyAntibody(int i, int j) {
+        Cell target = humanBody.getCell(i, j);
+        if (antibodyCredit >= antibodyPlacementCost && target != null && target.isEmpty()) {
+            antibodyCredit -= antibodyPlacementCost;
+            target.setOrganism(new Antibody(GeneticCode.getTest0()));
+            started = true;
+        }
+    }
+
     private void spawnVirus() {
         if (CarinRandom.nextFloat() < virusSpawnRate) {
             LinkedList<Cell> emptyCells = humanBody.getEmptyCells();
-            CarinRandom.nextInt(emptyCells.size());
-            Cell cell = emptyCells.get(CarinRandom.nextInt(emptyCells.size()));
-            cell.setOrganism(new Virus(GeneticCode.getTest0()));
+            if (emptyCells.size() > 0) {
+                CarinRandom.nextInt(emptyCells.size());
+                Cell cell = emptyCells.get(CarinRandom.nextInt(emptyCells.size()));
+                cell.setOrganism(new Virus(GeneticCode.getTest01()));
+                started = true;
+            }
         }
     }
 
     private boolean isOver() {
-        return !humanBody.hasAntibody() || !humanBody.hasVirus();
+        return  (Virus.amount() == 0 || Antibody.amount() == 0) && started;
     }
 
     public void run() {
@@ -54,9 +72,12 @@ public class Game extends Thread {
     private void loop() {
         while (true) {
             if (isPlaying) {
-                System.out.println("Antibody credit: " + antibodyCredit);
+                Organism.wakeAll();
                 Organism.runAll();
                 spawnVirus();
+                System.out.println("Antibody credit: " + antibodyCredit);
+                System.out.println("Virus left: " + Virus.amount());
+                System.out.println("Antibody left: " + Antibody.amount());
                 humanBody.print();
                 try {
                     Thread.sleep(speedModifier * 1000L);
@@ -86,10 +107,5 @@ public class Game extends Thread {
     public void pauseGame() {
         isPlaying = false;
         System.out.println("Game paused");
-    }
-
-    public static void main(String[] args) {
-        Game game = Game.getInstance();
-        game.start();
     }
 }

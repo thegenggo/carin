@@ -18,6 +18,12 @@ public class HumanBody {
         }
     }
 
+    public Cell getCell(int i, int j) {
+        if (i < 0 || i >= m || j < 0 || j >= n) return null;
+        return cells[i][j];
+    }
+
+    /** @return empty cells in human body*/
     public LinkedList<Cell> getEmptyCells() {
         LinkedList<Cell> cells = new LinkedList<>();
         for (int i = 0; i < m; i++) {
@@ -26,6 +32,16 @@ public class HumanBody {
             }
         }
         return cells;
+    }
+
+    public void print() {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(cells[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("----------------------------------------");
     }
 
     private static HumanBody instance;

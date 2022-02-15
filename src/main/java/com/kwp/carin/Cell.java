@@ -1,5 +1,6 @@
 package com.kwp.carin;
 
+import com.kwp.util.Direction;
 import com.kwp.util.Pair;
 
 public class Cell {
@@ -16,6 +17,7 @@ public class Cell {
 
     public void setOrganism(Organism organism) {
         this.organism = organism;
+        organism.setCell(this);
     }
 
     public void clear() {
@@ -28,5 +30,23 @@ public class Cell {
 
     public Pair<Integer, Integer> getPosition() {
         return position;
+    }
+
+    public Cell getNeighbor(Direction direction) {
+        HumanBody humanBody = HumanBody.getInstance();
+        return switch (direction) {
+            case up -> humanBody.getCell(position.fst() - 1, position.snd());
+            case down -> humanBody.getCell(position.fst() + 1, position.snd());
+            case left -> humanBody.getCell(position.fst(), position.snd() - 1);
+            case right -> humanBody.getCell(position.fst(), position.snd() + 1);
+            case upleft -> humanBody.getCell(position.fst() - 1, position.snd() - 1);
+            case upright -> humanBody.getCell(position.fst() - 1, position.snd() + 1);
+            case downleft -> humanBody.getCell(position.fst() + 1, position.snd() - 1);
+            case downright -> humanBody.getCell(position.fst() + 1, position.snd() + 1);
+        };
+    }
+
+    public String toString() {
+        return String.format("[%-10s:%3s]", organism == null ? " " : organism, organism == null ? " " : organism.getHealth());
     }
 }

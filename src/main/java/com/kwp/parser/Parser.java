@@ -3,26 +3,28 @@ package com.kwp.parser;
 import com.kwp.carin.GeneticCode;
 import com.kwp.util.Direction;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Parser {
     private final Tokenizer tokenizer;
+    private static final Set<String> reservedWords = new HashSet<>();
 
     public Parser(String source) {
         tokenizer = new Tokenizer(source);
+        String[] reservedWordsArrays = {"antibody", "down", "downleft", "downright", "else", "if",
+                "left", "move", "nearby", "right", "shoot", "then", "up", "upleft", "upright", "virus", "while"};
+        Collections.addAll(reservedWords, reservedWordsArrays);
     }
 
     public Program parse() {
         Program program;
-        try {
-            program = parseProgram();
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            return null;
-        }
+        program = parseProgram();
         if (!tokenizer.hasNext()) {
             return program;
         } else {
-            System.out.println("Error: Unexpected token: " + tokenizer.consume());
-            return null;
+            throw new RuntimeException("Error: Unexpected token: " + tokenizer.consume());
         }
     }
 
@@ -59,7 +61,7 @@ public class Parser {
         try {
             tokenizer.consume("=");
         } catch (Exception e) {
-            System.out.println("Error: Expected '='");
+            throw new RuntimeException("Error: Expected '='");
         }
         Expression expression = parseExpression();
         return new AssignmentStatement(name, expression);
@@ -100,13 +102,13 @@ public class Parser {
         try {
             tokenizer.consume("(");
         } catch (Exception e) {
-            System.out.println("Error: Expected '('");
+            throw new RuntimeException("Error: Expected '('");
         }
         Expression condition = parseExpression();
         try {
             tokenizer.consume(")");
         } catch (Exception e) {
-            System.out.println("Error: Expected ')'");
+            throw new RuntimeException("Error: Expected ')'");
         }
         Statement statement = parseStatement();
         return new WhileStatement(condition, statement);
@@ -117,24 +119,24 @@ public class Parser {
         try {
             tokenizer.consume("(");
         } catch (Exception e) {
-            System.out.println("Error: Expected '('");
+            throw new RuntimeException("Error: Expected '('");
         }
         Expression condition = parseExpression();
         try {
             tokenizer.consume(")");
         } catch (Exception e) {
-            System.out.println("Error: Expected ')'");
+            throw new RuntimeException("Error: Expected ')'");
         }
         try {
             tokenizer.consume("then");
         } catch (Exception e) {
-            System.out.println("Error: Expected 'then'");
+            throw new RuntimeException("Error: Expected 'then'");
         }
         Statement thenStatement = parseStatement();
         try {
             tokenizer.consume("else");
         } catch (Exception e) {
-            System.out.println("Error: Expected 'else'");
+            throw new RuntimeException("Error: Expected 'else'");
         }
         Statement elseStatement = parseStatement();
         return new IfStatement(condition, thenStatement, elseStatement);
@@ -189,10 +191,11 @@ public class Parser {
             try {
                 tokenizer.consume(")");
             } catch (Exception e) {
-                System.out.println("Error: Expected ')'");
+                throw new RuntimeException("Error: Expected ')'");
             }
             return result;
         } else if (Character.isLetter(tokenizer.peek().charAt(0))) {
+            if (Parser.reservedWords.contains(tokenizer.peek())) throw new RuntimeException("Error: " + tokenizer.peek() + " is a reserved word");
             return new Identifier(tokenizer.consume());
         } else if (Character.isDigit(tokenizer.peek().charAt(0))) {
             return new Number(Integer.parseInt(tokenizer.consume()));
@@ -209,12 +212,5 @@ public class Parser {
         } else {
             return new SensorExpression(tokenizer.consume(), Direction.valueOf(tokenizer.consume()));
         }
-    }
-
-    public static void main(String[] args) {
-        GeneticCode code = GeneticCode.getTest0();
-        Parser parser = new Parser(code.getCode());
-        Program program = parser.parse();
-        System.out.println(program);
     }
 }

@@ -1,7 +1,6 @@
 package com.kwp.parser;
 
 import com.kwp.carin.GeneticCode;
-import com.kwp.carin.Organism;
 import com.kwp.util.Direction;
 
 public class Parser {

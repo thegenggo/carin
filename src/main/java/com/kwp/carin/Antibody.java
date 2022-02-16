@@ -1,5 +1,6 @@
 package com.kwp.carin;
 
+import com.kwp.parser.GeneticCode;
 import com.kwp.util.Direction;
 
 import java.util.LinkedList;

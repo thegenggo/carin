@@ -1,5 +1,6 @@
 package com.kwp.carin;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kwp.util.Direction;
 import com.kwp.util.Pair;
 
@@ -28,6 +29,7 @@ public class Cell {
         return organism;
     }
 
+    @JsonIgnore
     public Pair<Integer, Integer> getPosition() {
         return position;
     }

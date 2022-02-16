@@ -1,6 +1,5 @@
 package com.kwp.parser;
 
-import com.kwp.carin.GeneticCode;
 import com.kwp.carin.Organism;
 
 import java.util.HashMap;

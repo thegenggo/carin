@@ -1,5 +1,6 @@
 package com.kwp.carin;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kwp.util.Pair;
 
 import java.util.LinkedList;
@@ -18,12 +19,17 @@ public class HumanBody {
         }
     }
 
+    public Cell[][] getCells() {
+        return cells;
+    }
+
     public Cell getCell(int i, int j) {
         if (i < 0 || i >= m || j < 0 || j >= n) return null;
         return cells[i][j];
     }
 
     /** @return empty cells in human body*/
+    @JsonIgnore
     public LinkedList<Cell> getEmptyCells() {
         LinkedList<Cell> cells = new LinkedList<>();
         for (int i = 0; i < m; i++) {
@@ -32,6 +38,10 @@ public class HumanBody {
             }
         }
         return cells;
+    }
+
+    public String toString() {
+        return "HumanBody{" +  "m=" + m + ", n=" + n + '}';
     }
 
     public void print() {

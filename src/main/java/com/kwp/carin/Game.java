@@ -43,8 +43,10 @@ public class Game extends Thread {
     public void buyAntibody(int i, int j) {
         Cell target = humanBody.getCell(i, j);
         if (antibodyCredit >= antibodyPlacementCost && target != null && target.isEmpty()) {
+            Antibody antibody = new Antibody(GeneticCode.getDefault());
             antibodyCredit -= antibodyPlacementCost;
-            target.setOrganism(new Antibody(GeneticCode.getDefault()));
+            target.setOrganism(antibody);
+            antibody.setCell(target);
             started = true;
         }
     }
@@ -53,9 +55,10 @@ public class Game extends Thread {
         if (CarinRandom.nextFloat() < virusSpawnRate) {
             LinkedList<Cell> emptyCells = humanBody.getEmptyCells();
             if (emptyCells.size() > 0) {
-                CarinRandom.nextInt(emptyCells.size());
+                Virus virus = Virus.getRandomVirus();
                 Cell cell = emptyCells.get(CarinRandom.nextInt(emptyCells.size()));
-                cell.setOrganism(Virus.getRandomVirus());
+                cell.setOrganism(virus);
+                virus.setCell(cell);
                 started = true;
             }
         }

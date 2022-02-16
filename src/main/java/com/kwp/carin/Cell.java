@@ -18,7 +18,6 @@ public class Cell {
 
     public void setOrganism(Organism organism) {
         this.organism = organism;
-        organism.setCell(this);
     }
 
     public void clear() {

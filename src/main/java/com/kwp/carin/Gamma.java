@@ -13,6 +13,10 @@ public class Gamma extends Virus {
         this(geneticCode);
     }
 
+    protected Virus getMutation() {
+        return new Gamma();
+    }
+
     public String toString() {
         return "Gamma";
     }

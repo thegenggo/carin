@@ -50,6 +50,10 @@ public abstract class Organism {
         return cell;
     }
 
+    public int getAttack() {
+        return attack;
+    }
+
     public boolean isAntibody() {
         return this instanceof Antibody;
     }
@@ -77,18 +81,8 @@ public abstract class Organism {
         ready = false;
     }
 
-    /** @return true if target is died */
-    public boolean shoot(Direction direction) {
-        Cell targetCell = cell.getNeighbor(direction);
-        if (targetCell == null) return false;
-        Organism target = targetCell.getOrganism();
-        if (target != null) {
-            target.receiveDamage(attack);
-            return target.isDeath();
-        }
-        ready = false;
-        return false;
-    }
+    /** @return true if attack success */
+    public abstract boolean shoot(Direction direction);
 
     protected void receiveDamage(int damage) {
         health -= damage;

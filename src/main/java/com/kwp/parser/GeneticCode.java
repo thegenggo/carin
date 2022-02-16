@@ -31,8 +31,12 @@ public class GeneticCode {
         return Objects.hash(code);
     }
 
-    public static GeneticCode getDefault() {
+    public static GeneticCode getAntibodyDefault() {
         return getGeneticCodeFromFile("src/main/java/com/kwp/parser/geneticcodes/default.txt");
+    }
+
+    public static GeneticCode getVirusDefault() {
+        return getGeneticCodeFromFile("src/main/java/com/kwp/parser/geneticcodes/focusAtkOnAntibody.txt");
     }
 
     public static GeneticCode getBerserk() {

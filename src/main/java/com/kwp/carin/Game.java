@@ -45,7 +45,7 @@ public class Game extends Thread {
     public void buyAntibody(int i, int j) {
         Cell target = humanBody.getCell(i, j);
         if (antibodyCredit >= antibodyPlacementCost && target != null && target.isEmpty()) {
-            Antibody antibody = new Antibody(GeneticCode.getBerserk());
+            Antibody antibody = new Pfizer();
             antibodyCredit -= antibodyPlacementCost;
             target.setOrganism(antibody);
             antibody.setCell(target);

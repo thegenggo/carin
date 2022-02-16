@@ -33,11 +33,15 @@ public class Antibody extends Organism {
     }
 
     public boolean shoot(Direction direction) {
-        if (!ready) return false;
-        boolean isTargetDied = super.shoot(direction);
-        if (isTargetDied) health += killGain;
-        ready = false;
-        return isTargetDied;
+        Cell targetCell = cell.getNeighbor(direction);
+        if (targetCell == null) return false;
+        if (targetCell.isEmpty()) return false;
+        Organism target = targetCell.getOrganism();
+        target.receiveDamage(attack);
+        if (target.isDeath()) {
+            health += killGain;
+        }
+        return true;
     }
 
     public void receiveDamage(int damage) {
@@ -45,6 +49,12 @@ public class Antibody extends Organism {
         if (isDeath()) {
             antibodies.remove(this);
         }
+    }
+
+    public void mutate(Virus attacker) {
+        Virus virus = attacker.getMutation();
+        cell.setOrganism(virus);
+        virus.setCell(cell);
     }
 
     public String toString() {

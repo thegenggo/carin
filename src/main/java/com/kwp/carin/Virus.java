@@ -25,11 +25,18 @@ public abstract class Virus extends Organism {
     }
 
     public boolean shoot(Direction direction) {
-        if (!ready) return false;
-        boolean isTargetDied = super.shoot(direction);
+        Cell targetCell = cell.getNeighbor(direction);
+        if (targetCell == null) return false;
+        if (targetCell.isEmpty()) return false;
+        Organism target = targetCell.getOrganism();
+        target.receiveDamage(attack);
         health += attackGain;
-        ready = false;
-        return isTargetDied;
+        if (target.isDeath()) {
+            Virus mutation = getMutation();
+            targetCell.setOrganism(mutation);
+            mutation.setCell(targetCell);
+        }
+        return true;
     }
 
     public void receiveDamage(int damage) {
@@ -42,6 +49,8 @@ public abstract class Virus extends Organism {
     public String toString() {
         return "Virus";
     }
+
+    protected abstract Virus getMutation();
 
     public static Virus getRandomVirus() {
         return switch (CarinRandom.nextInt(3)) {

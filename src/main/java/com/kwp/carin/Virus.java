@@ -52,6 +52,6 @@ public class Virus extends Organism {
         if (CarinRandom.nextInt(2) == 0) {
             return new Virus();
         }
-        return new Omicron();
+        return new Alpha();
     }
 }

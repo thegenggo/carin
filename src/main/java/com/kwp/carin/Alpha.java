@@ -2,14 +2,14 @@ package com.kwp.carin;
 
 import com.kwp.parser.GeneticCode;
 
-public class Omicron extends Virus {
+public class Alpha extends Virus {
     private static final GeneticCode defaultCode = GeneticCode.getDefault();
 
-    private Omicron(GeneticCode code) {
+    private Alpha(GeneticCode code) {
         super(code);
     }
 
-    protected Omicron() {
+    protected Alpha() {
         this(defaultCode);
     }
 

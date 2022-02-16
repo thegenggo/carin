@@ -1,6 +1,7 @@
 package com.kwp.carin;
 
 import com.kwp.parser.GeneticCode;
+import com.kwp.parser.Parser;
 import com.kwp.parser.Program;
 import com.kwp.util.Direction;
 import com.kwp.util.Pair;
@@ -9,8 +10,15 @@ import java.util.LinkedList;
 
 public abstract class Organism {
     private static final LinkedList<Organism> organisms = new LinkedList<>();
+    protected static GeneticCode geneticCode = null;
 
-    protected GeneticCode code;
+    public static boolean setGeneticCode(GeneticCode code) {
+        Parser parser = new Parser(code);
+        if (parser.parse() == null) return false;
+        geneticCode = code;
+        return true;
+    }
+
     protected Program program;
     protected Cell cell;
     protected int initialHealth;
@@ -19,7 +27,6 @@ public abstract class Organism {
     protected boolean ready;
 
     public Organism(GeneticCode code) {
-        this.code = code;
         program = Program.getInstance(code);
         organisms.add(this);
         ready = true;

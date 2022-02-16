@@ -1,5 +1,6 @@
 package com.kwp.carin;
 
+import com.kwp.parser.GeneticCode;
 import com.kwp.util.CarinRandom;
 
 import java.util.LinkedList;
@@ -43,7 +44,7 @@ public class Game extends Thread {
         Cell target = humanBody.getCell(i, j);
         if (antibodyCredit >= antibodyPlacementCost && target != null && target.isEmpty()) {
             antibodyCredit -= antibodyPlacementCost;
-            target.setOrganism(new Antibody(GeneticCode.getTest0()));
+            target.setOrganism(new Antibody(GeneticCode.getDefault()));
             started = true;
         }
     }
@@ -54,7 +55,7 @@ public class Game extends Thread {
             if (emptyCells.size() > 0) {
                 CarinRandom.nextInt(emptyCells.size());
                 Cell cell = emptyCells.get(CarinRandom.nextInt(emptyCells.size()));
-                cell.setOrganism(new Virus(GeneticCode.getTest01()));
+                cell.setOrganism(Virus.getRandomVirus());
                 started = true;
             }
         }

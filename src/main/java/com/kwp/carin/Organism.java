@@ -1,5 +1,6 @@
 package com.kwp.carin;
 
+import com.kwp.parser.GeneticCode;
 import com.kwp.parser.Program;
 import com.kwp.util.Direction;
 import com.kwp.util.Pair;

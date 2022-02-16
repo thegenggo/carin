@@ -34,14 +34,21 @@ public class Configuration {
             antibodyMoveCost = scanner.nextInt();
             if (antibodyMoveCost > initialAntibodyCredit) System.out.println("Warning: Antibody Move Cost should be no more than the initial antibody credits");
         } catch (NoSuchFileException e) {
-            System.out.println("File not found");
+            System.out.println("No configuration file found. Using default configuration.");
+            m = 10; n = 10;
+            virusSpawnRate = 0.8f;
+            initialAntibodyCredit = 100; antibodyPlacementCost = 20;
+            virusHealth = 100; antibodyHealth = 100;
+            virusAttackDamage = 10; virusAttackGain = 5;
+            antibodyAttackDamage = 10; antibodyKillGain = 5;
+            antibodyMoveCost = 10;
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public Pair<Integer, Integer> getDimension() {
-        return new Pair<Integer, Integer>(m, n);
+        return new Pair<>(m, n);
     }
 
     public static float getVirusSpawnRate() {

@@ -51,6 +51,7 @@ public abstract class Organism {
         if (target != null && target.isEmpty()) {
             cell.clear();
             target.setOrganism(this);
+            cell = target;
         }
         ready = false;
     }

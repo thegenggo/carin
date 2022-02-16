@@ -12,6 +12,7 @@ public class Cell {
         position = new Pair<>(i, j);
     }
 
+    @JsonIgnore
     public boolean isEmpty() {
         return organism == null;
     }

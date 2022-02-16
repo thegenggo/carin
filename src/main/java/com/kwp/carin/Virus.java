@@ -31,7 +31,7 @@ public abstract class Virus extends Organism {
         Organism target = targetCell.getOrganism();
         target.receiveDamage(attack);
         health += attackGain;
-        if (target.isDeath()) {
+        if (target.isDeath() && !target.isVirus()) {
             Virus mutation = getMutation();
             targetCell.setOrganism(mutation);
             mutation.setCell(targetCell);

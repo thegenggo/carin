@@ -9,9 +9,10 @@ public class Game extends Thread {
     private static Game instance;
     private final HumanBody humanBody;
     private final float virusSpawnRate;
-    private int speedModifier;
     private int antibodyCredit;
     private final int antibodyPlacementCost;
+    private final int antibodyMoveCost;
+    private int speedModifier;
     private boolean started;
     private boolean isPlaying;
     private Antibody selectedAntibody;
@@ -21,6 +22,7 @@ public class Game extends Thread {
         virusSpawnRate = Configuration.getVirusSpawnRate();
         antibodyCredit = Configuration.getInitialAntibodyCredit();
         antibodyPlacementCost = Configuration.getAntibodyPlacementCost();
+        antibodyMoveCost = Configuration.getAntibodyMoveCost();
         isPlaying = true;
         speedModifier = 1;
     }
@@ -51,6 +53,31 @@ public class Game extends Thread {
         }
     }
 
+    public void selectAntibody(int i, int j) {
+        Cell cell = humanBody.getCell(i, j);
+        if (cell.isEmpty()) return;
+        Organism organism = cell.getOrganism();
+        if (organism.isAntibody()) {
+            if (selectedAntibody != null) selectedAntibody.setSelected(false);
+            selectedAntibody = (Antibody) organism;
+            selectedAntibody.setSelected(true);
+        }
+    }
+
+    public void moveSelectedAntibody(int i, int j) {
+        if (selectedAntibody != null) {
+            Cell target = humanBody.getCell(i, j);
+            if (target != null && target.isEmpty() && selectedAntibody.isReady()) {
+                Cell currentCell = selectedAntibody.getCell();
+                currentCell.clear();
+                selectedAntibody.setCell(target);
+                target.setOrganism(selectedAntibody);
+                selectedAntibody.receiveDamage(antibodyMoveCost);
+                selectedAntibody.setReady(false);
+            }
+        }
+    }
+
     private void spawnVirus() {
         if (CarinRandom.nextFloat() < virusSpawnRate) {
             LinkedList<Cell> emptyCells = humanBody.getEmptyCells();
@@ -76,13 +103,13 @@ public class Game extends Thread {
     private void loop() {
         while (true) {
             if (isPlaying) {
-                Organism.wakeAll();
                 Organism.runAll();
                 spawnVirus();
                 System.out.println("Antibody credit: " + antibodyCredit);
                 System.out.println("Virus left: " + Virus.amount());
                 System.out.println("Antibody left: " + Antibody.amount());
                 humanBody.print();
+                Organism.wakeAll();
                 try {
                     Thread.sleep(speedModifier * 1000L);
                 } catch (InterruptedException ignored) {

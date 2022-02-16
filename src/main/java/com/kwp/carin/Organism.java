@@ -29,8 +29,16 @@ public abstract class Organism {
         this.cell = cell;
     }
 
+    public void setReady(boolean ready) {
+        this.ready = ready;
+    }
+
     public int getHealth() {
         return health;
+    }
+
+    public Cell getCell() {
+        return cell;
     }
 
     public boolean isAntibody() {
@@ -43,6 +51,10 @@ public abstract class Organism {
 
     protected boolean isDeath() {
         return health <= 0;
+    }
+
+    public boolean isReady() {
+        return ready;
     }
 
     public void move(Direction direction) {

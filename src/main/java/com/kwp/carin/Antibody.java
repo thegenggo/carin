@@ -13,6 +13,7 @@ public class Antibody extends Organism {
     }
 
     private final int killGain;
+    private boolean selected;
 
     public Antibody(GeneticCode code) {
         super(code);
@@ -21,6 +22,14 @@ public class Antibody extends Organism {
         killGain = Configuration.getAntibodyKillGain();
         health = initialHealth;
         antibodies.add(this);
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+
+    public boolean getSelected() {
+        return selected;
     }
 
     public boolean shoot(Direction direction) {

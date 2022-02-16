@@ -36,4 +36,14 @@ public class GameController {
     public HumanBody humanbody() {
         return game.getHumanBody();
     }
+
+    @RequestMapping("/select")
+    public void select(@RequestParam int i, @RequestParam int j) {
+        game.selectAntibody(i, j);
+    }
+
+    @RequestMapping("move")
+    public void move(@RequestParam int i, @RequestParam int j) {
+        game.moveSelectedAntibody(i, j);
+    }
 }

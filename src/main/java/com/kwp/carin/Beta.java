@@ -2,18 +2,18 @@ package com.kwp.carin;
 
 import com.kwp.parser.GeneticCode;
 
-public class Alpha extends Virus {
+public class Beta extends Virus {
     private static final GeneticCode defaultCode = GeneticCode.getBerserk();
 
-    private Alpha(GeneticCode code) {
+    private Beta(GeneticCode code) {
         super(code);
     }
 
-    protected Alpha() {
+    protected Beta() {
         this(defaultCode);
     }
 
     public String toString() {
-        return "Alpha";
+        return "Beta";
     }
 }

@@ -1,5 +1,6 @@
 package com.kwp.carin;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kwp.parser.GeneticCode;
 import com.kwp.parser.Parser;
 import com.kwp.parser.Program;
@@ -44,6 +45,7 @@ public abstract class Organism {
         return health;
     }
 
+    @JsonIgnore
     public Cell getCell() {
         return cell;
     }

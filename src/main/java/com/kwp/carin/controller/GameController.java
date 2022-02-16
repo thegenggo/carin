@@ -4,10 +4,7 @@ import com.kwp.carin.Alpha;
 import com.kwp.carin.Game;
 import com.kwp.carin.HumanBody;
 import com.kwp.parser.GeneticCode;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/game")
@@ -35,7 +32,7 @@ public class GameController {
         game.buyAntibody(i, j);
     }
 
-    @RequestMapping("/humanbody")
+    @GetMapping("/humanbody")
     public HumanBody humanbody() {
         return game.getHumanBody();
     }
@@ -52,7 +49,18 @@ public class GameController {
 
     @RequestMapping("/setgeneticcode/alpha")
     public boolean setGeneticCodeAlpha(@RequestBody String code) {
-        System.out.println(code);
+        GeneticCode geneticCode = new GeneticCode(code);
+        return Alpha.setGeneticCode(geneticCode);
+    }
+
+    @RequestMapping("/setgeneticcode/beta")
+    public boolean setGeneticCodeBeta(@RequestBody String code) {
+        GeneticCode geneticCode = new GeneticCode(code);
+        return Alpha.setGeneticCode(geneticCode);
+    }
+
+    @RequestMapping("/setgeneticcode/gamma")
+    public boolean setGeneticCodeGamma(@RequestBody String code) {
         GeneticCode geneticCode = new GeneticCode(code);
         return Alpha.setGeneticCode(geneticCode);
     }

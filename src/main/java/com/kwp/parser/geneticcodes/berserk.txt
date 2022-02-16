@@ -32,7 +32,7 @@ then
             else if (virusLoc % 10 - 5) then move downleft
             else if (virusLoc % 10 - 4) then move down
             else if (virusLoc % 10 - 3) then move downright
-            lse if (virusLoc % 10 - 2) then move right
+            else if (virusLoc % 10 - 2) then move right
             else if (virusLoc % 10 - 1) then move upright
             else move up
         else

@@ -11,14 +11,6 @@ import java.util.LinkedList;
 
 public abstract class Organism {
     private static final LinkedList<Organism> organisms = new LinkedList<>();
-    protected static GeneticCode geneticCode = null;
-
-    public static boolean setGeneticCode(GeneticCode code) {
-        Parser parser = new Parser(code);
-        if (parser.parse() == null) return false;
-        geneticCode = code;
-        return true;
-    }
 
     public static void reset() {
         organisms.clear();

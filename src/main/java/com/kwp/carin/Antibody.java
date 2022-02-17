@@ -5,7 +5,9 @@ import com.kwp.util.Direction;
 
 import java.util.LinkedList;
 
-public class Antibody extends Organism {
+public abstract class Antibody extends Organism {
+    public enum Type {Moderna, Pfizer, Sinovac}
+
     private static final LinkedList<Antibody> antibodies = new LinkedList<>();
 
     public static int amount() {
@@ -14,6 +16,14 @@ public class Antibody extends Organism {
 
     public static void reset() {
         antibodies.clear();
+    }
+
+    public static Antibody getInstance(Type type) {
+        return switch (type) {
+            case Moderna -> new Moderna();
+            case Pfizer -> new Pfizer();
+            case Sinovac -> new Sinovac();
+        };
     }
 
     private final int killGain;

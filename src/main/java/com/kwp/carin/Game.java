@@ -25,7 +25,7 @@ public class Game extends Thread {
         antibodyCredit = Configuration.getInitialAntibodyCredit();
         antibodyPlacementCost = Configuration.getAntibodyPlacementCost();
         antibodyMoveCost = Configuration.getAntibodyMoveCost();
-        isPlaying = true;
+        isPlaying = false;
         currentSpeedIndex = 1;
         speedModifier = SPEED_RANGE[currentSpeedIndex];
     }
@@ -45,10 +45,10 @@ public class Game extends Thread {
         return humanBody;
     }
 
-    public void buyAntibody(int i, int j) {
+    public void buyAntibody(int i, int j, Antibody.Type type) {
         Cell target = humanBody.getCell(i, j);
         if (antibodyCredit >= antibodyPlacementCost && target != null && target.isEmpty()) {
-            Antibody antibody = new Pfizer();
+            Antibody antibody = Antibody.getInstance(type);
             antibodyCredit -= antibodyPlacementCost;
             target.setOrganism(antibody);
             antibody.setCell(target);
@@ -64,6 +64,7 @@ public class Game extends Thread {
             if (selectedAntibody != null) selectedAntibody.setSelected(false);
             selectedAntibody = (Antibody) organism;
             selectedAntibody.setSelected(true);
+            System.out.println("Selected antibody: " + selectedAntibody);
         }
     }
 
@@ -123,6 +124,7 @@ public class Game extends Thread {
         } catch (IllegalThreadStateException e) {
             System.out.println("Game is already started");
         }
+        isPlaying = true;
     }
 
     public void resumeGame() {
@@ -149,7 +151,8 @@ public class Game extends Thread {
         speedModifier = SPEED_RANGE[currentSpeedIndex];
         started = false;
         Organism.reset();
-        isPlaying = true;
+        isPlaying = false;
+        System.out.println("Game reset");
     }
 
     private void loop() {

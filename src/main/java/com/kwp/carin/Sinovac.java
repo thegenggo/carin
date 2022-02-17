@@ -14,6 +14,6 @@ public class Sinovac extends Antibody {
     }
 
     public String toString() {
-        return "Pfizer";
+        return "Sinovac";
     }
 }

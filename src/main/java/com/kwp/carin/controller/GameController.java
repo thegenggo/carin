@@ -1,6 +1,7 @@
 package com.kwp.carin.controller;
 
 import com.kwp.carin.Alpha;
+import com.kwp.carin.Antibody;
 import com.kwp.carin.Game;
 import com.kwp.carin.HumanBody;
 import com.kwp.parser.GeneticCode;
@@ -17,19 +18,29 @@ public class GameController {
         game.startGame();
     }
 
-    @RequestMapping("/resume")
-    public void resume() {
-        game.resumeGame();
-    }
-
     @RequestMapping("/pause")
     public void pause() {
         game.pauseGame();
     }
 
-    @RequestMapping("/buy/antibody")
-    public void buyAntibody(@RequestParam int i, @RequestParam int j) {
-        game.buyAntibody(i, j);
+    @RequestMapping("/resume")
+    public void resume() {
+        game.resumeGame();
+    }
+
+    @RequestMapping("/reset")
+    public void reset() {
+        game.resetGame();
+    }
+
+    @RequestMapping("/increasespeed")
+    public float increaseSpeed() {
+        return game.increaseSpeed();
+    }
+
+    @RequestMapping("/decreasespeed")
+    public float decreaseSpeed() {
+        return game.decreaseSpeed();
     }
 
     @GetMapping("/humanbody")
@@ -37,14 +48,19 @@ public class GameController {
         return game.getHumanBody();
     }
 
-    @RequestMapping("/select")
-    public void select(@RequestParam int i, @RequestParam int j) {
-        game.selectAntibody(i, j);
+    @RequestMapping("/buy/pfizer")
+    public void buyPfizer(@RequestParam int i, @RequestParam int j) {
+        game.buyAntibody(i, j, Antibody.Type.Pfizer);
     }
 
-    @RequestMapping("/move")
-    public void move(@RequestParam int i, @RequestParam int j) {
-        game.moveSelectedAntibody(i, j);
+    @RequestMapping("/buy/moderna")
+    public void buyMorderna(@RequestParam int i, @RequestParam int j) {
+        game.buyAntibody(i, j, Antibody.Type.Moderna);
+    }
+
+    @RequestMapping("/buy/sinovac")
+    public void buySinovac(@RequestParam int i, @RequestParam int j) {
+        game.buyAntibody(i, j, Antibody.Type.Sinovac);
     }
 
     @RequestMapping("/setgeneticcode/alpha")
@@ -65,18 +81,13 @@ public class GameController {
         return Alpha.setGeneticCode(geneticCode);
     }
 
-    @RequestMapping("/increasespeed")
-    public float increaseSpeed() {
-        return game.increaseSpeed();
+    @RequestMapping("/select")
+    public void select(@RequestParam int i, @RequestParam int j) {
+        game.selectAntibody(i, j);
     }
 
-    @RequestMapping("/decreasespeed")
-    public float decreaseSpeed() {
-        return game.decreaseSpeed();
-    }
-
-    @RequestMapping("/reset")
-    public void reset() {
-        game.resetGame();
+    @RequestMapping("/move")
+    public void move(@RequestParam int i, @RequestParam int j) {
+        game.moveSelectedAntibody(i, j);
     }
 }

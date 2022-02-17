@@ -14,6 +14,6 @@ public class Moderna extends Antibody {
     }
 
     public String toString() {
-        return "Pfizer";
+        return "Moderna";
     }
 }

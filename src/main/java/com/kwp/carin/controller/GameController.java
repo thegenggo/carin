@@ -1,9 +1,6 @@
 package com.kwp.carin.controller;
 
-import com.kwp.carin.Alpha;
-import com.kwp.carin.Antibody;
-import com.kwp.carin.Game;
-import com.kwp.carin.HumanBody;
+import com.kwp.carin.*;
 import com.kwp.parser.GeneticCode;
 import org.springframework.web.bind.annotation.*;
 
@@ -72,13 +69,31 @@ public class GameController {
     @RequestMapping("/setgeneticcode/beta")
     public boolean setGeneticCodeBeta(@RequestBody String code) {
         GeneticCode geneticCode = new GeneticCode(code);
-        return Alpha.setGeneticCode(geneticCode);
+        return Beta.setGeneticCode(geneticCode);
     }
 
     @RequestMapping("/setgeneticcode/gamma")
     public boolean setGeneticCodeGamma(@RequestBody String code) {
         GeneticCode geneticCode = new GeneticCode(code);
-        return Alpha.setGeneticCode(geneticCode);
+        return Gamma.setGeneticCode(geneticCode);
+    }
+
+    @RequestMapping("/setgeneticcode/pfizer")
+    public boolean setGeneticCodePfizer(@RequestBody String code) {
+        GeneticCode geneticCode = new GeneticCode(code);
+        return Pfizer.setGeneticCode(geneticCode);
+    }
+
+    @RequestMapping("/setgeneticcode/moderna")
+    public boolean setGeneticCodeModerna(@RequestBody String code) {
+        GeneticCode geneticCode = new GeneticCode(code);
+        return Moderna.setGeneticCode(geneticCode);
+    }
+
+    @RequestMapping("/setgeneticcode/sinovac")
+    public boolean setGeneticCodeSinovac(@RequestBody String code) {
+        GeneticCode geneticCode = new GeneticCode(code);
+        return Sinovac.setGeneticCode(geneticCode);
     }
 
     @RequestMapping("/select")

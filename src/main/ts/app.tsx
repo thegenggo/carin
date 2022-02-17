@@ -15,6 +15,7 @@ function App() {
     <div id="App" >
         <Bar />
         <Canvas />
+        <h1>123456</h1>
     </div>
     );
 }

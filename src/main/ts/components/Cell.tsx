@@ -1,7 +1,12 @@
 import cell from "./images/cell.png"
 import React from 'react';
 
-function Cell (){
+type CellProps = {
+    x: number;
+    y: number;
+  }
+
+const Cell = () => {
     return(
         <img src = {cell}></img>
     );

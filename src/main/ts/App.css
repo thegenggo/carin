@@ -1,4 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 #App {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
     
     
 }
+

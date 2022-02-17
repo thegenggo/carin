@@ -12,7 +12,7 @@ public class Game extends Thread {
     private int antibodyCredit;
     private final int antibodyPlacementCost;
     private final int antibodyMoveCost;
-    private int speedModifier;
+    private float speedModifier;
     private boolean started;
     private boolean isPlaying;
     private Antibody selectedAntibody;
@@ -95,8 +95,38 @@ public class Game extends Thread {
         antibodyCredit += amount;
     }
 
+    public float increaseSpeed() {
+        speedModifier = 2;
+        return speedModifier;
+    }
+
+    public float decreaseSpeed() {
+        speedModifier = 0.5f;
+        return speedModifier;
+    }
+
     private boolean isOver() {
         return  (Virus.amount() == 0 || Antibody.amount() == 0) && started;
+    }
+
+    public void startGame() {
+        try {
+            this.start();
+            System.out.println("Game started");
+        } catch (IllegalThreadStateException e) {
+            System.out.println("Game is already started");
+        }
+    }
+
+    public void resumeGame() {
+        speedModifier = 1;
+        isPlaying = true;
+        System.out.println("Game resumed");
+    }
+
+    public void pauseGame() {
+        isPlaying = false;
+        System.out.println("Game paused");
     }
 
     public void run() {
@@ -115,7 +145,7 @@ public class Game extends Thread {
                 humanBody.print();
                 Organism.wakeAll();
                 try {
-                    Thread.sleep(speedModifier * 1000L);
+                    Thread.sleep((long) (1000/speedModifier));
                 } catch (InterruptedException ignored) {
 
                 }
@@ -123,24 +153,5 @@ public class Game extends Thread {
                 Thread.yield();
             }
         }
-    }
-
-    public void startGame() {
-        try {
-            this.start();
-            System.out.println("Game started");
-        } catch (IllegalThreadStateException e) {
-            System.out.println("Game is already started");
-        }
-    }
-
-    public void resumeGame() {
-        isPlaying = true;
-        System.out.println("Game resumed");
-    }
-
-    public void pauseGame() {
-        isPlaying = false;
-        System.out.println("Game paused");
     }
 }

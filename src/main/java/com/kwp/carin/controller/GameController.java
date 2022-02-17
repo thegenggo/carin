@@ -64,4 +64,9 @@ public class GameController {
         GeneticCode geneticCode = new GeneticCode(code);
         return Alpha.setGeneticCode(geneticCode);
     }
+
+    @RequestMapping("/increasespeed")
+    public float increaseSpeed() {
+        return game.increaseSpeed();
+    }
 }

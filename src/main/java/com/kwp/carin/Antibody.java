@@ -12,6 +12,10 @@ public class Antibody extends Organism {
         return antibodies.size();
     }
 
+    public static void reset() {
+        antibodies.clear();
+    }
+
     private final int killGain;
     private boolean selected;
 

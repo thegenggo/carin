@@ -69,4 +69,14 @@ public class GameController {
     public float increaseSpeed() {
         return game.increaseSpeed();
     }
+
+    @RequestMapping("/decreasespeed")
+    public float decreaseSpeed() {
+        return game.decreaseSpeed();
+    }
+
+    @RequestMapping("/reset")
+    public void reset() {
+        game.resetGame();
+    }
 }

@@ -1,12 +1,12 @@
 package com.kwp.carin;
 
-import com.kwp.parser.GeneticCode;
 import com.kwp.util.CarinRandom;
 
 import java.util.LinkedList;
 
 public class Game extends Thread {
     private static Game instance;
+
     private final HumanBody humanBody;
     private final float virusSpawnRate;
     private int antibodyCredit;
@@ -16,6 +16,8 @@ public class Game extends Thread {
     private boolean started;
     private boolean isPlaying;
     private Antibody selectedAntibody;
+    private final float[] SPEED_RANGE = {0.5f, 1.0f, 1.5f, 2.0f};
+    private int currentSpeedIndex;
 
     private Game() {
         humanBody = HumanBody.getInstance();
@@ -24,7 +26,8 @@ public class Game extends Thread {
         antibodyPlacementCost = Configuration.getAntibodyPlacementCost();
         antibodyMoveCost = Configuration.getAntibodyMoveCost();
         isPlaying = true;
-        speedModifier = 1;
+        currentSpeedIndex = 1;
+        speedModifier = SPEED_RANGE[currentSpeedIndex];
     }
 
     public static Game getInstance() {
@@ -96,13 +99,17 @@ public class Game extends Thread {
     }
 
     public float increaseSpeed() {
-        speedModifier = 2;
-        return speedModifier;
+        if (currentSpeedIndex < SPEED_RANGE.length - 1) {
+            currentSpeedIndex++;
+        }
+        return speedModifier = SPEED_RANGE[currentSpeedIndex];
     }
 
     public float decreaseSpeed() {
-        speedModifier = 0.5f;
-        return speedModifier;
+        if (currentSpeedIndex > 0) {
+            currentSpeedIndex--;
+        }
+        return speedModifier = SPEED_RANGE[currentSpeedIndex];
     }
 
     private boolean isOver() {
@@ -119,7 +126,8 @@ public class Game extends Thread {
     }
 
     public void resumeGame() {
-        speedModifier = 1;
+        currentSpeedIndex = 1;
+        speedModifier = SPEED_RANGE[currentSpeedIndex];
         isPlaying = true;
         System.out.println("Game resumed");
     }
@@ -132,6 +140,16 @@ public class Game extends Thread {
     public void run() {
         loop();
         System.out.println("Game is over");
+    }
+
+    public void resetGame() {
+        humanBody.reset();
+        antibodyCredit = Configuration.getInitialAntibodyCredit();
+        currentSpeedIndex = 1;
+        speedModifier = SPEED_RANGE[currentSpeedIndex];
+        started = false;
+        Organism.reset();
+        isPlaying = true;
     }
 
     private void loop() {

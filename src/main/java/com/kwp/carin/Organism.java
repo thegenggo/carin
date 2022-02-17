@@ -20,6 +20,12 @@ public abstract class Organism {
         return true;
     }
 
+    public static void reset() {
+        organisms.clear();
+        Antibody.reset();
+        Virus.reset();
+    }
+
     protected Program program;
     protected Cell cell;
     protected int initialHealth;

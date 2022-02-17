@@ -13,6 +13,10 @@ public abstract class Virus extends Organism {
         return viruses.size();
     }
 
+    public static void reset() {
+        viruses.clear();
+    }
+
     private final int attackGain;
 
     protected Virus(GeneticCode code) {

@@ -3,7 +3,7 @@ package com.kwp.carin;
 import com.kwp.parser.GeneticCode;
 import com.kwp.parser.Parser;
 
-public class Alpha extends Virus {
+public class Beta extends Virus {
     protected static GeneticCode geneticCode = GeneticCode.getVirusDefault();
 
     public static boolean setGeneticCode(GeneticCode code) {
@@ -13,19 +13,19 @@ public class Alpha extends Virus {
         return true;
     }
 
-    private Alpha(GeneticCode code) {
+    private Beta(GeneticCode code) {
         super(code);
     }
 
-    protected Alpha() {
+    protected Beta() {
         this(geneticCode);
     }
 
-    protected Virus getMutation() {
-        return new Alpha();
+    public String toString() {
+        return "Beta";
     }
 
-    public String toString() {
-        return "Alpha";
+    protected Virus getMutation() {
+        return new Beta();
     }
 }

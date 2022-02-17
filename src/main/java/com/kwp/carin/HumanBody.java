@@ -40,6 +40,14 @@ public class HumanBody {
         return cells;
     }
 
+    public void reset() {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                cells[i][j].clear();
+            }
+        }
+    }
+
     public String toString() {
         return "HumanBody{" +  "m=" + m + ", n=" + n + '}';
     }

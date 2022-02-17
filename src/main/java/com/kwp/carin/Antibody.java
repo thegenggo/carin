@@ -5,14 +5,29 @@ import com.kwp.util.Direction;
 
 import java.util.LinkedList;
 
-public class Antibody extends Organism {
+public abstract class Antibody extends Organism {
+    public enum Type {Moderna, Pfizer, Sinovac}
+
     private static final LinkedList<Antibody> antibodies = new LinkedList<>();
 
     public static int amount() {
         return antibodies.size();
     }
 
+    public static void reset() {
+        antibodies.clear();
+    }
+
+    public static Antibody getInstance(Type type) {
+        return switch (type) {
+            case Moderna -> new Moderna();
+            case Pfizer -> new Pfizer();
+            case Sinovac -> new Sinovac();
+        };
+    }
+
     private final int killGain;
+    private boolean selected;
 
     public Antibody(GeneticCode code) {
         super(code);
@@ -23,12 +38,27 @@ public class Antibody extends Organism {
         antibodies.add(this);
     }
 
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+
+    public boolean getSelected() {
+        return selected;
+    }
+
     public boolean shoot(Direction direction) {
-        if (!ready) return false;
-        boolean isTargetDied = super.shoot(direction);
-        if (isTargetDied) health += killGain;
-        ready = false;
-        return isTargetDied;
+        Cell targetCell = cell.getNeighbor(direction);
+        if (targetCell == null) return false;
+        if (targetCell.isEmpty()) return false;
+        Organism target = targetCell.getOrganism();
+        target.receiveDamage(attack);
+        if (target.isDeath()) {
+            health += killGain;
+            if (target instanceof Virus) {
+                Game.getInstance().increaseAntibodyCredit(10);
+            }
+        }
+        return true;
     }
 
     public void receiveDamage(int damage) {
@@ -36,6 +66,12 @@ public class Antibody extends Organism {
         if (isDeath()) {
             antibodies.remove(this);
         }
+    }
+
+    public void mutate(Virus attacker) {
+        Virus virus = attacker.getMutation();
+        cell.setOrganism(virus);
+        virus.setCell(cell);
     }
 
     public String toString() {

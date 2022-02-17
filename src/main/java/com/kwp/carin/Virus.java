@@ -6,12 +6,15 @@ import com.kwp.util.Direction;
 
 import java.util.LinkedList;
 
-public class Virus extends Organism {
+public abstract class Virus extends Organism {
     private static final LinkedList<Virus> viruses = new LinkedList<>();
-    private static final GeneticCode defaultCode = GeneticCode.getDefault();
 
     public static int amount() {
         return viruses.size();
+    }
+
+    public static void reset() {
+        viruses.clear();
     }
 
     private final int attackGain;
@@ -25,16 +28,19 @@ public class Virus extends Organism {
         viruses.add(this);
     }
 
-    protected Virus() {
-        this(defaultCode);
-    }
-
     public boolean shoot(Direction direction) {
-        if (!ready) return false;
-        boolean isTargetDied = super.shoot(direction);
+        Cell targetCell = cell.getNeighbor(direction);
+        if (targetCell == null) return false;
+        if (targetCell.isEmpty()) return false;
+        Organism target = targetCell.getOrganism();
+        target.receiveDamage(attack);
         health += attackGain;
-        ready = false;
-        return isTargetDied;
+        if (target.isDeath() && !target.isVirus()) {
+            Virus mutation = getMutation();
+            targetCell.setOrganism(mutation);
+            mutation.setCell(targetCell);
+        }
+        return true;
     }
 
     public void receiveDamage(int damage) {
@@ -48,10 +54,14 @@ public class Virus extends Organism {
         return "Virus";
     }
 
+    protected abstract Virus getMutation();
+
     public static Virus getRandomVirus() {
-        if (CarinRandom.nextInt(2) == 0) {
-            return new Virus();
-        }
-        return new Alpha();
+        return switch (CarinRandom.nextInt(3)) {
+            case 0 -> new Alpha();
+            case 1 -> new Beta();
+            case 2 -> new Gamma();
+            default -> throw new IllegalStateException("Unexpected value: " + CarinRandom.nextInt(3));
+        };
     }
 }

@@ -1,6 +1,8 @@
 package com.kwp.carin;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kwp.parser.GeneticCode;
+import com.kwp.parser.Parser;
 import com.kwp.parser.Program;
 import com.kwp.util.Direction;
 import com.kwp.util.Pair;
@@ -10,7 +12,12 @@ import java.util.LinkedList;
 public abstract class Organism {
     private static final LinkedList<Organism> organisms = new LinkedList<>();
 
-    protected GeneticCode code;
+    public static void reset() {
+        organisms.clear();
+        Antibody.reset();
+        Virus.reset();
+    }
+
     protected Program program;
     protected Cell cell;
     protected int initialHealth;
@@ -19,7 +26,6 @@ public abstract class Organism {
     protected boolean ready;
 
     public Organism(GeneticCode code) {
-        this.code = code;
         program = Program.getInstance(code);
         organisms.add(this);
         ready = true;
@@ -29,8 +35,21 @@ public abstract class Organism {
         this.cell = cell;
     }
 
+    public void setReady(boolean ready) {
+        this.ready = ready;
+    }
+
     public int getHealth() {
         return health;
+    }
+
+    @JsonIgnore
+    public Cell getCell() {
+        return cell;
+    }
+
+    public int getAttack() {
+        return attack;
     }
 
     public boolean isAntibody() {
@@ -45,28 +64,23 @@ public abstract class Organism {
         return health <= 0;
     }
 
+    public boolean isReady() {
+        return ready;
+    }
+
     public void move(Direction direction) {
         if (!ready) return;
         Cell target = cell.getNeighbor(direction);
         if (target != null && target.isEmpty()) {
             cell.clear();
             target.setOrganism(this);
+            cell = target;
         }
         ready = false;
     }
 
-    /** @return true if target is died */
-    public boolean shoot(Direction direction) {
-        Cell targetCell = cell.getNeighbor(direction);
-        if (targetCell == null) return false;
-        Organism target = targetCell.getOrganism();
-        if (target != null) {
-            target.receiveDamage(attack);
-            return target.isDeath();
-        }
-        ready = false;
-        return false;
-    }
+    /** @return true if attack success */
+    public abstract boolean shoot(Direction direction);
 
     protected void receiveDamage(int damage) {
         health -= damage;

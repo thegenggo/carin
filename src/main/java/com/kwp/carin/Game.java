@@ -1,28 +1,33 @@
 package com.kwp.carin;
 
-import com.kwp.parser.GeneticCode;
 import com.kwp.util.CarinRandom;
 
 import java.util.LinkedList;
 
 public class Game extends Thread {
     private static Game instance;
+
     private final HumanBody humanBody;
     private final float virusSpawnRate;
-    private int speedModifier;
     private int antibodyCredit;
     private final int antibodyPlacementCost;
+    private final int antibodyMoveCost;
+    private float speedModifier;
     private boolean started;
     private boolean isPlaying;
     private Antibody selectedAntibody;
+    private final float[] SPEED_RANGE = {0.5f, 1.0f, 1.5f, 2.0f};
+    private int currentSpeedIndex;
 
     private Game() {
         humanBody = HumanBody.getInstance();
         virusSpawnRate = Configuration.getVirusSpawnRate();
         antibodyCredit = Configuration.getInitialAntibodyCredit();
         antibodyPlacementCost = Configuration.getAntibodyPlacementCost();
-        isPlaying = true;
-        speedModifier = 1;
+        antibodyMoveCost = Configuration.getAntibodyMoveCost();
+        isPlaying = false;
+        currentSpeedIndex = 1;
+        speedModifier = SPEED_RANGE[currentSpeedIndex];
     }
 
     public static Game getInstance() {
@@ -40,12 +45,40 @@ public class Game extends Thread {
         return humanBody;
     }
 
-    public void buyAntibody(int i, int j) {
+    public void buyAntibody(int i, int j, Antibody.Type type) {
         Cell target = humanBody.getCell(i, j);
         if (antibodyCredit >= antibodyPlacementCost && target != null && target.isEmpty()) {
+            Antibody antibody = Antibody.getInstance(type);
             antibodyCredit -= antibodyPlacementCost;
-            target.setOrganism(new Antibody(GeneticCode.getDefault()));
+            target.setOrganism(antibody);
+            antibody.setCell(target);
             started = true;
+        }
+    }
+
+    public void selectAntibody(int i, int j) {
+        Cell cell = humanBody.getCell(i, j);
+        if (cell.isEmpty()) return;
+        Organism organism = cell.getOrganism();
+        if (organism.isAntibody()) {
+            if (selectedAntibody != null) selectedAntibody.setSelected(false);
+            selectedAntibody = (Antibody) organism;
+            selectedAntibody.setSelected(true);
+            System.out.println("Selected antibody: " + selectedAntibody);
+        }
+    }
+
+    public void moveSelectedAntibody(int i, int j) {
+        if (selectedAntibody != null) {
+            Cell target = humanBody.getCell(i, j);
+            if (target != null && target.isEmpty() && selectedAntibody.isReady()) {
+                Cell currentCell = selectedAntibody.getCell();
+                currentCell.clear();
+                selectedAntibody.setCell(target);
+                target.setOrganism(selectedAntibody);
+                selectedAntibody.receiveDamage(antibodyMoveCost);
+                selectedAntibody.setReady(false);
+            }
         }
     }
 
@@ -53,42 +86,35 @@ public class Game extends Thread {
         if (CarinRandom.nextFloat() < virusSpawnRate) {
             LinkedList<Cell> emptyCells = humanBody.getEmptyCells();
             if (emptyCells.size() > 0) {
-                CarinRandom.nextInt(emptyCells.size());
+                Virus virus = Virus.getRandomVirus();
                 Cell cell = emptyCells.get(CarinRandom.nextInt(emptyCells.size()));
-                cell.setOrganism(Virus.getRandomVirus());
+                cell.setOrganism(virus);
+                virus.setCell(cell);
                 started = true;
             }
         }
     }
 
+    public void increaseAntibodyCredit(int amount) {
+        antibodyCredit += amount;
+    }
+
+    public float increaseSpeed() {
+        if (currentSpeedIndex < SPEED_RANGE.length - 1) {
+            currentSpeedIndex++;
+        }
+        return speedModifier = SPEED_RANGE[currentSpeedIndex];
+    }
+
+    public float decreaseSpeed() {
+        if (currentSpeedIndex > 0) {
+            currentSpeedIndex--;
+        }
+        return speedModifier = SPEED_RANGE[currentSpeedIndex];
+    }
+
     private boolean isOver() {
         return  (Virus.amount() == 0 || Antibody.amount() == 0) && started;
-    }
-
-    public void run() {
-        loop();
-        System.out.println("Game is over");
-    }
-
-    private void loop() {
-        while (true) {
-            if (isPlaying) {
-                Organism.wakeAll();
-                Organism.runAll();
-                spawnVirus();
-                System.out.println("Antibody credit: " + antibodyCredit);
-                System.out.println("Virus left: " + Virus.amount());
-                System.out.println("Antibody left: " + Antibody.amount());
-                humanBody.print();
-                try {
-                    Thread.sleep(speedModifier * 1000L);
-                } catch (InterruptedException ignored) {
-
-                }
-            } else {
-                Thread.yield();
-            }
-        }
     }
 
     public void startGame() {
@@ -98,9 +124,12 @@ public class Game extends Thread {
         } catch (IllegalThreadStateException e) {
             System.out.println("Game is already started");
         }
+        isPlaying = true;
     }
 
     public void resumeGame() {
+        currentSpeedIndex = 1;
+        speedModifier = SPEED_RANGE[currentSpeedIndex];
         isPlaying = true;
         System.out.println("Game resumed");
     }
@@ -108,5 +137,42 @@ public class Game extends Thread {
     public void pauseGame() {
         isPlaying = false;
         System.out.println("Game paused");
+    }
+
+    public void run() {
+        loop();
+        System.out.println("Game is over");
+    }
+
+    public void resetGame() {
+        humanBody.reset();
+        antibodyCredit = Configuration.getInitialAntibodyCredit();
+        currentSpeedIndex = 1;
+        speedModifier = SPEED_RANGE[currentSpeedIndex];
+        started = false;
+        Organism.reset();
+        isPlaying = false;
+        System.out.println("Game reset");
+    }
+
+    private void loop() {
+        while (true) {
+            if (isPlaying) {
+                Organism.runAll();
+                spawnVirus();
+                System.out.println("Antibody credit: " + antibodyCredit);
+                System.out.println("Virus left: " + Virus.amount());
+                System.out.println("Antibody left: " + Antibody.amount());
+                humanBody.print();
+                Organism.wakeAll();
+                try {
+                    Thread.sleep((long) (1000/speedModifier));
+                } catch (InterruptedException ignored) {
+
+                }
+            } else {
+                Thread.yield();
+            }
+        }
     }
 }

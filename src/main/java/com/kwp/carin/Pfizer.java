@@ -3,8 +3,8 @@ package com.kwp.carin;
 import com.kwp.parser.GeneticCode;
 import com.kwp.parser.Parser;
 
-public class Alpha extends Virus {
-    protected static GeneticCode geneticCode = GeneticCode.getVirusDefault();
+public class Pfizer extends Antibody {
+    private static GeneticCode geneticCode = GeneticCode.getAntibodyDefault();
 
     public static boolean setGeneticCode(GeneticCode code) {
         Parser parser = new Parser(code);
@@ -13,19 +13,15 @@ public class Alpha extends Virus {
         return true;
     }
 
-    private Alpha(GeneticCode code) {
+    private Pfizer(GeneticCode code) {
         super(code);
     }
 
-    protected Alpha() {
+    protected Pfizer() {
         this(geneticCode);
     }
 
-    protected Virus getMutation() {
-        return new Alpha();
-    }
-
     public String toString() {
-        return "Alpha";
+        return "Pfizer";
     }
 }

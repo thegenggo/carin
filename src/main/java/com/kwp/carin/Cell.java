@@ -12,13 +12,13 @@ public class Cell {
         position = new Pair<>(i, j);
     }
 
+    @JsonIgnore
     public boolean isEmpty() {
         return organism == null;
     }
 
     public void setOrganism(Organism organism) {
         this.organism = organism;
-        organism.setCell(this);
     }
 
     public void clear() {

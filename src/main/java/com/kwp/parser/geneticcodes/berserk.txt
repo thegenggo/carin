@@ -2,7 +2,7 @@ virusLoc = virus
 antibodyLoc = antibody
 if (virusLoc - antibodyLoc)
 then
-    if(antibodLoc)
+    if(antibodyLoc)
     then
         if (antibodyLoc / 10 - 1)
         then

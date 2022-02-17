@@ -40,6 +40,9 @@ public class Antibody extends Organism {
         target.receiveDamage(attack);
         if (target.isDeath()) {
             health += killGain;
+            if (target instanceof Virus) {
+                Game.getInstance().increaseAntibodyCredit(10);
+            }
         }
         return true;
     }

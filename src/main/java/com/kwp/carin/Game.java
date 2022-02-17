@@ -91,6 +91,10 @@ public class Game extends Thread {
         }
     }
 
+    public void increaseAntibodyCredit(int amount) {
+        antibodyCredit += amount;
+    }
+
     private boolean isOver() {
         return  (Virus.amount() == 0 || Antibody.amount() == 0) && started;
     }

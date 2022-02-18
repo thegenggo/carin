@@ -113,7 +113,7 @@ public class Game extends Thread {
         return speedModifier = SPEED_RANGE[currentSpeedIndex];
     }
 
-    private boolean isOver() {
+    public boolean isOver() {
         return  (Virus.amount() == 0 || Antibody.amount() == 0) && started;
     }
 
@@ -156,8 +156,11 @@ public class Game extends Thread {
     }
 
     private void loop() {
+        long lastTime = 0;
         while (true) {
-            if (isPlaying) {
+            long currentTime = System.currentTimeMillis();
+            if (isPlaying && currentTime - lastTime >= 1000 / speedModifier) {
+                lastTime = currentTime;
                 Organism.runAll();
                 spawnVirus();
                 System.out.println("Antibody credit: " + antibodyCredit);
@@ -165,11 +168,6 @@ public class Game extends Thread {
                 System.out.println("Antibody left: " + Antibody.amount());
                 humanBody.print();
                 Organism.wakeAll();
-                try {
-                    Thread.sleep((long) (1000/speedModifier));
-                } catch (InterruptedException ignored) {
-
-                }
             } else {
                 Thread.yield();
             }

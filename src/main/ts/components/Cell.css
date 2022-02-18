@@ -1,6 +1,11 @@
-.cell{
+#Cell{
     margin: 0;
     border: 0;
     padding: 0;
-    
+    width: 192px;
+    height: 192px;
+    background-image: url("./images/cell.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

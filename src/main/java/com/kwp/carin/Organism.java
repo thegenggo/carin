@@ -2,7 +2,6 @@ package com.kwp.carin;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kwp.parser.GeneticCode;
-import com.kwp.parser.Parser;
 import com.kwp.parser.Program;
 import com.kwp.util.Direction;
 import com.kwp.util.Pair;
@@ -50,6 +49,10 @@ public abstract class Organism {
 
     public int getAttack() {
         return attack;
+    }
+
+    public boolean getSelected() {
+        return false;
     }
 
     public boolean isAntibody() {
@@ -196,5 +199,9 @@ public abstract class Organism {
         for (Organism organism : copy) {
             organism.ready = true;
         }
+    }
+
+    public String getType() {
+        return toString();
     }
 }

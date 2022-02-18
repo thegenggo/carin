@@ -3,87 +3,92 @@
     src: url('./fonts/ShortStack-Regular.ttf');
 }
 
-#Bar {
-    position: absolute;
-    width: 1920px;
-    height: 120px;
-    left: 0px;
-    top: 0px;
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
-#bar {
-    position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
+.flex-row {
+    flex-direction: row;
 }
 
-#antibodyCreditIcon {
-    position: absolute;
-    left: 4.95%;
-    right: 92.55%;
-    top: 2.5%;
-    bottom: 17.5%;
+.min-w-3\/10 {
+    min-width: 30%;
 }
 
-#antibodyCreditText {
+.m-8 {
+    margin: 2.0rem;
+}
+
+.space-x-8 > * + * {
+    margin-left: 2.0rem;
+}
+
+.Bar {
+    background-image: url("./images/bar.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 12%;
+}
+
+.antibodyCreditIcon {
+    margin: 0px;
+    padding: 0px;
+}
+
+.antibodyCreditText {
     font-family: Short Stack;
     font-style: normal;
     font-weight: normal;
     font-size: 72px;
     line-height: 89px;
-    position: absolute;
     left: 8.33%;
     right: 80.31%;
     top: 15%;
     bottom: 17.5%;
 }
 
-#shopButton {
-    position: absolute;
+.shopButton {
     left: 26.35%;
     right: 69.53%;
     top: 5.83%;
     bottom: 10.83%;
 }
 
-#decreaseSpdButton {
-    position: absolute; 
+.decreaseSpdButton {
     left: 62.08%;
     right: 33.49%;
     top: 20%;
     bottom: 15%;
 }
 
-#increaseSpdButton {
-    position: absolute;
+.increaseSpdButton {
     left: 82.19%;
     right: 13.49%;
     top: 20.83%;
     bottom: 15%;
 }
 
-#pauseButton {
-    position: absolute;
+.pauseButton {
     left: 72.14%;
     right: 23.44%;
     top: 19.17%;
     bottom: 15%;
 }
 
-#playButton {
-    position: absolute;
+.playButton {
     left: 72.14%;
     right: 23.44%;
     top: 19.17%;
     bottom: 15%;
 }
 
-#replayButton {
-position: absolute;
-left: 92.14%;
-right: 3.44%;
-top: 19.17%;
-bottom: 15%;
+.replayButton {
+    left: 92.14%;
+    right: 3.44%;
+    top: 19.17%;
+    bottom: 15%;
 }

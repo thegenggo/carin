@@ -2,11 +2,17 @@ var path = require('path');
 
 module.exports = {
   entry: './src/main/ts/App.tsx',
-  cache: true,
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+    aggregateTimeout: 600,
+    poll: 1000
+  },
+  devtool: 'source-map',
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, 'src/main/resources/static/'),
-    filename: 'built/bundle.js',
+    path: path.join(__dirname, 'target/classes/static/built'),
+    filename: 'bundle.js'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],

@@ -1,14 +1,34 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-#App {
-    display: block;
+body, html {
+    overflow: hidden; /* Hide scrollbars */
+    -webkit-user-select: none; /* Safari */
+    -webkit-user-drag: none;
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
     margin: 0;
     padding: 0;
     border: 0;
-    
-    
+    width: 100%;
+    height: 100%;
 }
 
+#react {
+    width: 100%;
+    height: 100%;
+}
+
+#App {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    user-zoom: none;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}

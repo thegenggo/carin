@@ -28,6 +28,6 @@
     "webpack-dev-server": "^4.7.4"
   },
   "scripts": {
-    "watch": "webpack --config webpack.config.js"
+    "watch": "webpack"
   }
 }

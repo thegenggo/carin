@@ -3,6 +3,7 @@ import './SetGeneticCodePage.css';
 import backButton from './images/backButton.png';
 import applyButton from './images/applyButton.png';
 import pfizer from './images/pfizer.png';
+import okButton from './images/okButton 1.png';
 
 function SetGeneticCodePage({type}: {type: string}) {
     
@@ -13,8 +14,12 @@ function SetGeneticCodePage({type}: {type: string}) {
         fetch(`/game/setgeneticcode/${type}`, {body: geneticCode, method: "POST"}).then(response => {
             return response.json();
         }).then((data: boolean) => {
-            if (data === true) alert("Genetic code applied successfully");
-            else alert("Genetic code is invalid");
+            if (data === true) {
+                document.getElementById("successWindow").style.display = "flex";
+            }
+            else {
+                document.getElementById("failWindow").style.display = "flex";
+            }
         }).catch(error => {
             console.log(error);
         });
@@ -22,6 +27,11 @@ function SetGeneticCodePage({type}: {type: string}) {
 
     const back = () => {
         window.location.href = "/";
+    }
+
+    const ok = () => {
+        document.getElementById("successWindow").style.display = "none";
+        document.getElementById("failWindow").style.display = "none";
     }
 
     return (
@@ -33,6 +43,14 @@ function SetGeneticCodePage({type}: {type: string}) {
             <textarea id="geneticcode" rows={20} cols={50}></textarea>
             <img src={backButton} className="backButton" onClick={back}></img>
             <img src={applyButton} className="applyButton" onClick={apply}></img>
+            <div id="successWindow">
+                <h1>Success</h1>
+                <img src={okButton} className="okButton" onClick={ok}></img>
+            </div>
+            <div id="failWindow">
+                <h1>Fail</h1>
+                <img src={okButton} className="okButton" onClick={ok}></img>
+            </div>
         </div>
     )
 }

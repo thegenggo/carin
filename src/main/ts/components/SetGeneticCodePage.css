@@ -1,0 +1,69 @@
+@font-face {
+    font-family: Short Stack;
+    src: url('./fonts/ShortStack-Regular.ttf');
+}
+
+.setGeneticCodePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: url("./images/BG.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+h1 {
+    font-family: Short Stack;
+    font-weight: normal;
+    font-size: 4.5rem;
+    line-height: 1;
+    color: aliceblue;
+}
+
+textarea {
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 35px;
+    padding: 3rem;
+    font-family: Short Stack;
+    font-style: normal;
+    font-size: x-large;
+    color: aliceblue;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+textarea {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.organismPortrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("./images/bgSetAnti 1.png");
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 19%;
+    left: 13%;
+}
+
+.backButton {
+    position: absolute;
+    left: 8%;
+    bottom: 6%;
+}
+
+.applyButton {
+    position: absolute;
+    right: 8%;
+    bottom: 6%;
+}

@@ -45,6 +45,11 @@ public class GameController {
         return game.getHumanBody();
     }
 
+    @GetMapping("/antibodycredit")
+    public int antibodyCredit() {
+        return game.getAntibodyCredit();
+    }
+
     @RequestMapping("/buy/pfizer")
     public void buyPfizer(@RequestParam int i, @RequestParam int j) {
         game.buyAntibody(i, j, Antibody.Type.Pfizer);

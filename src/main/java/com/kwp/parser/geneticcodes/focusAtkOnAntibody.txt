@@ -1,5 +1,5 @@
-antibodLoc = antibody
-if (antibodLoc / 10 - 1)
+antibodyLoc = antibody
+if (antibodyLoc / 10 - 1)
 then
   if (antibodyLoc % 10 - 7) then move upleft
   else if (antibodyLoc % 10 - 6) then move left
@@ -9,7 +9,7 @@ then
   else if (antibodyLoc % 10 - 2) then move right
   else if (antibodyLoc % 10 - 1) then move upright
   else move up
-else if (antibodLoc)
+else if (antibodyLoc)
 then
   if (antibodyLoc % 10 - 7) then shoot upleft
   else if (antibodyLoc % 10 - 6) then shoot left

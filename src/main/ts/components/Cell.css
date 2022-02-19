@@ -1,11 +1,30 @@
-#Cell{
+#Cell {
     margin: 0;
     border: 0;
     padding: 0;
     width: 192px;
     height: 192px;
     background-image: url("./images/cell.png");
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.health {
+    position: relative;
+    font-family: Short Stack;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+    top: -10%;
+    color: green;
+}
+
+.organism {
+    width: 100%;
+    height: 100%;
+}
+
+.organismImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

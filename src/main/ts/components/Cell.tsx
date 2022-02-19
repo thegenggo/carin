@@ -7,6 +7,7 @@ import AlphaImage from './images/alpha.png';
 import BetaImage from './images/beta.png';
 import GammaImage from './images/gamma.png';
 import './Cell.css';
+import { AutomaticPrefetchPlugin } from 'webpack';
 
 type CellProps = {
     organism: OrganismProps
@@ -14,9 +15,9 @@ type CellProps = {
     j: number;
 }
 
-const Cell = ({organism, i, j}: CellProps) => {
+const Cell = ({ organism, i, j }: CellProps) => {
 
-    const buyAntibody = async () => {
+    const buyAntibody = () => {
         console.log("buying antibody");
         fetch(`game/buy/pfizer?i=${i}&j=${j}`)
     }
@@ -24,18 +25,28 @@ const Cell = ({organism, i, j}: CellProps) => {
     const render = () => {
         if (organism == null) return null;
         switch (organism.type) {
-            case "Beta": return <img src={BetaImage}></img>;
-            case "Alpha": return <img src={AlphaImage}></img>;
-            case "Gamma": return <img src={GammaImage}></img>;
-            case "Pfizer": return <img src={PfizerImage}></img>;
-            case "Moderna": return <img src={ModernaImage}></img>;
-            case "Sinovac" : return <img src={SinovacImage}></img>;
+            case "Beta": return <img src={BetaImage} className="organismImage"></img>;
+            case "Alpha": return <img src={AlphaImage} className="organismImage"></img>;
+            case "Gamma": return <img src={GammaImage} className="organismImage"></img>;
+            case "Pfizer": return <img src={PfizerImage} className="organismImage"></img>;
+            case "Moderna": return <img src={ModernaImage} className="organismImage"></img>;
+            case "Sinovac": return <img src={SinovacImage} className="organismImage"></img>;
             default: return <div></div>;
         }
     }
 
-    return(
-        <div id="Cell" onClick={buyAntibody}>{render()}</div>
+    const health = () => {
+        if (organism == null) return null;
+        return <div className="health">{organism.health}</div>;
+    }
+
+    return (
+        <div id="Cell" onClick={buyAntibody}>
+            <div className="organism">
+                {render()}
+                {health()}
+            </div>
+        </div>
     )
 }
 export default Cell;

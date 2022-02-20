@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
   mode: 'development',
   output: {
-    path: path.join(__dirname, 'target/classes/static/built'),
+    path: path.join(__dirname, 'src/main/resources/static/built'),
     filename: 'bundle.js'
   },
   resolve: {

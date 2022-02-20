@@ -32453,7 +32453,7 @@ function Bar() {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         setInterval(function () {
             fetchAntibodyCredit();
-        }, 100);
+        }, 200);
         setIsPlaying(true);
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "Bar flex" },
@@ -32503,7 +32503,7 @@ function Canvas() {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         setInterval(function () {
             fetchHumanbody();
-        }, 100);
+        }, 200);
         var humanbody = document.getElementById("humanbody");
         var canvas = document.getElementById("canvas");
         var cameraZoom = 1;
@@ -32511,7 +32511,6 @@ function Canvas() {
         var maxZoom = 1;
         var cameraOffset = { x: 0, y: 0 };
         var isDragging = false;
-        var dragStart = { x: 0, y: 0 };
         var cameraOffsetLimit = { minX: 0, minY: 0, maxX: 0, maxY: 0 };
         var adjustZoom = function (zoomAmount) {
             minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight);

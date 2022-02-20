@@ -18,7 +18,7 @@ function Canvas() {
     useEffect(() => {
         setInterval(() => {
             fetchHumanbody();
-        }, 100)
+        }, 200)
         let humanbody = document.getElementById("humanbody")
         let canvas = document.getElementById("canvas")
 
@@ -28,7 +28,6 @@ function Canvas() {
 
         let cameraOffset = { x: 0, y: 0 }
         let isDragging = false
-        let dragStart = { x: 0, y: 0 }
         let cameraOffsetLimit = { minX: 0, minY: 0, maxX: 0, maxY: 0 }
 
         const adjustZoom = (zoomAmount: number) => {

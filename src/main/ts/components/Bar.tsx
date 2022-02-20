@@ -48,7 +48,7 @@ function Bar() {
     useEffect(() => {
         setInterval(() => {
             fetchAntibodyCredit();
-        }, 100)
+        }, 200)
         setIsPlaying(true);
     }, []);
 

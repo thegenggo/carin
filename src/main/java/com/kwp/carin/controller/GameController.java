@@ -30,6 +30,11 @@ public class GameController {
         game.resetGame();
     }
 
+    @RequestMapping("/isover")
+    public boolean isOver() {
+        return game.isOver();
+    }
+
     @RequestMapping("/increasespeed")
     public float increaseSpeed() {
         return game.increaseSpeed();

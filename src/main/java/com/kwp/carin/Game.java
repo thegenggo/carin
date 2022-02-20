@@ -93,6 +93,7 @@ public class Game extends Thread {
                 virus.setCell(cell);
             }
         }
+        if (Virus.amount() > 20) started = true;
     }
 
     public void increaseAntibodyCredit(int amount) {

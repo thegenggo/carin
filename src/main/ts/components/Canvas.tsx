@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { ContextExclusionPlugin } from "webpack";
 import "./Canvas.css"
 import Cell from "./cell";
 import OrganismProps from "./OrganismProps";
 
 function Canvas() {
-    const [cells, setCells] = useState<{organism: OrganismProps}[][]>([]);
+    const [cells, setCells] = useState<{ organism: OrganismProps }[][]>([]);
     const [cameraZoom, setCameraZoom] = useState(1);
     const [cameraOffset, setCameraOffset] = useState({ x: 0, y: 0 });
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -52,7 +51,7 @@ function Canvas() {
 
     useEffect(() => {
         setInterval(() => {
-          fetchHumanbody();
+            fetchHumanbody();
         }, 100)
         setHumanbody(document.getElementById("humanbody"))
         setCanvas(document.getElementById("canvas"))
@@ -63,6 +62,8 @@ function Canvas() {
     }, [cameraOffset, cameraZoom]);
 
     const update = () => {
+        setHumanbody(document.getElementById("humanbody"))
+        setCanvas(document.getElementById("canvas"))
         if (humanbody && canvas) {
             setMinZoom(Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight))
             console.log(minZoom)
@@ -97,7 +98,7 @@ function Canvas() {
                                 </td>
                             )}
                         </tr>
-                    ): null}
+                    ) : null}
                 </tbody>
             </table>
         </div>

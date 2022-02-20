@@ -10,6 +10,10 @@ import playButton from './images/playButton 1.png';
 import { Link } from "react-router-dom";
 
 function SetupPage() {
+    const start = () => {
+        fetch("/game/start", { method: "POST" })
+    }
+
     return (
         <div className="setupPage">
             <h1>Set Genetic Code</h1>
@@ -49,7 +53,7 @@ function SetupPage() {
                     </Link>
                 </div>
             </div>
-            <Link to={"/play"}>
+            <Link to={"/play"} onClick={start}>
                 <img src={playButton} className="playButton"></img>
             </Link>
         </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css'
 import SetGeneticCodePage from './components/SetGeneticCodePage';
 import SetupPage from './components/SetupPage';
+import Gameplay from './components/Gameplay';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                 <Route path="setup/alpha" element={<SetGeneticCodePage type="alpha"/>} />
                 <Route path="setup/beta" element={<SetGeneticCodePage type="beta"/>} />
                 <Route path="setup/gamma" element={<SetGeneticCodePage type="gamma"/>} />
+                <Route path="play" element={<Gameplay/>} />
             </Routes>
         </div>
     );

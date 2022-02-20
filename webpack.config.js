@@ -2,12 +2,6 @@ var path = require('path');
 
 module.exports = {
   entry: './src/main/ts/main.tsx',
-  watch: true,
-  watchOptions: {
-    ignored: /node_modules/,
-    aggregateTimeout: 600,
-    poll: 1000
-  },
   devtool: 'source-map',
   mode: 'development',
   output: {

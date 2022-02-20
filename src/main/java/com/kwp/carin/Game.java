@@ -18,6 +18,7 @@ public class Game extends Thread {
     private Antibody selectedAntibody;
     private final float[] SPEED_RANGE = {0.5f, 1.0f, 1.5f, 2.0f};
     private int currentSpeedIndex;
+    private final boolean DEBUG = false;
 
     private Game() {
         humanBody = HumanBody.getInstance();
@@ -64,7 +65,7 @@ public class Game extends Thread {
             if (selectedAntibody != null) selectedAntibody.setSelected(false);
             selectedAntibody = (Antibody) organism;
             selectedAntibody.setSelected(true);
-            System.out.println("Selected antibody: " + selectedAntibody);
+            if(DEBUG) System.out.println("Selected antibody: " + selectedAntibody);
         }
     }
 
@@ -119,10 +120,10 @@ public class Game extends Thread {
 
     public void startGame() {
         try {
-            this.start();
-            System.out.println("Game started");
+            start();
+            if(DEBUG) System.out.println("Game started");
         } catch (IllegalThreadStateException e) {
-            System.out.println("Game is already started");
+            if(DEBUG) System.out.println("Game is already started");
         }
         isPlaying = true;
     }
@@ -131,17 +132,17 @@ public class Game extends Thread {
         currentSpeedIndex = 1;
         speedModifier = SPEED_RANGE[currentSpeedIndex];
         isPlaying = true;
-        System.out.println("Game resumed");
+        if(DEBUG) System.out.println("Game resumed");
     }
 
     public void pauseGame() {
         isPlaying = false;
-        System.out.println("Game paused");
+        if(DEBUG) System.out.println("Game paused");
     }
 
     public void run() {
         loop();
-        System.out.println("Game is over");
+        if(DEBUG) System.out.println("Game is over");
     }
 
     public void resetGame() {
@@ -163,13 +164,11 @@ public class Game extends Thread {
                 lastTime = currentTime;
                 Organism.runAll();
                 spawnVirus();
-                System.out.println("Antibody credit: " + antibodyCredit);
-                System.out.println("Virus left: " + Virus.amount());
-                System.out.println("Antibody left: " + Antibody.amount());
-                humanBody.print();
+                if(DEBUG) System.out.println("Antibody credit: " + antibodyCredit);
+                if(DEBUG) System.out.println("Virus left: " + Virus.amount());
+                if(DEBUG) System.out.println("Antibody left: " + Antibody.amount());
+                if(DEBUG) humanBody.print();
                 Organism.wakeAll();
-            } else {
-                Thread.yield();
             }
         }
     }

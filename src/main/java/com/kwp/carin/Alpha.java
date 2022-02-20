@@ -7,7 +7,7 @@ public class Alpha extends Virus {
     protected static GeneticCode geneticCode = GeneticCode.getVirusDefault();
 
     public static boolean setGeneticCode(GeneticCode code) {
-        Parser parser = new Parser(code);
+        Parser parser = new Parser(code.getCode());
         if (parser.parse() == null) return false;
         geneticCode = code;
         return true;

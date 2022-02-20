@@ -9,11 +9,9 @@ import java.util.Set;
 public class Parser {
     private final Tokenizer tokenizer;
     private static final Set<String> reservedWords = new HashSet<>();
-    private final GeneticCode geneticCode;
 
-    public Parser(GeneticCode geneticCode) {
-        this.geneticCode = geneticCode;
-        tokenizer = new Tokenizer(geneticCode.getCode());
+    public Parser(String input) {
+        tokenizer = new Tokenizer(input);
         String[] reservedWordsArrays = {"antibody", "down", "downleft", "downright", "else", "if",
                 "left", "move", "nearby", "right", "shoot", "then", "up", "upleft", "upright", "virus", "while"};
         Collections.addAll(reservedWords, reservedWordsArrays);
@@ -34,7 +32,7 @@ public class Parser {
     }
 
     private Program parseProgram() throws SyntaxError {
-        Program program = Program.getInstance(geneticCode);
+        Program program = new Program();
         while (tokenizer.hasNext()) {
             program.addStatement(parseStatement());
         }

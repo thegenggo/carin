@@ -6,7 +6,7 @@ import com.kwp.util.CarinRandom;
 import java.util.Map;
 
 public class Identifier implements Expression {
-    private String name;
+    private final String name;
 
     public Identifier(String name) {
         this.name = name;

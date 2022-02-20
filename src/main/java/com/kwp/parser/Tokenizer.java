@@ -1,7 +1,7 @@
 package com.kwp.parser;
 
 public class Tokenizer {
-    private String source;
+    private final String source;
     private String next;
     private int position;
 

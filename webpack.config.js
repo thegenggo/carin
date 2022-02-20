@@ -2,6 +2,7 @@ var path = require('path');
 
 module.exports = {
   entry: './src/main/ts/main.tsx',
+  watch: true,
   devtool: 'source-map',
   mode: 'development',
   output: {

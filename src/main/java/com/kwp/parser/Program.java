@@ -7,10 +7,23 @@ import java.util.LinkedList;
 import java.util.Map;
 
 public class Program {
+    public static Map<GeneticCode, Program> instances;
+
+    public static Program getInstance(GeneticCode code) {
+        if (instances == null) {
+            instances = new HashMap<>();
+        }
+        if (!instances.containsKey(code)) {
+            Parser parser = new Parser(code.getCode());
+            instances.put(code, parser.parse());
+        }
+        return instances.get(code);
+    }
+
     LinkedList<Statement> statements;
     Map<String, Integer> variables;
 
-    public Program() {
+    Program() {
         statements = new LinkedList<>();
         variables = new HashMap<>();
     }
@@ -23,19 +36,5 @@ public class Program {
         for (Statement statement : statements) {
             statement.execute(variables, organism);
         }
-    }
-
-    public static Map<GeneticCode, Program> instances;
-
-    public static Program getInstance(GeneticCode code) {
-        if (instances == null) {
-            instances = new HashMap<>();
-        }
-        if (!instances.containsKey(code)) {
-            Parser parser = new Parser(code);
-            instances.put(code, new Program());
-            parser.parse();
-        }
-        return instances.get(code);
     }
 }

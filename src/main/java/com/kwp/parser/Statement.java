@@ -5,5 +5,5 @@ import com.kwp.carin.Organism;
 import java.util.Map;
 
 public interface Statement {
-    public void execute(Map<String, Integer> variables, Organism organism);
+    void execute(Map<String, Integer> variables, Organism organism);
 }

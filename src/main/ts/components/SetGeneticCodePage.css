@@ -43,15 +43,8 @@ textarea {
     scrollbar-width: none;  /* Firefox */
 }
 
-.organismPortrait {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: url("./images/bgSetAnti 1.png");
+.absolute-t19-l13 {
     position: absolute;
-    width: 300px;
-    height: 300px;
     top: 19%;
     left: 13%;
 }
@@ -60,16 +53,19 @@ textarea {
     position: absolute;
     left: 8%;
     bottom: 6%;
+    cursor: pointer;
 }
 
 .applyButton {
     position: absolute;
     right: 8%;
     bottom: 6%;
+    cursor: pointer;
 }
 
 .okButton {
     margin-top: -2rem;
+    cursor: pointer;
 }
 
 #successWindow, #failWindow {

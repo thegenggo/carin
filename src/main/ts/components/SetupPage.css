@@ -1,0 +1,42 @@
+@font-face {
+    font-family: Short Stack;
+    src: url('./fonts/ShortStack-Regular.ttf');
+}
+
+.setupPage {
+    background: url("./images/BG.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+h1 {
+    font-family: Short Stack;
+    font-weight: normal;
+    font-size: 4.5rem;
+    line-height: 1;
+    color: aliceblue;
+}
+
+.organismPortrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("./images/bgSetAnti 1.png");
+    width: 300px;
+    height: 300px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.playButton {
+    position: absolute;
+    right: 5%;
+    bottom: 7%;
+}

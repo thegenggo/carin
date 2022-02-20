@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './src/main/ts/App.tsx',
+  entry: './src/main/ts/main.tsx',
   watch: true,
   watchOptions: {
     ignored: /node_modules/,

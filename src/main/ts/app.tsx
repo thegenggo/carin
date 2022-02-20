@@ -1,18 +1,24 @@
-import { useEffect, useState } from 'react';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Bar from './components/Bar';
 import './App.css'
-import Canvas from './components/canvas';
+import SetGeneticCodePage from './components/SetGeneticCodePage';
+import SetupPage from './components/SetupPage';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
     return (
-        <div id="App">
-            {/* <Bar />
-            <Canvas /> */}
+        <div className="App">
+            <Routes>
+                <Route path="/" element={<SetupPage />} />
+                <Route path="setup/pfizer" element={<SetGeneticCodePage type="pfizer"/>} />
+                <Route path="setup/moderna" element={<SetGeneticCodePage type="moderna"/>} />
+                <Route path="setup/sinovac" element={<SetGeneticCodePage type="sinovac"/>} />
+                <Route path="setup/alpha" element={<SetGeneticCodePage type="alpha"/>} />
+                <Route path="setup/beta" element={<SetGeneticCodePage type="beta"/>} />
+                <Route path="setup/gamma" element={<SetGeneticCodePage type="gamma"/>} />
+            </Routes>
         </div>
     );
 }
 
-ReactDOM.render(<App />, document.getElementById('react'));
+export default App;

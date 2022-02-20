@@ -47,6 +47,7 @@ public abstract class Antibody extends Organism {
     }
 
     public boolean shoot(Direction direction) {
+        if (!isReady()) return false;
         Cell targetCell = cell.getNeighbor(direction);
         if (targetCell == null) return false;
         if (targetCell.isEmpty()) return false;
@@ -58,6 +59,7 @@ public abstract class Antibody extends Organism {
                 Game.getInstance().increaseAntibodyCredit(10);
             }
         }
+        ready = false;
         return true;
     }
 

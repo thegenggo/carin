@@ -111,7 +111,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#Cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.health {\r\n    position: relative;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: 900;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    top: -10%;\r\n    color: green;\r\n}\r\n\r\n.organism {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.organismImage {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Cell.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,SAAS;IACT,UAAU;IACV,YAAY;IACZ,aAAa;IACb,yDAA0C;AAC9C;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,gBAAgB;IAChB,eAAe;IACf,kBAAkB;IAClB,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;AACtB","sourcesContent":["#Cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(\"./images/cell.png\");\r\n}\r\n\r\n.health {\r\n    position: relative;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: 900;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    top: -10%;\r\n    color: green;\r\n}\r\n\r\n.organism {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.organismImage {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#Cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.health {\r\n    position: relative;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: 900;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    top: -10%;\r\n    color: green;\r\n}\r\n\r\n.organism {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.organismImage {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.cursor {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: -15%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Cell.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,SAAS;IACT,UAAU;IACV,YAAY;IACZ,aAAa;IACb,yDAA0C;AAC9C;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,gBAAgB;IAChB,eAAe;IACf,kBAAkB;IAClB,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;IAClB,mBAAmB;AACvB","sourcesContent":["#Cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(\"./images/cell.png\");\r\n}\r\n\r\n.health {\r\n    position: relative;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: 900;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    top: -10%;\r\n    color: green;\r\n}\r\n\r\n.organism {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.organismImage {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.cursor {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: -15%;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32454,6 +32454,7 @@ function Bar() {
         setInterval(function () {
             fetchAntibodyCredit();
         }, 100);
+        setIsPlaying(true);
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "Bar flex" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row m-8 min-w-3/10 space-x-8" },
@@ -32491,16 +32492,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Canvas() {
     var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]), cells = _a[0], setCells = _a[1];
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1), cameraZoom = _b[0], setCameraZoom = _b[1];
-    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({ x: 0, y: 0 }), cameraOffset = _c[0], setCameraOffset = _c[1];
-    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({ x: 0, y: 0 }), dragStart = _d[0], setDragStart = _d[1];
-    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), isDragging = _e[0], setIsDragging = _e[1];
-    var _f = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), humanbody = _f[0], setHumanbody = _f[1];
-    var _g = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), canvas = _g[0], setCanvas = _g[1];
     var SCROLL_SENSITIVITY = -0.0005;
-    var _h = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({ minX: 0, minY: 0, maxX: 0, maxY: 0 }), cameraOffsetLimit = _h[0], setCameraOffsetLimit = _h[1];
-    var _j = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1), minZoom = _j[0], setMinZoom = _j[1];
-    var _k = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1), maxZoom = _k[0], setMaxZoom = _k[1];
     var fetchHumanbody = function () {
         fetch("game/humanbody").then(function (response) { return response.json(); }).then(function (data) {
             setCells(data.cells);
@@ -32508,63 +32500,67 @@ function Canvas() {
             console.log(error);
         });
     };
-    var adjustZoom = function (zoomAmount) {
-        if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom)
-            setCameraZoom(cameraZoom + zoomAmount);
-        else if (cameraZoom + zoomAmount < minZoom)
-            setCameraZoom(minZoom);
-        else if (cameraZoom + zoomAmount > maxZoom)
-            setCameraZoom(maxZoom);
-    };
-    var onPointerDown = function (event) {
-        setIsDragging(true);
-        setDragStart({ x: event.clientX, y: event.clientY });
-    };
-    var onPointerMove = function (event) {
-        if (isDragging) {
-            var newOffset = {
-                x: cameraOffset.x + event.movementX,
-                y: cameraOffset.y + event.movementY
-            };
-            setCameraOffset(newOffset);
-        }
-    };
-    var onPointerUp = function (event) {
-        setIsDragging(false);
-    };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         setInterval(function () {
             fetchHumanbody();
         }, 100);
-        setHumanbody(document.getElementById("humanbody"));
-        setCanvas(document.getElementById("canvas"));
+        var humanbody = document.getElementById("humanbody");
+        var canvas = document.getElementById("canvas");
+        var cameraZoom = 1;
+        var minZoom = 1;
+        var maxZoom = 1;
+        var cameraOffset = { x: 0, y: 0 };
+        var isDragging = false;
+        var dragStart = { x: 0, y: 0 };
+        var cameraOffsetLimit = { minX: 0, minY: 0, maxX: 0, maxY: 0 };
+        var adjustZoom = function (zoomAmount) {
+            minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight);
+            if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom)
+                cameraZoom = cameraZoom + zoomAmount;
+            else if (cameraZoom + zoomAmount < minZoom)
+                cameraZoom = minZoom;
+            else if (cameraZoom + zoomAmount > maxZoom)
+                cameraZoom = maxZoom;
+            update();
+        };
+        var onPointerDown = function (event) {
+            isDragging = true;
+        };
+        var onPointerMove = function (event) {
+            if (isDragging) {
+                cameraOffset.x = cameraOffset.x + event.movementX;
+                cameraOffset.y = cameraOffset.y + event.movementY;
+            }
+            update();
+        };
+        var onPointerUp = function (event) {
+            isDragging = false;
+        };
+        var update = function () {
+            if (humanbody && canvas) {
+                cameraOffsetLimit.minX = canvas.clientWidth - humanbody.clientWidth * cameraZoom;
+                cameraOffsetLimit.minY = canvas.clientHeight - humanbody.clientHeight * cameraZoom;
+                cameraOffset.x = Math.min(cameraOffset.x, cameraOffsetLimit.maxX);
+                cameraOffset.y = Math.min(cameraOffset.y, cameraOffsetLimit.maxY);
+                cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX);
+                cameraOffset.y = Math.max(cameraOffset.y, cameraOffsetLimit.minY);
+                humanbody.style.transform = "translate(".concat(cameraOffset.x, "px, ").concat(cameraOffset.y, "px) scale(").concat(cameraZoom, ")");
+            }
+            ;
+        };
+        canvas.addEventListener("wheel", function (event) {
+            adjustZoom(event.deltaY * SCROLL_SENSITIVITY);
+        });
+        canvas.addEventListener("pointerdown", onPointerDown);
+        canvas.addEventListener("pointermove", onPointerMove);
+        canvas.addEventListener("pointerup", onPointerUp);
+        window.addEventListener("resize", update);
     }, []);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        update();
-    }, [cameraOffset, cameraZoom]);
-    var update = function () {
-        setHumanbody(document.getElementById("humanbody"));
-        setCanvas(document.getElementById("canvas"));
-        if (humanbody && canvas) {
-            setMinZoom(Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight));
-            console.log(minZoom);
-            cameraOffsetLimit.minX = canvas.clientWidth - humanbody.clientWidth * cameraZoom;
-            cameraOffsetLimit.minY = canvas.clientHeight - humanbody.clientHeight * cameraZoom;
-            cameraOffset.x = Math.min(cameraOffset.x, cameraOffsetLimit.maxX);
-            cameraOffset.y = Math.min(cameraOffset.y, cameraOffsetLimit.maxY);
-            cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX);
-            cameraOffset.y = Math.max(cameraOffset.y, cameraOffsetLimit.minY);
-            if (cameraZoom < minZoom)
-                setCameraZoom(minZoom);
-            if (cameraZoom > maxZoom)
-                setCameraZoom(maxZoom);
-            humanbody.style.top = "".concat(cameraOffset.y, "px");
-            humanbody.style.left = "".concat(cameraOffset.x, "px");
-            humanbody.style.transform = "scale(".concat(cameraZoom, ")");
-        }
-        ;
-    };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "canvas", onWheel: function (e) { return adjustZoom(e.deltaY * SCROLL_SENSITIVITY); }, onMouseDown: function (e) { return onPointerDown(e); }, onMouseUp: function (e) { return onPointerUp(e); }, onMouseMove: function (e) { return onPointerMove(e); } },
+    // useEffect(() => {
+    //     update()
+    //     console.log("update")
+    // }, [cameraOffset, cameraZoom]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "canvas" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { id: "humanbody" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, cells ? cells.map(function (row, i) {
                 return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, row.map(function (cell, j) {
@@ -32785,6 +32781,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_beta_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./images/beta.png */ "./src/main/ts/components/images/beta.png");
 /* harmony import */ var _images_gamma_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/gamma.png */ "./src/main/ts/components/images/gamma.png");
 /* harmony import */ var _Cell_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Cell.css */ "./src/main/ts/components/Cell.css");
+/* harmony import */ var _images_Polygon_1_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./images/Polygon 1.png */ "./src/main/ts/components/images/Polygon 1.png");
+
 
 
 
@@ -32795,9 +32793,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var Cell = function (_a) {
     var organism = _a.organism, i = _a.i, j = _a.j;
-    var buyAntibody = function () {
-        console.log("buying antibody");
-        fetch("game/buy/pfizer?i=".concat(i, "&j=").concat(j));
+    var onClick = function () {
+        if (organism == null) {
+            fetch("game/buy/pfizer?i=".concat(i, "&j=").concat(j));
+        }
+        else if (organism.antibody) {
+            fetch("game/select?i=".concat(i, "&j=").concat(j));
+        }
     };
     var render = function () {
         if (organism == null)
@@ -32817,8 +32819,19 @@ var Cell = function (_a) {
             return null;
         return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "health" }, organism.health);
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "Cell", onClick: buyAntibody },
+    var cursor = function () {
+        if (organism == null)
+            return null;
+        if (organism.selected) {
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_Polygon_1_png__WEBPACK_IMPORTED_MODULE_8__, className: "cursor" });
+        }
+        else {
+            return null;
+        }
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "Cell", onDoubleClick: onClick },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "organism" },
+            cursor(),
             render(),
             health())));
 };
@@ -32844,6 +32857,16 @@ module.exports = __webpack_require__.p + "992f4b1237c5c5d78098.ttf";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "b62047f4db411b24576c.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/components/images/Polygon 1.png":
+/*!*****************************************************!*\
+  !*** ./src/main/ts/components/images/Polygon 1.png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "941a778393e2ade81324.png";
 
 /***/ }),
 

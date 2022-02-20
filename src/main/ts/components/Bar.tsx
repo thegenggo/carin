@@ -49,6 +49,7 @@ function Bar() {
         setInterval(() => {
             fetchAntibodyCredit();
         }, 100)
+        setIsPlaying(true);
     }, []);
 
     return (<div className="Bar flex" >

@@ -28,3 +28,10 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.cursor {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -15%;
+}

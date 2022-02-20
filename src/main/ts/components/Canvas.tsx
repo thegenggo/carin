@@ -4,17 +4,8 @@ import Cell from "./cell";
 import OrganismProps from "./OrganismProps";
 
 function Canvas() {
-    const [cells, setCells] = useState<{ organism: OrganismProps }[][]>([]);
-    const [cameraZoom, setCameraZoom] = useState(1);
-    const [cameraOffset, setCameraOffset] = useState({ x: 0, y: 0 });
-    const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-    const [isDragging, setIsDragging] = useState(false);
-    const [humanbody, setHumanbody] = useState<HTMLElement | undefined>();
-    const [canvas, setCanvas] = useState<HTMLElement | undefined>();
-    const SCROLL_SENSITIVITY = -0.0005;
-    const [cameraOffsetLimit, setCameraOffsetLimit] = useState<{ minX: number, minY: number, maxX: number, maxY: number }>({ minX: 0, minY: 0, maxX: 0, maxY: 0 });
-    const [minZoom, setMinZoom] = useState(1);
-    const [maxZoom, setMaxZoom] = useState(1);
+    const [cells, setCells] = useState<{ organism: OrganismProps }[][]>([])
+    const SCROLL_SENSITIVITY = -0.0005
 
     const fetchHumanbody = () => {
         fetch("game/humanbody").then(response => response.json()).then(data => {
@@ -24,70 +15,77 @@ function Canvas() {
         });
     }
 
-    const adjustZoom = (zoomAmount: number) => {
-        if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom) setCameraZoom(cameraZoom + zoomAmount)
-        else if (cameraZoom + zoomAmount < minZoom) setCameraZoom(minZoom)
-        else if (cameraZoom + zoomAmount > maxZoom) setCameraZoom(maxZoom)
-    }
-
-    const onPointerDown = (event: any) => {
-        setIsDragging(true);
-        setDragStart({ x: event.clientX, y: event.clientY });
-    }
-
-    const onPointerMove = (event: any) => {
-        if (isDragging) {
-            const newOffset = {
-                x: cameraOffset.x + event.movementX,
-                y: cameraOffset.y + event.movementY
-            }
-            setCameraOffset(newOffset);
-        }
-    }
-
-    const onPointerUp = (event: any) => {
-        setIsDragging(false);
-    }
-
     useEffect(() => {
         setInterval(() => {
             fetchHumanbody();
         }, 100)
-        setHumanbody(document.getElementById("humanbody"))
-        setCanvas(document.getElementById("canvas"))
+        let humanbody = document.getElementById("humanbody")
+        let canvas = document.getElementById("canvas")
+
+        let cameraZoom = 1
+        let minZoom = 1
+        let maxZoom = 1
+
+        let cameraOffset = { x: 0, y: 0 }
+        let isDragging = false
+        let dragStart = { x: 0, y: 0 }
+        let cameraOffsetLimit = { minX: 0, minY: 0, maxX: 0, maxY: 0 }
+
+        const adjustZoom = (zoomAmount: number) => {
+            minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight)
+            if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom) cameraZoom = cameraZoom + zoomAmount
+            else if (cameraZoom + zoomAmount < minZoom) cameraZoom = minZoom
+            else if (cameraZoom + zoomAmount > maxZoom) cameraZoom = maxZoom
+            update()
+        }
+    
+        const onPointerDown = (event: any) => {
+            isDragging = true
+        }
+    
+        const onPointerMove = (event: any) => {
+            if (isDragging) {
+                cameraOffset.x = cameraOffset.x + event.movementX
+                cameraOffset.y = cameraOffset.y + event.movementY
+            }
+            update()
+        }
+    
+        const onPointerUp = (event: any) => {
+            isDragging = false
+        }
+
+        const update = () => {
+            if (humanbody && canvas) {
+    
+                cameraOffsetLimit.minX = canvas.clientWidth - humanbody.clientWidth * cameraZoom;
+                cameraOffsetLimit.minY = canvas.clientHeight - humanbody.clientHeight * cameraZoom;
+    
+                cameraOffset.x = Math.min(cameraOffset.x, cameraOffsetLimit.maxX)
+                cameraOffset.y = Math.min(cameraOffset.y, cameraOffsetLimit.maxY)
+                cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX)
+                cameraOffset.y = Math.max(cameraOffset.y, cameraOffsetLimit.minY)
+    
+                humanbody.style.transform = `translate(${cameraOffset.x}px, ${cameraOffset.y}px) scale(${cameraZoom})`;
+            };
+        }
+
+        canvas.addEventListener("wheel", (event: any) => {
+            adjustZoom(event.deltaY * SCROLL_SENSITIVITY)
+        })
+        canvas.addEventListener("pointerdown", onPointerDown)
+        canvas.addEventListener("pointermove", onPointerMove)
+        canvas.addEventListener("pointerup", onPointerUp)
+        window.addEventListener("resize", update)
     }, [])
 
-    useEffect(() => {
-        update()
-    }, [cameraOffset, cameraZoom]);
-
-    const update = () => {
-        setHumanbody(document.getElementById("humanbody"))
-        setCanvas(document.getElementById("canvas"))
-        if (humanbody && canvas) {
-            setMinZoom(Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight))
-            console.log(minZoom)
-
-            cameraOffsetLimit.minX = canvas.clientWidth - humanbody.clientWidth * cameraZoom;
-            cameraOffsetLimit.minY = canvas.clientHeight - humanbody.clientHeight * cameraZoom;
-
-            cameraOffset.x = Math.min(cameraOffset.x, cameraOffsetLimit.maxX)
-            cameraOffset.y = Math.min(cameraOffset.y, cameraOffsetLimit.maxY)
-            cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX)
-            cameraOffset.y = Math.max(cameraOffset.y, cameraOffsetLimit.minY)
-
-            if (cameraZoom < minZoom) setCameraZoom(minZoom)
-            if (cameraZoom > maxZoom) setCameraZoom(maxZoom)
-
-            humanbody.style.top = `${cameraOffset.y}px`;
-            humanbody.style.left = `${cameraOffset.x}px`;
-            humanbody.style.transform = `scale(${cameraZoom})`;
-        };
-    }
+    // useEffect(() => {
+    //     update()
+    //     console.log("update")
+    // }, [cameraOffset, cameraZoom]);
 
     return (
-        <div id="canvas" onWheel={(e) => adjustZoom(e.deltaY * SCROLL_SENSITIVITY)} onMouseDown={(e) => onPointerDown(e)} onMouseUp={(e) => onPointerUp(e)}
-            onMouseMove={(e) => onPointerMove(e)}>
+        <div id="canvas">
             <table id="humanbody">
                 <tbody>
                     {cells ? cells.map((row, i: number) =>

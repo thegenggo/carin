@@ -7,7 +7,7 @@ import AlphaImage from './images/alpha.png';
 import BetaImage from './images/beta.png';
 import GammaImage from './images/gamma.png';
 import './Cell.css';
-import { AutomaticPrefetchPlugin } from 'webpack';
+import Cursor from './images/Polygon 1.png';
 
 type CellProps = {
     organism: OrganismProps
@@ -17,9 +17,9 @@ type CellProps = {
 
 const Cell = ({ organism, i, j }: CellProps) => {
 
-    const buyAntibody = () => {
-        console.log("buying antibody");
-        fetch(`game/buy/pfizer?i=${i}&j=${j}`)
+    const onClick = () => {
+        if (organism == null) { fetch(`game/buy/pfizer?i=${i}&j=${j}`) }
+        else if (organism.antibody) { fetch(`game/select?i=${i}&j=${j}`) }
     }
 
     const render = () => {
@@ -40,9 +40,19 @@ const Cell = ({ organism, i, j }: CellProps) => {
         return <div className="health">{organism.health}</div>;
     }
 
+    const cursor = () => {
+        if (organism == null) return null;
+        if (organism.selected) {
+            return <img src={Cursor} className="cursor"></img>;
+        } else {
+            return null;
+        }
+    }
+
     return (
-        <div id="Cell" onClick={buyAntibody}>
+        <div id="Cell" onDoubleClick={onClick}>
             <div className="organism">
+                {cursor()}
                 {render()}
                 {health()}
             </div>

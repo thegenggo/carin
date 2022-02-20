@@ -91,7 +91,6 @@ public class Game extends Thread {
                 Cell cell = emptyCells.get(CarinRandom.nextInt(emptyCells.size()));
                 cell.setOrganism(virus);
                 virus.setCell(cell);
-                started = true;
             }
         }
     }
@@ -153,7 +152,7 @@ public class Game extends Thread {
         started = false;
         Organism.reset();
         isPlaying = false;
-        System.out.println("Game reset");
+        if(DEBUG) System.out.println("Game reset");
     }
 
     private void loop() {

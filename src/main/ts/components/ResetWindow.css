@@ -3,13 +3,17 @@
     src: url('./fonts/ShortStack-Regular.ttf');
 }
 
-.reset-window {
-    display: block;
+#reset-window {
+    display: none;
+    position: absolute;
     background: url("./images/comfirmWindow.png");
     width: 752px;
     height: 252px;;
     border-radius: 50px;
     padding: 24px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .reset-text span {

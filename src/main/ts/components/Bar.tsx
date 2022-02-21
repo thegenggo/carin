@@ -9,7 +9,7 @@ import resumeButton from "./images/resumeButton.png";
 import "./Bar.css";
 import { useState } from "react";
 
-function Bar() {
+function Bar({openResetConfirmWindow} : {openResetConfirmWindow: () => void}) {
     const [antibodyCredit, setAntibodyCredit] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
 
@@ -41,14 +41,11 @@ function Bar() {
         fetch("game/start").then(response => setIsPlaying(true)).catch(error => { console.log(error) })
     }
 
-    const reset = () => {
-        fetch("game/reset").then(response => setIsPlaying(true)).catch(error => { console.log(error) })
-    }
-
     useEffect(() => {
         setInterval(() => {
             fetchAntibodyCredit();
         }, 200)
+        fetchAntibodyCredit();
         setIsPlaying(true);
     }, []);
 
@@ -68,7 +65,7 @@ function Bar() {
                 {isPlaying ? <img className="pauseButton" src={pauseButton} onClick={pause}></img> : <img className="resumeButton" src={resumeButton} onClick={resume}></img>}
                 <img className="increaseSpdButton" src={increaseSpdButton} onClick={speedUp}></img>
             </div>
-            <img className="replayButton" src={replayButton} onClick={reset}></img>
+            <img className="replayButton" src={replayButton} onClick={openResetConfirmWindow}></img>
         </div>
     </div>
     );

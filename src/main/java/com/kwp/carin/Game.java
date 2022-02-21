@@ -121,6 +121,7 @@ public class Game extends Thread {
     public void startGame() {
         try {
             start();
+            isPlaying = true;
             if(DEBUG) System.out.println("Game started");
         } catch (IllegalThreadStateException e) {
             if(DEBUG) System.out.println("Game is already started");

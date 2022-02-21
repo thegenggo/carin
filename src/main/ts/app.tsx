@@ -4,13 +4,15 @@ import SetGeneticCodePage from './components/SetGeneticCodePage';
 import SetupPage from './components/SetupPage';
 import Gameplay from './components/Gameplay';
 import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home'
 
-function App() {
+function App(): JSX.Element {
 
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element={<SetupPage />} />
+                <Route path="/" element={<Home />} />
+                <Route path="setup" element={<SetupPage />} />
                 <Route path="setup/pfizer" element={<SetGeneticCodePage type="pfizer"/>} />
                 <Route path="setup/moderna" element={<SetGeneticCodePage type="moderna"/>} />
                 <Route path="setup/sinovac" element={<SetGeneticCodePage type="sinovac"/>} />

@@ -144,6 +144,37 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".gameplay {\r\n    width: 100%;\r\n   
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/main/ts/components/Home.css":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/main/ts/components/Home.css ***!
+  \*******************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./images/BG.png */ "./src/main/ts/components/images/BG.png"), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n\r\n.home{\r\n    height: 1080px;\r\n    width: 1920px;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n\r\n}\r\n\r\n.center{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    \r\n}\r\n\r\n.center-p{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin-top: 158px;\r\n}\r\n\r\n\r\n.underline{\r\n    text-decoration: none;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Home.css"],"names":[],"mappings":";;AAEA;IACI,cAAc;IACd,aAAa;IACb,yDAAwC;;AAE5C;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,mBAAmB;;AAEvB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,iBAAiB;AACrB;;;AAGA;IACI,qBAAqB;AACzB","sourcesContent":["\r\n\r\n.home{\r\n    height: 1080px;\r\n    width: 1920px;\r\n    background-image: url(\"./images/BG.png\");\r\n\r\n}\r\n\r\n.center{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    \r\n}\r\n\r\n.center-p{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin-top: 158px;\r\n}\r\n\r\n\r\n.underline{\r\n    text-decoration: none;\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/main/ts/components/ResetWindow.css":
 /*!**************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/main/ts/components/ResetWindow.css ***!
@@ -31973,6 +32004,60 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/main/ts/components/Home.css":
+/*!*****************************************!*\
+  !*** ./src/main/ts/components/Home.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_Home_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js!./Home.css */ "./node_modules/css-loader/dist/cjs.js!./src/main/ts/components/Home.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_Home_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_Home_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_Home_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_Home_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/main/ts/components/ResetWindow.css":
 /*!************************************************!*\
   !*** ./src/main/ts/components/ResetWindow.css ***!
@@ -32456,7 +32541,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SetGeneticCodePage */ "./src/main/ts/components/SetGeneticCodePage.tsx");
 /* harmony import */ var _components_SetupPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/SetupPage */ "./src/main/ts/components/SetupPage.tsx");
 /* harmony import */ var _components_Gameplay__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Gameplay */ "./src/main/ts/components/Gameplay.tsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Home */ "./src/main/ts/components/Home.tsx");
+
 
 
 
@@ -32465,15 +32552,16 @@ __webpack_require__.r(__webpack_exports__);
 
 function App() {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "App" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetupPage__WEBPACK_IMPORTED_MODULE_3__["default"], null) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "setup/pfizer", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "pfizer" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "setup/moderna", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "moderna" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "setup/sinovac", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "sinovac" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "setup/alpha", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "alpha" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "setup/beta", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "beta" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "setup/gamma", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "gamma" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "play", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Gameplay__WEBPACK_IMPORTED_MODULE_4__["default"], null) }))));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Home__WEBPACK_IMPORTED_MODULE_5__["default"], null) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetupPage__WEBPACK_IMPORTED_MODULE_3__["default"], null) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/pfizer", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "pfizer" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/moderna", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "moderna" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/sinovac", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "sinovac" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/alpha", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "alpha" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/beta", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "beta" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/gamma", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "gamma" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "play", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Gameplay__WEBPACK_IMPORTED_MODULE_4__["default"], null) }))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -32694,6 +32782,36 @@ function Gameplay() {
 
 /***/ }),
 
+/***/ "./src/main/ts/components/Home.tsx":
+/*!*****************************************!*\
+  !*** ./src/main/ts/components/Home.tsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _images_gameName_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/gameName.png */ "./src/main/ts/components/images/gameName.png");
+/* harmony import */ var _Home_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Home.css */ "./src/main/ts/components/Home.css");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+
+
+
+
+function Home() {
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, { to: "setup", className: "underline" },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "home" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "center" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_gameName_png__WEBPACK_IMPORTED_MODULE_1__, className: "center-p" })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", { className: "center" }, "Click to start..."))));
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+
+/***/ }),
+
 /***/ "./src/main/ts/components/ResetWindow.tsx":
 /*!************************************************!*\
   !*** ./src/main/ts/components/ResetWindow.tsx ***!
@@ -32789,7 +32907,7 @@ function SetGeneticCodePage(_a) {
         });
     };
     var back = function () {
-        window.location.href = "/";
+        window.location.href = "setup";
     };
     var ok = function () {
         document.getElementById("successWindow").style.display = "none";
@@ -32817,7 +32935,7 @@ function SetGeneticCodePage(_a) {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "absolute-t19-l13 organismPortrait" }, TypeImage()),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Set Genetic Code"),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { id: "geneticcode", rows: 20, cols: 50 }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, { to: "/" },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, { to: "setup" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_backButton_png__WEBPACK_IMPORTED_MODULE_2__, className: "backButton", onClick: back })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_applyButton_png__WEBPACK_IMPORTED_MODULE_3__, className: "applyButton", onClick: apply }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "successWindow" },
@@ -33121,6 +33239,16 @@ module.exports = __webpack_require__.p + "bc81c6dc2fbd20be11f8.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "074673e8ac45e00a79ab.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/components/images/gameName.png":
+/*!****************************************************!*\
+  !*** ./src/main/ts/components/images/gameName.png ***!
+  \****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "1306a3d30474b25fdc9b.png";
 
 /***/ }),
 

@@ -1,0 +1,27 @@
+
+
+.home{
+    height: 1080px;
+    width: 1920px;
+    background-image: url("./images/BG.png");
+
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.center-p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 158px;
+}
+
+
+.underline{
+    text-decoration: none;
+}

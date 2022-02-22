@@ -32907,7 +32907,7 @@ function SetGeneticCodePage(_a) {
         });
     };
     var back = function () {
-        window.location.href = "setup";
+        window.location.href = "/";
     };
     var ok = function () {
         document.getElementById("successWindow").style.display = "none";
@@ -32935,7 +32935,7 @@ function SetGeneticCodePage(_a) {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "absolute-t19-l13 organismPortrait" }, TypeImage()),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Set Genetic Code"),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { id: "geneticcode", rows: 20, cols: 50 }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, { to: "setup" },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, { to: "/" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_backButton_png__WEBPACK_IMPORTED_MODULE_2__, className: "backButton", onClick: back })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_applyButton_png__WEBPACK_IMPORTED_MODULE_3__, className: "applyButton", onClick: apply }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "successWindow" },
@@ -32988,23 +32988,23 @@ function SetupPage() {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Set Genetic Code"),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "row" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "setup/pfizer" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "pfizer" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "setupPage organismPortrait" },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_pfizer_png__WEBPACK_IMPORTED_MODULE_2__, className: "pfizer" }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "setup/moderna" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "moderna" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "setupPage organismPortrait" },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_moderna_png__WEBPACK_IMPORTED_MODULE_3__, className: "pfizer" }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "setup/sinovac" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "sinovac" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "setupPage organismPortrait" },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_sinovac_png__WEBPACK_IMPORTED_MODULE_4__, className: "pfizer" })))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "row" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "setup/alpha" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "alpha" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "setupPage organismPortrait" },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_alpha_png__WEBPACK_IMPORTED_MODULE_5__, className: "pfizer" }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "setup/beta" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "beta" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "setupPage organismPortrait" },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_beta_png__WEBPACK_IMPORTED_MODULE_6__, className: "pfizer" }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "setup/gamma" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "gamma" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "setupPage organismPortrait" },
                         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_gamma_png__WEBPACK_IMPORTED_MODULE_7__, className: "pfizer" }))))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, { to: "/play", onClick: start },

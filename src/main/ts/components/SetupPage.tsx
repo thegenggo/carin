@@ -19,34 +19,34 @@ function SetupPage() {
             <h1>Set Genetic Code</h1>
             <div>
                 <div className="row">
-                    <Link to={"setup/pfizer"}>
+                    <Link to={"pfizer"}>
                         <div className="setupPage organismPortrait">
                             <img src={pfizer} className="pfizer"></img>
                         </div>
                     </Link>
-                    <Link to={"setup/moderna"}>
+                    <Link to={"moderna"}>
                         <div className="setupPage organismPortrait">
                             <img src={moderna} className="pfizer"></img>
                         </div>
                     </Link>
-                    <Link to={"setup/sinovac"}>
+                    <Link to={"sinovac"}>
                         <div className="setupPage organismPortrait">
                             <img src={sinovac} className="pfizer"></img>
                         </div>
                     </Link>
                 </div>
                 <div className="row">
-                    <Link to={"setup/alpha"}>
+                    <Link to={"alpha"}>
                         <div className="setupPage organismPortrait">
                             <img src={alpha} className="pfizer"></img>
                         </div>
                     </Link>
-                    <Link to={"setup/beta"}>
+                    <Link to={"beta"}>
                         <div className="setupPage organismPortrait">
                             <img src={beta} className="pfizer"></img>
                         </div>
                     </Link>
-                    <Link to={"setup/gamma"}>
+                    <Link to={"gamma"}>
                         <div className="setupPage organismPortrait">
                             <img src={gamma} className="pfizer"></img>
                         </div>

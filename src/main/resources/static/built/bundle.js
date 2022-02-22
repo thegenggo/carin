@@ -32906,9 +32906,6 @@ function SetGeneticCodePage(_a) {
             console.log(error);
         });
     };
-    var back = function () {
-        window.location.href = "/";
-    };
     var ok = function () {
         document.getElementById("successWindow").style.display = "none";
         document.getElementById("failWindow").style.display = "none";
@@ -32935,8 +32932,8 @@ function SetGeneticCodePage(_a) {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "absolute-t19-l13 organismPortrait" }, TypeImage()),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Set Genetic Code"),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { id: "geneticcode", rows: 20, cols: 50 }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, { to: "/" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_backButton_png__WEBPACK_IMPORTED_MODULE_2__, className: "backButton", onClick: back })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, { to: "/setup" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_backButton_png__WEBPACK_IMPORTED_MODULE_2__, className: "backButton" })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_applyButton_png__WEBPACK_IMPORTED_MODULE_3__, className: "applyButton", onClick: apply }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "successWindow" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Success"),

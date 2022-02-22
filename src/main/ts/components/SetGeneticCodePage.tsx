@@ -9,7 +9,9 @@ import alpha from './images/alpha.png';
 import beta from './images/beta.png';
 import gamma from './images/gamma.png';
 import okButton from './images/okButton 1.png';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 function SetGeneticCodePage({ type }: { type: string }) {
 
@@ -31,9 +33,7 @@ function SetGeneticCodePage({ type }: { type: string }) {
         });
     }
 
-    const back = () => {
-        window.location.href = "/";
-    }
+    
 
     const ok = () => {
         document.getElementById("successWindow").style.display = "none";
@@ -66,8 +66,8 @@ function SetGeneticCodePage({ type }: { type: string }) {
             </div>
             <h1>Set Genetic Code</h1>
             <textarea id="geneticcode" rows={20} cols={50}></textarea>
-            <Link to="/">
-                <img src={backButton} className="backButton" onClick={back}></img>
+            <Link to="/setup">
+                <img src={backButton} className="backButton" ></img>
             </Link>
             <img src={applyButton} className="applyButton" onClick={apply}></img>
             <div id="successWindow">

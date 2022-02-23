@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense} from "react";
+import { transform } from "typescript";
 import "./Canvas.css"
-import Cell from "./cell";
+//import Cell from "./cell";
 import OrganismProps from "./OrganismProps";
+
+const Cell = lazy(() => import("./Cell"))
 
 let canSend = true;
 
@@ -32,6 +35,7 @@ function Canvas() {
         let cameraZoom = 1
         let minZoom = 1
         let maxZoom = 1
+        let mousePosition = { x: 0, y: 0 }
 
         let cameraOffset = { x: 0, y: 0 }
         let isDragging = false
@@ -39,9 +43,12 @@ function Canvas() {
 
         const adjustZoom = (zoomAmount: number) => {
             minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight)
+            let oldCameraZoom = cameraZoom
             if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom) cameraZoom = cameraZoom + zoomAmount
             else if (cameraZoom + zoomAmount < minZoom) cameraZoom = minZoom
             else if (cameraZoom + zoomAmount > maxZoom) cameraZoom = maxZoom
+            cameraOffset.x = cameraOffset.x - (mousePosition.x * (cameraZoom / oldCameraZoom) - mousePosition.x)
+            cameraOffset.y = cameraOffset.y - (mousePosition.y * (cameraZoom / oldCameraZoom) - mousePosition.y)
             update()
         }
 
@@ -63,7 +70,6 @@ function Canvas() {
 
         const update = () => {
             if (humanbody && canvas) {
-
                 cameraOffsetLimit.minX = canvas.clientWidth - humanbody.clientWidth * cameraZoom;
                 cameraOffsetLimit.minY = canvas.clientHeight - humanbody.clientHeight * cameraZoom;
 
@@ -72,11 +78,15 @@ function Canvas() {
                 cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX)
                 cameraOffset.y = Math.max(cameraOffset.y, cameraOffsetLimit.minY)
 
-                humanbody.style.transform = `translate(${cameraOffset.x}px, ${cameraOffset.y}px) scale(${cameraZoom})`;
+                humanbody.style.transform = `translate(${cameraOffset.x}px, ${cameraOffset.y}px) scale(${cameraZoom})`
             };
         }
 
         canvas.addEventListener("wheel", (event: any) => {
+            let rect = humanbody.getBoundingClientRect()
+            mousePosition.x = event.clientX - rect.left
+            mousePosition.y = event.clientY - rect.top
+            console.log(mousePosition.x, mousePosition.y)
             adjustZoom(event.deltaY * SCROLL_SENSITIVITY)
         })
         canvas.addEventListener("pointerdown", onPointerDown)
@@ -94,7 +104,9 @@ function Canvas() {
                     {cells ? cells.map((row, i: number) =>
                         <tr key={i}>
                             {row.map((cell, j: number) =>
+                            <Suspense fallback={<div>Loading...</div>}>
                                 <Cell key={j} organism={cell.organism} i={i} j={j} />
+                            </Suspense>
                             )}
                         </tr>
                     ) : <div>Loading...</div>}

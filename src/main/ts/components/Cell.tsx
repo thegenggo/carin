@@ -49,10 +49,6 @@ const Cell = React.memo(({ organism, i, j }: CellProps) => {
         }
     }
 
-    useEffect(() => {
-        console.log("rendered: " + i + " " + j)
-    })
-
     return (
         <td>
             <div id="Cell" onDoubleClick={onClick}>

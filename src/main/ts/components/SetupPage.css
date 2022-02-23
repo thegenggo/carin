@@ -39,4 +39,5 @@ h1 {
     position: absolute;
     right: 5%;
     bottom: 7%;
+    cursor: pointer;
 }

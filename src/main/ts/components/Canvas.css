@@ -6,7 +6,7 @@ table {
     padding: 0px;
     left: 0px;
     top: 0px;
-    transform-origin: 0 0;
+    transform-origin: top left;
 }
 
 #canvas {

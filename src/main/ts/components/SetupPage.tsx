@@ -1,4 +1,5 @@
-import React from "react";
+import React  from "react";
+import { Link, useNavigate } from "react-router-dom";
 import './SetupPage.css';
 import pfizer from './images/pfizer.png';
 import moderna from './images/moderna.png';
@@ -7,11 +8,14 @@ import alpha from './images/alpha.png';
 import beta from './images/beta.png';
 import gamma from './images/gamma.png';
 import playButton from './images/playButton 1.png';
-import { Link } from "react-router-dom";
 
 function SetupPage() {
+    let navigate = useNavigate()
+
     const start = () => {
-        fetch("/game/start", { method: "POST" })
+        fetch("/game/start", { method: "POST" }).then(() => {
+            navigate("/play")
+        })
     }
 
     return (
@@ -53,9 +57,7 @@ function SetupPage() {
                     </Link>
                 </div>
             </div>
-            <Link to={"/play"} onClick={start}>
-                <img src={playButton} className="playButton"></img>
-            </Link>
+            <img src={playButton} className="playButton" onClick={start}></img>
         </div>
     )
 }

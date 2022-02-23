@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/game")
 public class GameController {
-    private Game game;
+    private final Game game = Game.getInstance();
 
     @RequestMapping("/start")
     public void start() {
-        game = Game.getInstance();
         game.startGame();
     }
 

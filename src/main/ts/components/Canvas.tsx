@@ -3,22 +3,29 @@ import "./Canvas.css"
 import Cell from "./cell";
 import OrganismProps from "./OrganismProps";
 
+let canSend = true;
+
 function Canvas() {
-    const [cells, setCells] = useState<{ organism: OrganismProps }[][]>([])
+    const [cells, setCells] = useState<{ organism: OrganismProps }[][]>()
     const SCROLL_SENSITIVITY = -0.0005
 
     const fetchHumanbody = () => {
-        fetch("game/humanbody").then(response => response.json()).then(data => {
-            setCells(data.cells);
-        }).catch(error => {
-            console.log(error);
-        });
+        if (canSend) {
+            canSend = false;
+            fetch("game/humanbody").then(response => response.json()).then(data => {
+                setCells(data.cells);
+                canSend = true;
+            }).catch(error => {
+                console.log(error);
+            });
+        }
     }
 
     useEffect(() => {
-        setInterval(() => {
+        let interval = setInterval(() => {
             fetchHumanbody();
-        }, 200)
+        }, 10)
+
         let humanbody = document.getElementById("humanbody")
         let canvas = document.getElementById("canvas")
 
@@ -37,11 +44,11 @@ function Canvas() {
             else if (cameraZoom + zoomAmount > maxZoom) cameraZoom = maxZoom
             update()
         }
-    
+
         const onPointerDown = (event: any) => {
             isDragging = true
         }
-    
+
         const onPointerMove = (event: any) => {
             if (isDragging) {
                 cameraOffset.x = cameraOffset.x + event.movementX
@@ -49,22 +56,22 @@ function Canvas() {
             }
             update()
         }
-    
+
         const onPointerUp = (event: any) => {
             isDragging = false
         }
 
         const update = () => {
             if (humanbody && canvas) {
-    
+
                 cameraOffsetLimit.minX = canvas.clientWidth - humanbody.clientWidth * cameraZoom;
                 cameraOffsetLimit.minY = canvas.clientHeight - humanbody.clientHeight * cameraZoom;
-    
+
                 cameraOffset.x = Math.min(cameraOffset.x, cameraOffsetLimit.maxX)
                 cameraOffset.y = Math.min(cameraOffset.y, cameraOffsetLimit.maxY)
                 cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX)
                 cameraOffset.y = Math.max(cameraOffset.y, cameraOffsetLimit.minY)
-    
+
                 humanbody.style.transform = `translate(${cameraOffset.x}px, ${cameraOffset.y}px) scale(${cameraZoom})`;
             };
         }
@@ -76,26 +83,21 @@ function Canvas() {
         canvas.addEventListener("pointermove", onPointerMove)
         canvas.addEventListener("pointerup", onPointerUp)
         window.addEventListener("resize", update)
-    }, [])
 
-    // useEffect(() => {
-    //     update()
-    //     console.log("update")
-    // }, [cameraOffset, cameraZoom]);
+        return () => { clearInterval(interval) }
+    }, [])
 
     return (
         <div id="canvas">
             <table id="humanbody">
                 <tbody>
                     {cells ? cells.map((row, i: number) =>
-                        <tr>
+                        <tr key={i}>
                             {row.map((cell, j: number) =>
-                                <td>
-                                    <Cell organism={cell.organism} i={i} j={j} />
-                                </td>
+                                <Cell key={j} organism={cell.organism} i={i} j={j} />
                             )}
                         </tr>
-                    ) : null}
+                    ) : <div>Loading...</div>}
                 </tbody>
             </table>
         </div>

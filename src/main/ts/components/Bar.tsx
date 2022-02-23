@@ -9,16 +9,22 @@ import resumeButton from "./images/resumeButton.png";
 import "./Bar.css";
 import { useState } from "react";
 
-function Bar({openResetConfirmWindow} : {openResetConfirmWindow: () => void}) {
+let canSend = true;
+
+function Bar({ openResetConfirmWindow }: { openResetConfirmWindow: () => void }) {
     const [antibodyCredit, setAntibodyCredit] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
 
     const fetchAntibodyCredit = () => {
-        fetch("game/antibodycredit").then(response => response.json()).then(data => {
-            setAntibodyCredit(data)
-        }).catch(error => {
-            console.log(error)
-        });
+        if (canSend) {
+            canSend = false;
+            fetch("game/antibodycredit").then(response => response.json()).then(data => {
+                setAntibodyCredit(data)
+                canSend = true;
+            }).catch(error => {
+                console.log(error)
+            });
+        }
     }
 
     const speedUp = () => {
@@ -42,11 +48,14 @@ function Bar({openResetConfirmWindow} : {openResetConfirmWindow: () => void}) {
     }
 
     useEffect(() => {
-        setInterval(() => {
+        let interval = setInterval(() => {
             fetchAntibodyCredit();
-        }, 200)
+        }, 10)
+
         fetchAntibodyCredit();
         setIsPlaying(true);
+
+        return () => { clearInterval(interval) }
     }, []);
 
     return (<div className="Bar flex" >

@@ -87,7 +87,7 @@ public class GeneticCode {
         return new GeneticCode(code);
     }
 
-    public static GeneticCode getGeneticCodeFromFile(String pathText) {
+    private static GeneticCode getGeneticCodeFromFile(String pathText) {
         Path path = Paths.get(pathText);
         Charset charset = StandardCharsets.US_ASCII;
         StringBuilder code = new StringBuilder();

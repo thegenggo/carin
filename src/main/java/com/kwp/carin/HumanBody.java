@@ -6,6 +6,16 @@ import com.kwp.util.Pair;
 import java.util.LinkedList;
 
 public class HumanBody {
+    private static HumanBody instance;
+
+    public static HumanBody getInstance() {
+        if (instance == null) {
+            Pair<Integer, Integer> dimension = Configuration.getDimension();
+            instance = new HumanBody(dimension.fst(), dimension.snd());
+        }
+        return instance;
+    }
+
     private final Cell[][] cells;
     private final int m, n;
 
@@ -48,10 +58,6 @@ public class HumanBody {
         }
     }
 
-    public String toString() {
-        return "HumanBody{" +  "m=" + m + ", n=" + n + '}';
-    }
-
     public void print() {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -60,16 +66,5 @@ public class HumanBody {
             System.out.println();
         }
         System.out.println("----------------------------------------");
-    }
-
-    private static HumanBody instance;
-
-    public static HumanBody getInstance() {
-        if (instance == null) {
-            Configuration config = Configuration.getInstance();
-            Pair<Integer, Integer> dimension = config.getDimension();
-            instance = new HumanBody(dimension.fst(), dimension.snd());
-        }
-        return instance;
     }
 }

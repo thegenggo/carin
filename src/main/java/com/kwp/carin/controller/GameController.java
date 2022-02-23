@@ -32,7 +32,7 @@ public class GameController {
 
     @RequestMapping("/isover")
     public boolean isOver() {
-        return game.isOver();
+        return game.isGameOver();
     }
 
     @RequestMapping("/increasespeed")

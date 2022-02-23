@@ -7,6 +7,13 @@ import java.util.LinkedList;
 public class Game extends Thread {
     private static Game instance;
 
+    public static Game getInstance() {
+        if (instance == null) {
+            instance = new Game();
+        }
+        return instance;
+    }
+
     private final HumanBody humanBody;
     private final float virusSpawnRate;
     private int antibodyCredit;
@@ -29,13 +36,6 @@ public class Game extends Thread {
         isPlaying = false;
         currentSpeedIndex = 1;
         speedModifier = SPEED_RANGE[currentSpeedIndex];
-    }
-
-    public static Game getInstance() {
-        if (instance == null) {
-            instance = new Game();
-        }
-        return instance;
     }
 
     public int getAntibodyCredit() {
@@ -114,7 +114,7 @@ public class Game extends Thread {
         return speedModifier = SPEED_RANGE[currentSpeedIndex];
     }
 
-    public boolean isOver() {
+    public boolean isGameOver() {
         return  (Virus.amount() == 0 || Antibody.amount() == 0) && started;
     }
 

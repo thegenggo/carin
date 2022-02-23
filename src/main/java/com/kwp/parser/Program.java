@@ -21,18 +21,16 @@ public class Program {
     }
 
     LinkedList<Statement> statements;
-    Map<String, Integer> variables;
 
-    Program() {
+    public Program() {
         statements = new LinkedList<>();
-        variables = new HashMap<>();
     }
 
     public void addStatement(Statement statement) {
         statements.add(statement);
     }
 
-    public void evaluate(Organism organism) {
+    public void evaluate(Organism organism, Map<String, Integer> variables) {
         for (Statement statement : statements) {
             statement.execute(variables, organism);
         }

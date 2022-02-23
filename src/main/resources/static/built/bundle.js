@@ -32597,16 +32597,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var canSend = true;
 function Bar(_a) {
     var openResetConfirmWindow = _a.openResetConfirmWindow;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0), antibodyCredit = _b[0], setAntibodyCredit = _b[1];
     var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true), isPlaying = _c[0], setIsPlaying = _c[1];
     var fetchAntibodyCredit = function () {
-        fetch("game/antibodycredit").then(function (response) { return response.json(); }).then(function (data) {
-            setAntibodyCredit(data);
-        }).catch(function (error) {
-            console.log(error);
-        });
+        if (canSend) {
+            canSend = false;
+            fetch("game/antibodycredit").then(function (response) { return response.json(); }).then(function (data) {
+                setAntibodyCredit(data);
+                canSend = true;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
     };
     var speedUp = function () {
         fetch("game/increasespeed");
@@ -32624,11 +32629,12 @@ function Bar(_a) {
         fetch("game/start").then(function (response) { return setIsPlaying(true); }).catch(function (error) { console.log(error); });
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        setInterval(function () {
+        var interval = setInterval(function () {
             fetchAntibodyCredit();
-        }, 200);
+        }, 10);
         fetchAntibodyCredit();
         setIsPlaying(true);
+        return function () { clearInterval(interval); };
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "Bar flex" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row m-8 min-w-3/10 space-x-8" },
@@ -32664,20 +32670,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var canSend = true;
 function Canvas() {
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]), cells = _a[0], setCells = _a[1];
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), cells = _a[0], setCells = _a[1];
     var SCROLL_SENSITIVITY = -0.0005;
     var fetchHumanbody = function () {
-        fetch("game/humanbody").then(function (response) { return response.json(); }).then(function (data) {
-            setCells(data.cells);
-        }).catch(function (error) {
-            console.log(error);
-        });
+        if (canSend) {
+            canSend = false;
+            fetch("game/humanbody").then(function (response) { return response.json(); }).then(function (data) {
+                setCells(data.cells);
+                canSend = true;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        setInterval(function () {
+        var interval = setInterval(function () {
             fetchHumanbody();
-        }, 200);
+        }, 10);
         var humanbody = document.getElementById("humanbody");
         var canvas = document.getElementById("canvas");
         var cameraZoom = 1;
@@ -32728,19 +32739,15 @@ function Canvas() {
         canvas.addEventListener("pointermove", onPointerMove);
         canvas.addEventListener("pointerup", onPointerUp);
         window.addEventListener("resize", update);
+        return function () { clearInterval(interval); };
     }, []);
-    // useEffect(() => {
-    //     update()
-    //     console.log("update")
-    // }, [cameraOffset, cameraZoom]);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "canvas" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { id: "humanbody" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, cells ? cells.map(function (row, i) {
-                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, row.map(function (cell, j) {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_cell__WEBPACK_IMPORTED_MODULE_2__["default"], { organism: cell.organism, i: i, j: j }));
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: i }, row.map(function (cell, j) {
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_cell__WEBPACK_IMPORTED_MODULE_2__["default"], { key: j, organism: cell.organism, i: i, j: j });
                 }));
-            }) : null))));
+            }) : react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Loading...")))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Canvas);
 
@@ -33040,7 +33047,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Cell = function (_a) {
+var Cell = react__WEBPACK_IMPORTED_MODULE_0__.memo(function (_a) {
     var organism = _a.organism, i = _a.i, j = _a.j;
     var onClick = function () {
         if (organism == null) {
@@ -33078,12 +33085,16 @@ var Cell = function (_a) {
             return null;
         }
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "Cell", onDoubleClick: onClick },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "organism" },
-            cursor(),
-            render(),
-            health())));
-};
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        console.log("rendered: " + i + " " + j);
+    });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "Cell", onDoubleClick: onClick },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "organism" },
+                cursor(),
+                render(),
+                health()))));
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cell);
 
 

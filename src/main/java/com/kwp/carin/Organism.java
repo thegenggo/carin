@@ -6,10 +6,26 @@ import com.kwp.parser.Program;
 import com.kwp.util.Direction;
 import com.kwp.util.Pair;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public abstract class Organism {
     private static final LinkedList<Organism> organisms = new LinkedList<>();
+
+    public static void runAll() {
+        LinkedList<Organism> copy = new LinkedList<>(organisms);
+        for (Organism organism : copy) {
+            if (!organism.isDeath()) organism.evaluate();
+        }
+    }
+
+    public static void wakeAll() {
+        LinkedList<Organism> copy = new LinkedList<>(organisms);
+        for (Organism organism : copy) {
+            organism.ready = true;
+        }
+    }
 
     public static void reset() {
         organisms.clear();
@@ -18,24 +34,19 @@ public abstract class Organism {
     }
 
     protected Program program;
+    protected Map<String, Integer> variables;
     protected Cell cell;
     protected int initialHealth;
     protected int health;
     protected int attack;
+
     protected boolean ready;
 
     public Organism(GeneticCode code) {
         program = Program.getInstance(code);
         organisms.add(this);
+        variables = new HashMap<>();
         ready = true;
-    }
-
-    public void setCell(Cell cell) {
-        this.cell = cell;
-    }
-
-    public void setReady(boolean ready) {
-        this.ready = ready;
     }
 
     public int getHealth() {
@@ -69,6 +80,14 @@ public abstract class Organism {
 
     public boolean isReady() {
         return ready;
+    }
+
+    public void setCell(Cell cell) {
+        this.cell = cell;
+    }
+
+    public void setReady(boolean ready) {
+        this.ready = ready;
     }
 
     public void move(Direction direction) {
@@ -184,21 +203,7 @@ public abstract class Organism {
     }
 
     public void evaluate() {
-        program.evaluate(this);
-    }
-
-    public static void runAll() {
-        LinkedList<Organism> copy = new LinkedList<>(organisms);
-        for (Organism organism : copy) {
-            if (!organism.isDeath()) organism.evaluate();
-        }
-    }
-
-    public static void wakeAll() {
-        LinkedList<Organism> copy = new LinkedList<>(organisms);
-        for (Organism organism : copy) {
-            organism.ready = true;
-        }
+        program.evaluate(this, variables);
     }
 
     public String getType() {

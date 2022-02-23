@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import OrganismProps from './OrganismProps';
 import PfizerImage from './images/pfizer.png';
 import SinovacImage from './images/sinovac.png';
@@ -15,7 +15,7 @@ type CellProps = {
     j: number;
 }
 
-const Cell = ({ organism, i, j }: CellProps) => {
+const Cell = React.memo(({ organism, i, j }: CellProps) => {
 
     const onClick = () => {
         if (organism == null) { fetch(`game/buy/pfizer?i=${i}&j=${j}`) }
@@ -49,14 +49,21 @@ const Cell = ({ organism, i, j }: CellProps) => {
         }
     }
 
+    useEffect(() => {
+        console.log("rendered: " + i + " " + j)
+    })
+
     return (
-        <div id="Cell" onDoubleClick={onClick}>
-            <div className="organism">
-                {cursor()}
-                {render()}
-                {health()}
+        <td>
+            <div id="Cell" onDoubleClick={onClick}>
+                <div className="organism">
+                    {cursor()}
+                    {render()}
+                    {health()}
+                </div>
             </div>
-        </div>
+        </td>
     )
-}
+})
+
 export default Cell;

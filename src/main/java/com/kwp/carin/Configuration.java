@@ -3,7 +3,6 @@ package com.kwp.carin;
 import com.kwp.util.Pair;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -47,8 +46,8 @@ public class Configuration {
         }
     }
 
-    public Pair<Integer, Integer> getDimension() {
-        return new Pair<>(m, n);
+    public static Pair<Integer, Integer> getDimension() {
+        return new Pair<>(instance.m, instance.n);
     }
 
     public static float getVirusSpawnRate() {
@@ -93,7 +92,7 @@ public class Configuration {
 
     private static final Configuration instance = new Configuration();
 
-    public static Configuration getInstance() {
+    private static Configuration getInstance() {
         return instance;
     }
 }

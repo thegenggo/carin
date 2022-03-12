@@ -49,6 +49,8 @@ const Cell = React.memo(({ organism, i, j }: CellProps) => {
         }
     }
 
+    console.log("rendering cell");
+
     return (
         <td>
             <div id="Cell" onDoubleClick={onClick}>

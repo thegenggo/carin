@@ -1,34 +1,27 @@
-import React, { useEffect, useState, lazy, Suspense} from "react";
-import { transform } from "typescript";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import "./Canvas.css"
-//import Cell from "./cell";
 import OrganismProps from "./OrganismProps";
-
-const Cell = lazy(() => import("./Cell"))
-
-let canSend = true;
+import Cell from "./Cell";
 
 function Canvas() {
-    const [cells, setCells] = useState<{ organism: OrganismProps }[][]>()
+    const [cells, setCells] = useState<OrganismProps[][]>()
     const SCROLL_SENSITIVITY = -0.0005
 
     const fetchHumanbody = () => {
-        if (canSend) {
-            canSend = false;
-            fetch("game/humanbody").then(response => response.json()).then(data => {
-                setCells(data.cells);
-                canSend = true;
-            }).catch(error => {
-                console.log(error);
-            });
-        }
+        fetch("game/humanbody").then(response => response.json()).then(data => {
+            setCells(data);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+
+    const testHumanbody = () => {
+        setCells(Array(100).fill(Array(100).fill(null)));
     }
 
     useEffect(() => {
-        let interval = setInterval(() => {
-            fetchHumanbody();
-        }, 10)
-
+        let interval = setInterval(fetchHumanbody, 250);
+        
         let humanbody = document.getElementById("humanbody")
         let canvas = document.getElementById("canvas")
 
@@ -86,9 +79,9 @@ function Canvas() {
             let rect = humanbody.getBoundingClientRect()
             mousePosition.x = event.clientX - rect.left
             mousePosition.y = event.clientY - rect.top
-            console.log(mousePosition.x, mousePosition.y)
             adjustZoom(event.deltaY * SCROLL_SENSITIVITY)
         })
+
         canvas.addEventListener("pointerdown", onPointerDown)
         canvas.addEventListener("pointermove", onPointerMove)
         canvas.addEventListener("pointerup", onPointerUp)
@@ -100,18 +93,17 @@ function Canvas() {
     return (
         <div id="canvas">
             <table id="humanbody">
-                <tbody>
-                    {cells ? cells.map((row, i: number) =>
+                {cells ? <tbody>
+                    {cells.map((row, i: number) =>
                         <tr key={i}>
-                            {row.map((cell, j: number) =>
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <Cell key={j} organism={cell.organism} i={i} j={j} />
-                            </Suspense>
+                            {row.map((organism, j: number) =>
+                                <Cell key={j} organism={organism} i={i} j={j} />
                             )}
                         </tr>
-                    ) : <div>Loading...</div>}
-                </tbody>
+                    )}
+                </tbody> : null}
             </table>
+            {cells ? null : <div>Loading...</div>}
         </div>
     );
 }

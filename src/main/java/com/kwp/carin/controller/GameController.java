@@ -45,8 +45,15 @@ public class GameController {
     }
 
     @GetMapping("/humanbody")
-    public HumanBody humanbody() {
-        return game.getHumanBody();
+    public Organism[][] humanbody() {
+        Cell[][] cells = game.getHumanBody().getCells();
+        Organism[][] organisms = new Organism[cells.length][cells[0].length];
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++) {
+                organisms[i][j] = cells[i][j].getOrganism();
+            }
+        }
+        return organisms;
     }
 
     @GetMapping("/antibodycredit")

@@ -4,18 +4,25 @@
 }
 
 .setupPage {
+    text-align: center;
     background: url("./images/BG.png");
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    width: 100%;
+}
+
+.setupMidField {
+    width: 47%;
+    height: 79%;
 }
 
 h1 {
     font-family: Short Stack;
     font-weight: normal;
-    font-size: 4.5rem;
+    font-size: 7vh;
     line-height: 1;
     color: aliceblue;
 }
@@ -26,24 +33,36 @@ h1 {
     align-items: center;
     justify-content: center;
     background: url("./images/bgSetAnti 1.png");
-    width: 300px;
-    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 28vh;
+    height: 28vh;
     transition: transform 0.2s;
-    
 }
 
-.organismPortrait:hover{
+a > .organismPortrait:hover {
     transform: scale(1.15);
     background: url("./images/bgSetAnti 2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.organismPortrait img {
+    width: 15vh;
+    height: 15vh;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .playButton {
     position: absolute;
+    width: 13%;
+    height: 14%;
     right: 5%;
     bottom: 7%;
     cursor: pointer;

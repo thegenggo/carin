@@ -17,7 +17,7 @@ function ResetWindow() {
 
     return (
         <div id="reset-window">
-            <text className="reset-text">Are you sure to <span>reset</span> the game</text>
+            <div className="reset-text">Are you sure to <span>reset</span> the game</div>
             <div className="reset-buttons">
                 <img src={confirmButton} onClick={reset}></img>
                 <img src={cancelButton} onClick={cancel}></img>

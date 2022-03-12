@@ -173,7 +173,7 @@ public class Parser {
         Expression result = parsePower();
         while (tokenizer.peek("^")) {
             String operator = tokenizer.consume();
-            Expression next = parsePower();
+            Expression next = parseFactor();
             result = new BinaryExpression(result, operator, next);
         }
         return result;

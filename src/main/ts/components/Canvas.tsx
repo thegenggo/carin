@@ -20,45 +20,102 @@ function Canvas() {
     }
 
     useEffect(() => {
-        let interval = setInterval(fetchHumanbody, 250);
-        
+        //let interval = setInterval(fetchHumanbody, 250);
+        testHumanbody()
+
         let humanbody = document.getElementById("humanbody")
         let canvas = document.getElementById("canvas")
 
         let cameraZoom = 1
+        let lastZoom = cameraZoom
         let minZoom = 1
         let maxZoom = 1
         let mousePosition = { x: 0, y: 0 }
+        let focusPosition = { x: 0, y: 0 }
 
         let cameraOffset = { x: 0, y: 0 }
         let isDragging = false
+        let dragStart = { x: 0, y: 0 }
         let cameraOffsetLimit = { minX: 0, minY: 0, maxX: 0, maxY: 0 }
 
-        const adjustZoom = (zoomAmount: number) => {
-            minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight)
-            let oldCameraZoom = cameraZoom
-            if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom) cameraZoom = cameraZoom + zoomAmount
-            else if (cameraZoom + zoomAmount < minZoom) cameraZoom = minZoom
-            else if (cameraZoom + zoomAmount > maxZoom) cameraZoom = maxZoom
-            cameraOffset.x = cameraOffset.x - (mousePosition.x * (cameraZoom / oldCameraZoom) - mousePosition.x)
-            cameraOffset.y = cameraOffset.y - (mousePosition.y * (cameraZoom / oldCameraZoom) - mousePosition.y)
-            update()
+        let initialPinchDistance: any = null
+
+        const getEventLocation = (event: any) => {
+            if (event.touches && event.touches.length == 1) {
+                return { x: event.touches[0].clientX, y: event.touches[0].clientY }
+            } else {
+                return { x: event.clientX, y: event.clientY }
+            }
+        }
+
+        const adjustZoom = (zoomAmount: number, zoomFactor: number) => {
+            if (!isDragging) {
+                minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight)
+                let oldCameraZoom = cameraZoom
+                if (zoomAmount) {
+                    if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom) cameraZoom = cameraZoom + zoomAmount
+                    else if (cameraZoom + zoomAmount < minZoom) cameraZoom = minZoom
+                    else if (cameraZoom + zoomAmount > maxZoom) cameraZoom = maxZoom
+                    cameraOffset.x = cameraOffset.x - (mousePosition.x * (cameraZoom / oldCameraZoom) - mousePosition.x)
+                    cameraOffset.y = cameraOffset.y - (mousePosition.y * (cameraZoom / oldCameraZoom) - mousePosition.y)
+                }
+                else if (zoomFactor) {
+                    if (minZoom < zoomFactor * lastZoom && zoomFactor * lastZoom < maxZoom) cameraZoom = zoomFactor * lastZoom
+                    else if (zoomFactor * lastZoom < minZoom) cameraZoom = minZoom
+                    else if (zoomFactor * lastZoom > maxZoom) cameraZoom = maxZoom
+                    cameraOffset.x = cameraOffset.x - (focusPosition.x * (cameraZoom / oldCameraZoom) - focusPosition.x)
+                    cameraOffset.y = cameraOffset.y - (focusPosition.y * (cameraZoom / oldCameraZoom) - focusPosition.y)
+                }
+                update()
+            }
         }
 
         const onPointerDown = (event: any) => {
             isDragging = true
+            dragStart.x = getEventLocation(event).x / cameraZoom - cameraOffset.x
+            dragStart.y = getEventLocation(event).y / cameraZoom - cameraOffset.y
         }
 
         const onPointerMove = (event: any) => {
             if (isDragging) {
-                cameraOffset.x = cameraOffset.x + event.movementX
-                cameraOffset.y = cameraOffset.y + event.movementY
+                cameraOffset.x = getEventLocation(event).x / cameraZoom - dragStart.x
+                cameraOffset.y = getEventLocation(event).y / cameraZoom - dragStart.y
+                update()
             }
-            update()
         }
 
         const onPointerUp = (event: any) => {
             isDragging = false
+            initialPinchDistance = null
+            lastZoom = cameraZoom
+        }
+
+        const handleTouch = (event: any, singleTouchHandler: any) => {
+            if (event.touches.length === 1) {
+                singleTouchHandler(event)
+            } else if (event.type === "touchmove" && event.touches.length === 2) {
+                isDragging = false
+                handlePinch(event)
+            }
+        }
+
+        const handlePinch = (event: any) => {
+            event.preventDefault()
+            let rect = humanbody.getBoundingClientRect()
+
+            let touch1 = { x: event.touches[0].clientX, y: event.touches[0].clientY }
+            let touch2 = { x: event.touches[1].clientX, y: event.touches[1].clientY }
+
+            let currentDistance = Math.sqrt(Math.pow(touch1.x - touch2.x, 2) + Math.pow(touch1.y - touch2.y, 2))
+            focusPosition.x = (touch1.x + touch2.x) / 2 - rect.left
+            focusPosition.y = (touch1.y + touch2.y) / 2 - rect.top
+
+            if (initialPinchDistance == null) {
+                initialPinchDistance = currentDistance
+            }
+            else {
+                adjustZoom(null, currentDistance / initialPinchDistance)
+            }
         }
 
         const update = () => {
@@ -79,15 +136,18 @@ function Canvas() {
             let rect = humanbody.getBoundingClientRect()
             mousePosition.x = event.clientX - rect.left
             mousePosition.y = event.clientY - rect.top
-            adjustZoom(event.deltaY * SCROLL_SENSITIVITY)
+            adjustZoom(event.deltaY * SCROLL_SENSITIVITY, null)
         })
 
         canvas.addEventListener("pointerdown", onPointerDown)
         canvas.addEventListener("pointermove", onPointerMove)
         canvas.addEventListener("pointerup", onPointerUp)
+        canvas.addEventListener("touchstart", (event: any) => { handleTouch(event, onPointerDown) })
+        canvas.addEventListener("touchmove", (event: any) => { handleTouch(event, onPointerMove) })
+        canvas.addEventListener("touchend", (event: any) => { handleTouch(event, onPointerUp) })
         window.addEventListener("resize", update)
 
-        return () => { clearInterval(interval) }
+        //return () => { clearInterval(interval) }
     }, [])
 
     return (

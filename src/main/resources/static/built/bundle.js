@@ -32686,41 +32686,96 @@ function Canvas() {
         setCells(Array(100).fill(Array(100).fill(null)));
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        var interval = setInterval(fetchHumanbody, 250);
+        //let interval = setInterval(fetchHumanbody, 250);
+        testHumanbody();
         var humanbody = document.getElementById("humanbody");
         var canvas = document.getElementById("canvas");
         var cameraZoom = 1;
+        var lastZoom = cameraZoom;
         var minZoom = 1;
         var maxZoom = 1;
         var mousePosition = { x: 0, y: 0 };
+        var focusPosition = { x: 0, y: 0 };
         var cameraOffset = { x: 0, y: 0 };
         var isDragging = false;
+        var dragStart = { x: 0, y: 0 };
         var cameraOffsetLimit = { minX: 0, minY: 0, maxX: 0, maxY: 0 };
-        var adjustZoom = function (zoomAmount) {
-            minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight);
-            var oldCameraZoom = cameraZoom;
-            if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom)
-                cameraZoom = cameraZoom + zoomAmount;
-            else if (cameraZoom + zoomAmount < minZoom)
-                cameraZoom = minZoom;
-            else if (cameraZoom + zoomAmount > maxZoom)
-                cameraZoom = maxZoom;
-            cameraOffset.x = cameraOffset.x - (mousePosition.x * (cameraZoom / oldCameraZoom) - mousePosition.x);
-            cameraOffset.y = cameraOffset.y - (mousePosition.y * (cameraZoom / oldCameraZoom) - mousePosition.y);
-            update();
+        var initialPinchDistance = null;
+        var getEventLocation = function (event) {
+            if (event.touches && event.touches.length == 1) {
+                return { x: event.touches[0].clientX, y: event.touches[0].clientY };
+            }
+            else {
+                return { x: event.clientX, y: event.clientY };
+            }
+        };
+        var adjustZoom = function (zoomAmount, zoomFactor) {
+            if (!isDragging) {
+                minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight);
+                var oldCameraZoom = cameraZoom;
+                if (zoomAmount) {
+                    if (minZoom < cameraZoom + zoomAmount && cameraZoom + zoomAmount < maxZoom)
+                        cameraZoom = cameraZoom + zoomAmount;
+                    else if (cameraZoom + zoomAmount < minZoom)
+                        cameraZoom = minZoom;
+                    else if (cameraZoom + zoomAmount > maxZoom)
+                        cameraZoom = maxZoom;
+                    cameraOffset.x = cameraOffset.x - (mousePosition.x * (cameraZoom / oldCameraZoom) - mousePosition.x);
+                    cameraOffset.y = cameraOffset.y - (mousePosition.y * (cameraZoom / oldCameraZoom) - mousePosition.y);
+                }
+                else if (zoomFactor) {
+                    if (minZoom < zoomFactor * lastZoom && zoomFactor * lastZoom < maxZoom)
+                        cameraZoom = zoomFactor * lastZoom;
+                    else if (zoomFactor * lastZoom < minZoom)
+                        cameraZoom = minZoom;
+                    else if (zoomFactor * lastZoom > maxZoom)
+                        cameraZoom = maxZoom;
+                    cameraOffset.x = cameraOffset.x - (focusPosition.x * (cameraZoom / oldCameraZoom) - focusPosition.x);
+                    cameraOffset.y = cameraOffset.y - (focusPosition.y * (cameraZoom / oldCameraZoom) - focusPosition.y);
+                }
+                update();
+            }
         };
         var onPointerDown = function (event) {
             isDragging = true;
+            dragStart.x = getEventLocation(event).x / cameraZoom - cameraOffset.x;
+            dragStart.y = getEventLocation(event).y / cameraZoom - cameraOffset.y;
         };
         var onPointerMove = function (event) {
             if (isDragging) {
-                cameraOffset.x = cameraOffset.x + event.movementX;
-                cameraOffset.y = cameraOffset.y + event.movementY;
+                cameraOffset.x = getEventLocation(event).x / cameraZoom - dragStart.x;
+                cameraOffset.y = getEventLocation(event).y / cameraZoom - dragStart.y;
+                update();
             }
-            update();
         };
         var onPointerUp = function (event) {
             isDragging = false;
+            initialPinchDistance = null;
+            lastZoom = cameraZoom;
+        };
+        var handleTouch = function (event, singleTouchHandler) {
+            if (event.touches.length === 1) {
+                singleTouchHandler(event);
+            }
+            else if (event.type === "touchmove" && event.touches.length === 2) {
+                isDragging = false;
+                handlePinch(event);
+            }
+        };
+        var handlePinch = function (event) {
+            event.preventDefault();
+            var rect = humanbody.getBoundingClientRect();
+            var touch1 = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+            var touch2 = { x: event.touches[1].clientX, y: event.touches[1].clientY };
+            var currentDistance = Math.sqrt(Math.pow(touch1.x - touch2.x, 2) + Math.pow(touch1.y - touch2.y, 2));
+            focusPosition.x = (touch1.x + touch2.x) / 2 - rect.left;
+            focusPosition.y = (touch1.y + touch2.y) / 2 - rect.top;
+            if (initialPinchDistance == null) {
+                initialPinchDistance = currentDistance;
+            }
+            else {
+                adjustZoom(null, currentDistance / initialPinchDistance);
+            }
         };
         var update = function () {
             if (humanbody && canvas) {
@@ -32738,13 +32793,16 @@ function Canvas() {
             var rect = humanbody.getBoundingClientRect();
             mousePosition.x = event.clientX - rect.left;
             mousePosition.y = event.clientY - rect.top;
-            adjustZoom(event.deltaY * SCROLL_SENSITIVITY);
+            adjustZoom(event.deltaY * SCROLL_SENSITIVITY, null);
         });
         canvas.addEventListener("pointerdown", onPointerDown);
         canvas.addEventListener("pointermove", onPointerMove);
         canvas.addEventListener("pointerup", onPointerUp);
+        canvas.addEventListener("touchstart", function (event) { handleTouch(event, onPointerDown); });
+        canvas.addEventListener("touchmove", function (event) { handleTouch(event, onPointerMove); });
+        canvas.addEventListener("touchend", function (event) { handleTouch(event, onPointerUp); });
         window.addEventListener("resize", update);
-        return function () { clearInterval(interval); };
+        //return () => { clearInterval(interval) }
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "canvas" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { id: "humanbody" }, cells ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, cells.map(function (row, i) {

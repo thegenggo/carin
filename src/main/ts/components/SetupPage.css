@@ -35,8 +35,8 @@ h1 {
     background: url("./images/bgSetAnti 1.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 28vh;
-    height: 28vh;
+    width: 16vw;
+    height: 16vw;
     transition: transform 0.2s;
 }
 

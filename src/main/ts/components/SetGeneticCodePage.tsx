@@ -33,8 +33,6 @@ function SetGeneticCodePage({ type }: { type: string }) {
         });
     }
 
-    
-
     const ok = () => {
         document.getElementById("successWindow").style.display = "none";
         document.getElementById("failWindow").style.display = "none";
@@ -61,24 +59,33 @@ function SetGeneticCodePage({ type }: { type: string }) {
 
     return (
         <div className="setGeneticCodePage">
-            <div className="absolute-t19-l13 organismPortrait">
-                {TypeImage()}
+            <div className="flex">
+                <div className="flex row1">
+                    <div className="empty"></div>
+                    <div className="text">
+                        Set Genetic Code
+                    </div>
+                </div>
+                <div className="flex row2">
+                    <div className="organismPortrait">
+                        {TypeImage()}
+                    </div>
+                    <textarea spellCheck="false" id="geneticcode" placeholder="Enter genetic code..." rows={20} cols={50}></textarea>
+                </div>
             </div>
-            <h1>Set Genetic Code</h1>
-            <textarea id="geneticcode" rows={20} cols={50}></textarea>
             <Link to="/setup">
                 <img src={backButton} className="backButton" ></img>
             </Link>
             <img src={applyButton} className="applyButton" onClick={apply}></img>
             <div id="successWindow">
-                <h1>Success</h1>
+                <div>Success</div>
                 <img src={okButton} className="okButton" onClick={ok}></img>
             </div>
             <div id="failWindow">
-                <h1>Fail</h1>
+                <div>Fail</div>
                 <img src={okButton} className="okButton" onClick={ok}></img>
             </div>
-        </div>
+        </div >
     )
 }
 

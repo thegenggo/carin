@@ -1,0 +1,14 @@
+{
+    "short_name": "CARIN",
+    "name": "CARIN",
+    "icons": [
+      {
+        "src": "gameName.png",
+        "sizes": "192x192",
+        "type": "built/images/gameName.png"
+      }
+    ],
+    "start_url": "/index.html",
+    "display": "fullscreen",
+    "orientation": "landscape"
+}

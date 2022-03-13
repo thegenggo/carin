@@ -19,16 +19,36 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.ts?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name][ext][query]',
+        }
+      },
+      {
         test: /\.(png|jpe?g|gif)$/,
         type: 'asset/resource',
+        generator : {
+          filename : 'images/[name][ext][query]',
+        }
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.webmanifest$/,
+        type: 'asset/resource',
+        generator : {
+          filename : '[name][ext][query]',
+        }
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        generator : {
+          filename : 'fonts/[name][ext][query]',
+        }
       },
     ],
   },

@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -webkit-user-drag: none;\r\n    user-select: none;\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/App.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB,EAAE,oBAAoB;IACtC,yBAAyB,EAAE,WAAW;IACtC,uBAAuB;IACvB,qBAAqB,EAAE,oBAAoB;IAC3C,iBAAiB,EAAE,oBAAoB;IACvC,SAAS;IACT,UAAU;IACV,SAAS;IACT,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,uBAAuB;IACvB,iBAAiB;IACjB,sBAAsB;IACtB,yBAAyB;IACzB,qBAAqB;AACzB","sourcesContent":["body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -webkit-user-drag: none;\r\n    user-select: none;\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -webkit-user-drag: none;\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/App.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB,EAAE,oBAAoB;IACtC,yBAAyB,EAAE,WAAW;IACtC,uBAAuB;IACvB,qBAAqB,EAAE,oBAAoB;IAC3C,iBAAiB,EAAE,oBAAoB;IACvC,SAAS;IACT,UAAU;IACV,SAAS;IACT,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,uBAAuB;IACvB,sBAAsB;IACtB,yBAAyB;IACzB,qBAAqB;IACrB,iBAAiB;AACrB","sourcesContent":["body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -webkit-user-drag: none;\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33117,7 +33117,7 @@ function SetupPage() {
   \*************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "992f4b1237c5c5d78098.ttf";
+module.exports = __webpack_require__.p + "fonts/ShortStack-Regular.ttf";
 
 /***/ }),
 
@@ -33127,7 +33127,7 @@ module.exports = __webpack_require__.p + "992f4b1237c5c5d78098.ttf";
   \**********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "b62047f4db411b24576c.png";
+module.exports = __webpack_require__.p + "images/BG.png";
 
 /***/ }),
 
@@ -33137,7 +33137,7 @@ module.exports = __webpack_require__.p + "b62047f4db411b24576c.png";
   \*****************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "941a778393e2ade81324.png";
+module.exports = __webpack_require__.p + "images/Polygon 1.png";
 
 /***/ }),
 
@@ -33147,7 +33147,7 @@ module.exports = __webpack_require__.p + "941a778393e2ade81324.png";
   \*************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "5eadcf5f91a1a0f2b1ba.png";
+module.exports = __webpack_require__.p + "images/alpha.png";
 
 /***/ }),
 
@@ -33157,7 +33157,7 @@ module.exports = __webpack_require__.p + "5eadcf5f91a1a0f2b1ba.png";
   \**************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "96f3ef4d2badcaa99d18.png";
+module.exports = __webpack_require__.p + "images/antibodyCreditIcon.png";
 
 /***/ }),
 
@@ -33167,7 +33167,7 @@ module.exports = __webpack_require__.p + "96f3ef4d2badcaa99d18.png";
   \*******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "e2972f9ac764f1be028e.png";
+module.exports = __webpack_require__.p + "images/applyButton.png";
 
 /***/ }),
 
@@ -33177,7 +33177,7 @@ module.exports = __webpack_require__.p + "e2972f9ac764f1be028e.png";
   \******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "5f82797d9bcd6c6f733e.png";
+module.exports = __webpack_require__.p + "images/backButton.png";
 
 /***/ }),
 
@@ -33187,7 +33187,7 @@ module.exports = __webpack_require__.p + "5f82797d9bcd6c6f733e.png";
   \***********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "0d2e6121fb67c363ddc7.png";
+module.exports = __webpack_require__.p + "images/bar.png";
 
 /***/ }),
 
@@ -33197,7 +33197,7 @@ module.exports = __webpack_require__.p + "0d2e6121fb67c363ddc7.png";
   \************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "9f2d8ce267be0245d791.png";
+module.exports = __webpack_require__.p + "images/beta.png";
 
 /***/ }),
 
@@ -33207,7 +33207,7 @@ module.exports = __webpack_require__.p + "9f2d8ce267be0245d791.png";
   \*******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "5c95585c409c6bb10d8d.png";
+module.exports = __webpack_require__.p + "images/bgSetAnti 1.png";
 
 /***/ }),
 
@@ -33217,7 +33217,7 @@ module.exports = __webpack_require__.p + "5c95585c409c6bb10d8d.png";
   \*******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "a60ed438ce70a5802688.png";
+module.exports = __webpack_require__.p + "images/bgSetAnti 2.png";
 
 /***/ }),
 
@@ -33227,7 +33227,7 @@ module.exports = __webpack_require__.p + "a60ed438ce70a5802688.png";
   \**************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "b6f1720b311df8f12177.png";
+module.exports = __webpack_require__.p + "images/cancel.png";
 
 /***/ }),
 
@@ -33237,7 +33237,7 @@ module.exports = __webpack_require__.p + "b6f1720b311df8f12177.png";
   \************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "decac790a9441431dba0.png";
+module.exports = __webpack_require__.p + "images/cell.png";
 
 /***/ }),
 
@@ -33247,7 +33247,7 @@ module.exports = __webpack_require__.p + "decac790a9441431dba0.png";
   \*********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "b108762aece45c819673.png";
+module.exports = __webpack_require__.p + "images/comfirmWindow.png";
 
 /***/ }),
 
@@ -33257,7 +33257,7 @@ module.exports = __webpack_require__.p + "b108762aece45c819673.png";
   \*********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "bc81c6dc2fbd20be11f8.png";
+module.exports = __webpack_require__.p + "images/confirmButton.png";
 
 /***/ }),
 
@@ -33267,7 +33267,7 @@ module.exports = __webpack_require__.p + "bc81c6dc2fbd20be11f8.png";
   \*************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "074673e8ac45e00a79ab.png";
+module.exports = __webpack_require__.p + "images/decreaseSpdButton.png";
 
 /***/ }),
 
@@ -33277,7 +33277,7 @@ module.exports = __webpack_require__.p + "074673e8ac45e00a79ab.png";
   \****************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "1306a3d30474b25fdc9b.png";
+module.exports = __webpack_require__.p + "images/gameName.png";
 
 /***/ }),
 
@@ -33287,7 +33287,7 @@ module.exports = __webpack_require__.p + "1306a3d30474b25fdc9b.png";
   \*************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "837d124fac25e0f2d665.png";
+module.exports = __webpack_require__.p + "images/gamma.png";
 
 /***/ }),
 
@@ -33297,7 +33297,7 @@ module.exports = __webpack_require__.p + "837d124fac25e0f2d665.png";
   \*************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "851b9de1e846bca41a79.png";
+module.exports = __webpack_require__.p + "images/increaseSpdButton.png";
 
 /***/ }),
 
@@ -33307,7 +33307,7 @@ module.exports = __webpack_require__.p + "851b9de1e846bca41a79.png";
   \***************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "f5072b82f6546d2f91df.png";
+module.exports = __webpack_require__.p + "images/moderna.png";
 
 /***/ }),
 
@@ -33317,7 +33317,7 @@ module.exports = __webpack_require__.p + "f5072b82f6546d2f91df.png";
   \******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "eeff480a524ae8f4d9b5.png";
+module.exports = __webpack_require__.p + "images/okButton 1.png";
 
 /***/ }),
 
@@ -33327,7 +33327,7 @@ module.exports = __webpack_require__.p + "eeff480a524ae8f4d9b5.png";
   \*******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "f04435b86fe1499d2a95.png";
+module.exports = __webpack_require__.p + "images/pauseButton.png";
 
 /***/ }),
 
@@ -33337,7 +33337,7 @@ module.exports = __webpack_require__.p + "f04435b86fe1499d2a95.png";
   \**************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "a2d2d7c83b2bf481731c.png";
+module.exports = __webpack_require__.p + "images/pfizer.png";
 
 /***/ }),
 
@@ -33347,7 +33347,7 @@ module.exports = __webpack_require__.p + "a2d2d7c83b2bf481731c.png";
   \********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "de86a846993dc9573084.png";
+module.exports = __webpack_require__.p + "images/playButton 1.png";
 
 /***/ }),
 
@@ -33357,7 +33357,7 @@ module.exports = __webpack_require__.p + "de86a846993dc9573084.png";
   \********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "6a50e89972f04099916b.png";
+module.exports = __webpack_require__.p + "images/replayButton.png";
 
 /***/ }),
 
@@ -33367,7 +33367,7 @@ module.exports = __webpack_require__.p + "6a50e89972f04099916b.png";
   \********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "6c90253da7f636067404.png";
+module.exports = __webpack_require__.p + "images/resumeButton.png";
 
 /***/ }),
 
@@ -33377,7 +33377,7 @@ module.exports = __webpack_require__.p + "6c90253da7f636067404.png";
   \******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "3b2e7ce9dc9b38f07992.png";
+module.exports = __webpack_require__.p + "images/shopButton.png";
 
 /***/ }),
 
@@ -33387,7 +33387,17 @@ module.exports = __webpack_require__.p + "3b2e7ce9dc9b38f07992.png";
   \***************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "85a6cff94692f34f31d2.png";
+module.exports = __webpack_require__.p + "images/sinovac.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/manifest.webmanifest":
+/*!******************************************!*\
+  !*** ./src/main/ts/manifest.webmanifest ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "manifest.webmanifest";
 
 /***/ }),
 
@@ -33565,8 +33575,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var webmanifest = __webpack_require__(/*! ./manifest.webmanifest */ "./src/main/ts/manifest.webmanifest");
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.BrowserRouter, null,
     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App__WEBPACK_IMPORTED_MODULE_2__["default"], null)), document.getElementById("react"));
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js").then(function (registration) {
+        console.log("Service Worker Registered");
+        console.log(registration);
+    }).catch(function (err) {
+        console.log("Service Worker Failed to Register", err);
+    });
+}
 
 })();
 

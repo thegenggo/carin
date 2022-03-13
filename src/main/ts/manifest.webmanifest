@@ -1,0 +1,14 @@
+{
+  "name": "CARIN",
+  "short_name": "CARIN",
+  "icons": [
+    {
+      "src": "/built/images/pfizer.png",
+      "sizes": "165x165",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "landscape"
+}

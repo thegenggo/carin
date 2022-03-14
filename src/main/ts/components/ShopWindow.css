@@ -1,0 +1,31 @@
+.shop-window {
+    background: url(./images/comfirmWindow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 5vh;
+    width: 42%;
+    height: 28%;
+    border-radius: 50px;
+}
+
+.shop-window > * + * {
+    margin-left: 2vw;
+}
+
+.shop-window .antibody {
+    width: 10vw;
+    height: 10vw;
+}
+
+.shop-window .cancel {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 9%;
+    height: 20%;
+}

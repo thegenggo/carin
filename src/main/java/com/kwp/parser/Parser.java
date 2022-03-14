@@ -61,11 +61,7 @@ public class Parser {
 
     private Statement parseAssignmentStatement() throws SyntaxError {
         String name = tokenizer.consume();
-        try {
-            tokenizer.consume("=");
-        } catch (Exception e) {
-            throw new SyntaxError("Error: Expected '='");
-        }
+        tokenizer.consume("=");
         Expression expression = parseExpression();
         return new AssignmentStatement(name, expression);
     }
@@ -102,45 +98,21 @@ public class Parser {
 
     private Statement parseWhileStatement() throws SyntaxError {
         tokenizer.consume();
-        try {
-            tokenizer.consume("(");
-        } catch (Exception e) {
-            throw new SyntaxError("Error: Expected '('");
-        }
+        tokenizer.consume("(");
         Expression condition = parseExpression();
-        try {
-            tokenizer.consume(")");
-        } catch (Exception e) {
-            throw new SyntaxError("Error: Expected ')'");
-        }
+        tokenizer.consume(")");
         Statement statement = parseStatement();
         return new WhileStatement(condition, statement);
     }
 
     private Statement parseIfStatement() throws SyntaxError {
         tokenizer.consume();
-        try {
-            tokenizer.consume("(");
-        } catch (Exception e) {
-            throw new SyntaxError("Error: Expected '('");
-        }
+        tokenizer.consume("(");
         Expression condition = parseExpression();
-        try {
-            tokenizer.consume(")");
-        } catch (Exception e) {
-            throw new SyntaxError("Error: Expected ')'");
-        }
-        try {
-            tokenizer.consume("then");
-        } catch (Exception e) {
-            throw new SyntaxError("Error: Expected 'then'");
-        }
+        tokenizer.consume(")");
+        tokenizer.consume("then");
         Statement thenStatement = parseStatement();
-        try {
-            tokenizer.consume("else");
-        } catch (Exception e) {
-            throw new SyntaxError("Error: Expected 'else'");
-        }
+        tokenizer.consume("else");
         Statement elseStatement = parseStatement();
         return new IfStatement(condition, thenStatement, elseStatement);
     }
@@ -185,11 +157,7 @@ public class Parser {
         } else if (tokenizer.peek("(")) {
             tokenizer.consume();
             Expression result = parseExpression();
-            try {
-                tokenizer.consume(")");
-            } catch (Exception e) {
-                throw new SyntaxError("Error: Expected ')'");
-            }
+            tokenizer.consume(")");
             return result;
         } else if (Character.isLetter(tokenizer.peek().charAt(0))) {
             if (Parser.reservedWords.contains(tokenizer.peek())) throw new SyntaxError("Error: " + tokenizer.peek() + " is a reserved word");

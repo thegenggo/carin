@@ -4,19 +4,27 @@ import OrganismProps from "./OrganismProps";
 import Cell from "./Cell";
 
 function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
-    const [cells, setCells] = useState<OrganismProps[][]>()
+    const [cells, setCells] = useState(<tbody></tbody>)
     const SCROLL_SENSITIVITY = -0.0005
 
     const fetchHumanbody = () => {
-        fetch("game/humanbody").then(response => response.json()).then(data => {
-            setCells(data);
+        fetch("game/humanbody").then(response => response.json()).then((data: OrganismProps[][]) => {
+            setCells(<tbody>
+                {data.map((row, i) => {
+                    return <tr key={i}>
+                        {row.map((organism, j) => {
+                            return <Cell key={j} organism={organism} i={i} j={j} />
+                        })}
+                    </tr>
+                })}
+            </tbody>)
         }).catch(error => {
-            console.log(error);
-        });
+            console.log(error)
+        })
     }
 
     const testHumanbody = () => {
-        setCells(Array(100).fill(Array(100).fill(null)));
+        // setCells(Array(100).fill(Array(100).fill(null)));
     }
 
     useEffect(() => {
@@ -140,7 +148,7 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
             adjustZoom(event.deltaY * SCROLL_SENSITIVITY, null)
         })
 
-        canvas.addEventListener("pointerdown", event => {onPointerDown(event); clearAllWindows()})
+        canvas.addEventListener("pointerdown", event => { onPointerDown(event); clearAllWindows() })
         canvas.addEventListener("pointermove", onPointerMove)
         canvas.addEventListener("pointerup", onPointerUp)
         canvas.addEventListener("touchstart", (event) => { handleTouch(event, onPointerDown) })
@@ -154,7 +162,7 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
     return (
         <div id="canvas">
             <table id="humanbody">
-                {cells ? <tbody>
+                {/* {cells ? <tbody>
                     {cells.map((row, i: number) =>
                         <tr key={i}>
                             {row.map((organism, j: number) =>
@@ -162,9 +170,10 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
                             )}
                         </tr>
                     )}
-                </tbody> : null}
+                </tbody> : null} */}
+                {cells ? cells : null}
             </table>
-            {cells ? null : <div>Loading...</div>}
+            {/* {cells ? null : <div>Loading...</div>} */}
         </div>
     );
 }

@@ -32760,17 +32760,21 @@ __webpack_require__.r(__webpack_exports__);
 
 function Canvas(_a) {
     var clearAllWindows = _a.clearAllWindows;
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), cells = _b[0], setCells = _b[1];
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null)), cells = _b[0], setCells = _b[1];
     var SCROLL_SENSITIVITY = -0.0005;
     var fetchHumanbody = function () {
         fetch("game/humanbody").then(function (response) { return response.json(); }).then(function (data) {
-            setCells(data);
+            setCells(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, data.map(function (row, i) {
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: i }, row.map(function (organism, j) {
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], { key: j, organism: organism, i: i, j: j });
+                }));
+            })));
         }).catch(function (error) {
             console.log(error);
         });
     };
     var testHumanbody = function () {
-        setCells(Array(100).fill(Array(100).fill(null)));
+        // setCells(Array(100).fill(Array(100).fill(null)));
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(fetchHumanbody, 250);
@@ -32893,12 +32897,7 @@ function Canvas(_a) {
         return function () { clearInterval(interval); };
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "canvas" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { id: "humanbody" }, cells ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, cells.map(function (row, i) {
-            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: i }, row.map(function (organism, j) {
-                return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], { key: j, organism: organism, i: i, j: j });
-            }));
-        })) : null),
-        cells ? null : react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Loading...")));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { id: "humanbody" }, cells ? cells : null)));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Canvas);
 
@@ -33316,11 +33315,8 @@ var ShopWindow = function (_a) {
         event.dataTransfer.effectAllowed = "move";
         event.dataTransfer.setData("text", event.target.id);
     };
-    var onTouchStart = function (event) {
-        event.target.classList.add("dragstart");
-    };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "shop-window", className: "shop-window", style: { visibility: show ? "visible" : "hidden" } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", id: "pfizer", src: _images_pfizer_png__WEBPACK_IMPORTED_MODULE_2__, draggable: true, onDragStart: drag, onTouchStart: onTouchStart }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", id: "pfizer", src: _images_pfizer_png__WEBPACK_IMPORTED_MODULE_2__, draggable: true, onDragStart: drag }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", id: "moderna", src: _images_moderna_png__WEBPACK_IMPORTED_MODULE_3__, draggable: true, onDragStart: drag }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", id: "sinovac", src: _images_sinovac_png__WEBPACK_IMPORTED_MODULE_4__, draggable: true, onDragStart: drag }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "cancel", src: _images_cancel_png__WEBPACK_IMPORTED_MODULE_5__, draggable: "false", onClick: clearAllWindows })));

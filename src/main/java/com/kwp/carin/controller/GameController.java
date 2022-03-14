@@ -67,13 +67,13 @@ public class GameController {
     }
 
     @RequestMapping("/buy/moderna")
-    public void buyMorderna(@RequestParam int i, @RequestParam int j) {
-        game.buyAntibody(i, j, Antibody.Type.Moderna);
+    public boolean buyMorderna(@RequestParam int i, @RequestParam int j) {
+        return game.buyAntibody(i, j, Antibody.Type.Moderna);
     }
 
     @RequestMapping("/buy/sinovac")
-    public void buySinovac(@RequestParam int i, @RequestParam int j) {
-        game.buyAntibody(i, j, Antibody.Type.Sinovac);
+    public boolean buySinovac(@RequestParam int i, @RequestParam int j) {
+        return game.buyAntibody(i, j, Antibody.Type.Sinovac);
     }
 
     @RequestMapping("/setgeneticcode/alpha")

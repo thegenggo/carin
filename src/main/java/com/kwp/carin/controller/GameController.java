@@ -114,7 +114,7 @@ public class GameController {
 
     @RequestMapping("/select")
     public void select(@RequestParam int i, @RequestParam int j) {
-        game.selectAntibody(i, j);
+        game.decideMove(i, j);
     }
 
     @RequestMapping("/move")

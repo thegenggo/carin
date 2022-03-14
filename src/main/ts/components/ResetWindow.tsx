@@ -4,7 +4,7 @@ import cancelButton from "./images/cancel.png";
 import confirmButton from "./images/confirmButton.png";
 import './ResetWindow.css';
 
-function ResetWindow({ clearAllWindows }: { clearAllWindows: () => void }) {
+function ResetWindow({ show, clearAllWindows}: { show: boolean, clearAllWindows: () => void }) {
     const navigate = useNavigate();
 
     const reset = () => {
@@ -12,7 +12,7 @@ function ResetWindow({ clearAllWindows }: { clearAllWindows: () => void }) {
     }
 
     return (
-        <div id="reset-window">
+        <div id="reset-window" style={{visibility: show ? "visible" : "hidden"}}>
             <div className="reset-text">Are you sure to <span>reset</span> the game</div>
             <div className="reset-buttons">
                 <img src={confirmButton} onClick={reset}></img>

@@ -21,6 +21,8 @@
 }
 
 .shop-window .antibody {
+    position: relative;
+    background-color: transparent;
     width: 10vw;
     height: 10vw;
 }

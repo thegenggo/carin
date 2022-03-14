@@ -30,8 +30,8 @@ function Gameplay() {
         <div className="gameplay">
             <Bar openResetConfirmWindow={openResetConfirmWindow} openShopWindow={openShopWindow}/>
             <Canvas clearAllWindows={clearAllWindows}/>
-            {showResetWindow && <ResetWindow clearAllWindows={clearAllWindows}/>}
-            {showShopWindow && <ShopWindow clearAllWindows={clearAllWindows}/>}
+            <ResetWindow show={showResetWindow} clearAllWindows={clearAllWindows}/>
+            <ShopWindow show={showShopWindow} clearAllWindows={clearAllWindows}/>
         </div>
     )
 }

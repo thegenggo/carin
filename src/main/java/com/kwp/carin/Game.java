@@ -78,8 +78,17 @@ public class Game extends Thread {
                 selectedAntibody.setCell(target);
                 target.setOrganism(selectedAntibody);
                 selectedAntibody.receiveDamage(antibodyMoveCost);
-                selectedAntibody.setReady(false);
+                selectedAntibody.setSelected(false);
+                selectedAntibody = null;
             }
+        }
+    }
+
+    public void decideMove(int i, int j) {
+        if (selectedAntibody != null) {
+            moveSelectedAntibody(i, j);
+        } else {
+            selectAntibody(i, j);
         }
     }
 

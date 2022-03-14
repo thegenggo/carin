@@ -17,20 +17,15 @@ type CellProps = {
 
 const Cell = React.memo(({ organism, i, j }: CellProps) => {
 
-    const onClick = () => {
-        if (organism == null) { fetch(`game/buy/pfizer?i=${i}&j=${j}`) }
-        else if (organism.antibody) { fetch(`game/select?i=${i}&j=${j}`) }
-    }
-
     const render = () => {
         if (organism == null) return null;
         switch (organism.type) {
-            case "Beta": return <img src={BetaImage} className="organismImage"></img>;
-            case "Alpha": return <img src={AlphaImage} className="organismImage"></img>;
-            case "Gamma": return <img src={GammaImage} className="organismImage"></img>;
-            case "Pfizer": return <img src={PfizerImage} className="organismImage"></img>;
-            case "Moderna": return <img src={ModernaImage} className="organismImage"></img>;
-            case "Sinovac": return <img src={SinovacImage} className="organismImage"></img>;
+            case "Beta": return <img src={BetaImage} className="organismImage" draggable="false"></img>;
+            case "Alpha": return <img src={AlphaImage} className="organismImage" draggable="false"></img>;
+            case "Gamma": return <img src={GammaImage} className="organismImage" draggable="false"></img>;
+            case "Pfizer": return <img src={PfizerImage} className="organismImage" draggable="false"></img>;
+            case "Moderna": return <img src={ModernaImage} className="organismImage" draggable="false"></img>;
+            case "Sinovac": return <img src={SinovacImage} className="organismImage" draggable="false"></img>;
             default: return <div></div>;
         }
     }
@@ -49,11 +44,33 @@ const Cell = React.memo(({ organism, i, j }: CellProps) => {
         }
     }
 
+    const drop = (event: any) => {
+        console.log("drop")
+        event.preventDefault();
+        const data = event.dataTransfer.getData("text");
+        if (data == "pfizer") {
+            fetch(`game/buy/pfizer?i=${i}&j=${j}`);
+        } else if (data == "sinovac") {
+            fetch(`game/buy/sinovac?i=${i}&j=${j}`);
+        } else if (data == "moderna") {
+            fetch(`game/buy/moderna?i=${i}&j=${j}`);
+        }
+    }
+
+    const allowDrop = (event: any) => {
+        event.preventDefault();
+    }
+
+    const select = (event: any) => {
+        event.preventDefault();
+        fetch(`game/select?i=${i}&j=${j}`);
+    }
+
     console.log("rendering cell");
 
     return (
         <td>
-            <div id="Cell" onDoubleClick={onClick}>
+            <div id="Cell" onDrop={drop} onDragOver={allowDrop} onTouchStart={select} onMouseDown={select}>
                 <div className="organism">
                     {cursor()}
                     {render()}

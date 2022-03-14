@@ -71,7 +71,8 @@ function Bar({ openResetConfirmWindow, openShopWindow }: { openResetConfirmWindo
         <div className="flex flex-row m-8 min-w-3/10 space-x-8">
             <div className="flex flex-row space-x-8">
                 <img className="decreaseSpdButton" src={decreaseSpdButton} onClick={speedDown}></img>
-                {isPlaying ? <img className="pauseButton" src={pauseButton} onClick={pause}></img> : <img className="resumeButton" src={resumeButton} onClick={resume}></img>}
+                {isPlaying ? <img className="pauseButton" src={pauseButton} onClick={pause}></img>
+                        : <img className="resumeButton" src={resumeButton} onClick={resume}></img>}
                 <img className="increaseSpdButton" src={increaseSpdButton} onClick={speedUp}></img>
             </div>
             <img className="replayButton" src={replayButton} onClick={openResetConfirmWindow}></img>

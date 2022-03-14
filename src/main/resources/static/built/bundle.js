@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -webkit-user-drag: none;\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/App.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB,EAAE,oBAAoB;IACtC,yBAAyB,EAAE,WAAW;IACtC,uBAAuB;IACvB,qBAAqB,EAAE,oBAAoB;IAC3C,iBAAiB,EAAE,oBAAoB;IACvC,SAAS;IACT,UAAU;IACV,SAAS;IACT,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,uBAAuB;IACvB,sBAAsB;IACtB,yBAAyB;IACzB,qBAAqB;IACrB,iBAAiB;AACrB","sourcesContent":["body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -webkit-user-drag: none;\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/App.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB,EAAE,oBAAoB;IACtC,yBAAyB,EAAE,WAAW;IACtC,uBAAuB;IACvB,qBAAqB,EAAE,oBAAoB;IAC3C,iBAAiB,EAAE,oBAAoB;IACvC,SAAS;IACT,UAAU;IACV,SAAS;IACT,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,sBAAsB;IACtB,yBAAyB;IACzB,qBAAqB;IACrB,iBAAiB;AACrB","sourcesContent":["body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -304,7 +304,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".shop-window {\r\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: absolute;\r\n    padding: 5vh;\r\n    width: 42%;\r\n    height: 28%;\r\n    border-radius: 50px;\r\n    left: 50%;\r\n    top: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.shop-window > * + * {\r\n    margin-left: 2vw;\r\n}\r\n\r\n.shop-window .antibody {\r\n    width: 10vw;\r\n    height: 10vw;\r\n}\r\n\r\n.shop-window .cancel {\r\n    position: absolute;\r\n    top: 5%;\r\n    right: 5%;\r\n    width: 9%;\r\n    height: 20%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/ShopWindow.css"],"names":[],"mappings":"AAAA;IACI,mDAA2C;IAC3C,sBAAsB;IACtB,4BAA4B;IAC5B,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,uBAAuB;IACvB,kBAAkB;IAClB,YAAY;IACZ,UAAU;IACV,WAAW;IACX,mBAAmB;IACnB,SAAS;IACT,QAAQ;IACR,gCAAgC;AACpC;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,OAAO;IACP,SAAS;IACT,SAAS;IACT,WAAW;AACf","sourcesContent":[".shop-window {\r\n    background: url(./images/comfirmWindow.png);\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: absolute;\r\n    padding: 5vh;\r\n    width: 42%;\r\n    height: 28%;\r\n    border-radius: 50px;\r\n    left: 50%;\r\n    top: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.shop-window > * + * {\r\n    margin-left: 2vw;\r\n}\r\n\r\n.shop-window .antibody {\r\n    width: 10vw;\r\n    height: 10vw;\r\n}\r\n\r\n.shop-window .cancel {\r\n    position: absolute;\r\n    top: 5%;\r\n    right: 5%;\r\n    width: 9%;\r\n    height: 20%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".shop-window {\r\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: absolute;\r\n    padding: 5vh;\r\n    width: 42%;\r\n    height: 28%;\r\n    border-radius: 50px;\r\n    left: 50%;\r\n    top: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.shop-window > * + * {\r\n    margin-left: 2vw;\r\n}\r\n\r\n.shop-window .antibody {\r\n    position: relative;\r\n    background-color: transparent;\r\n    width: 10vw;\r\n    height: 10vw;\r\n}\r\n\r\n.shop-window .cancel {\r\n    position: absolute;\r\n    top: 5%;\r\n    right: 5%;\r\n    width: 9%;\r\n    height: 20%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/ShopWindow.css"],"names":[],"mappings":"AAAA;IACI,mDAA2C;IAC3C,sBAAsB;IACtB,4BAA4B;IAC5B,aAAa;IACb,mBAAmB;IACnB,mBAAmB;IACnB,uBAAuB;IACvB,kBAAkB;IAClB,YAAY;IACZ,UAAU;IACV,WAAW;IACX,mBAAmB;IACnB,SAAS;IACT,QAAQ;IACR,gCAAgC;AACpC;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,kBAAkB;IAClB,6BAA6B;IAC7B,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,OAAO;IACP,SAAS;IACT,SAAS;IACT,WAAW;AACf","sourcesContent":[".shop-window {\r\n    background: url(./images/comfirmWindow.png);\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: absolute;\r\n    padding: 5vh;\r\n    width: 42%;\r\n    height: 28%;\r\n    border-radius: 50px;\r\n    left: 50%;\r\n    top: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.shop-window > * + * {\r\n    margin-left: 2vw;\r\n}\r\n\r\n.shop-window .antibody {\r\n    position: relative;\r\n    background-color: transparent;\r\n    width: 10vw;\r\n    height: 10vw;\r\n}\r\n\r\n.shop-window .cancel {\r\n    position: absolute;\r\n    top: 5%;\r\n    right: 5%;\r\n    width: 9%;\r\n    height: 20%;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32732,7 +32732,8 @@ function Bar(_a) {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row m-8 min-w-3/10 space-x-8" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row space-x-8" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "decreaseSpdButton", src: _images_decreaseSpdButton_png__WEBPACK_IMPORTED_MODULE_3__, onClick: speedDown }),
-                isPlaying ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "pauseButton", src: _images_pauseButton_png__WEBPACK_IMPORTED_MODULE_5__, onClick: pause }) : react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "resumeButton", src: _images_resumeButton_png__WEBPACK_IMPORTED_MODULE_7__, onClick: resume }),
+                isPlaying ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "pauseButton", src: _images_pauseButton_png__WEBPACK_IMPORTED_MODULE_5__, onClick: pause })
+                    : react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "resumeButton", src: _images_resumeButton_png__WEBPACK_IMPORTED_MODULE_7__, onClick: resume }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "increaseSpdButton", src: _images_increaseSpdButton_png__WEBPACK_IMPORTED_MODULE_4__, onClick: speedUp })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "replayButton", src: _images_replayButton_png__WEBPACK_IMPORTED_MODULE_6__, onClick: openResetConfirmWindow }))));
 }
@@ -32772,8 +32773,8 @@ function Canvas(_a) {
         setCells(Array(100).fill(Array(100).fill(null)));
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        //let interval = setInterval(fetchHumanbody, 250);
-        testHumanbody();
+        var interval = setInterval(fetchHumanbody, 250);
+        // testHumanbody()
         var humanbody = document.getElementById("humanbody");
         var canvas = document.getElementById("canvas");
         var cameraZoom = 1;
@@ -32889,7 +32890,7 @@ function Canvas(_a) {
         canvas.addEventListener("touchmove", function (event) { handleTouch(event, onPointerMove); });
         canvas.addEventListener("touchend", function (event) { handleTouch(event, onPointerUp); });
         window.addEventListener("resize", update);
-        //return () => { clearInterval(interval) }
+        return function () { clearInterval(interval); };
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "canvas" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { id: "humanbody" }, cells ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, cells.map(function (row, i) {
@@ -32934,24 +32935,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var Cell = react__WEBPACK_IMPORTED_MODULE_0__.memo(function (_a) {
     var organism = _a.organism, i = _a.i, j = _a.j;
-    var onClick = function () {
-        if (organism == null) {
-            fetch("game/buy/pfizer?i=".concat(i, "&j=").concat(j));
-        }
-        else if (organism.antibody) {
-            fetch("game/select?i=".concat(i, "&j=").concat(j));
-        }
-    };
     var render = function () {
         if (organism == null)
             return null;
         switch (organism.type) {
-            case "Beta": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_beta_png__WEBPACK_IMPORTED_MODULE_5__, className: "organismImage" });
-            case "Alpha": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_alpha_png__WEBPACK_IMPORTED_MODULE_4__, className: "organismImage" });
-            case "Gamma": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_gamma_png__WEBPACK_IMPORTED_MODULE_6__, className: "organismImage" });
-            case "Pfizer": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_pfizer_png__WEBPACK_IMPORTED_MODULE_1__, className: "organismImage" });
-            case "Moderna": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_moderna_png__WEBPACK_IMPORTED_MODULE_3__, className: "organismImage" });
-            case "Sinovac": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_sinovac_png__WEBPACK_IMPORTED_MODULE_2__, className: "organismImage" });
+            case "Beta": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_beta_png__WEBPACK_IMPORTED_MODULE_5__, className: "organismImage", draggable: "false" });
+            case "Alpha": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_alpha_png__WEBPACK_IMPORTED_MODULE_4__, className: "organismImage", draggable: "false" });
+            case "Gamma": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_gamma_png__WEBPACK_IMPORTED_MODULE_6__, className: "organismImage", draggable: "false" });
+            case "Pfizer": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_pfizer_png__WEBPACK_IMPORTED_MODULE_1__, className: "organismImage", draggable: "false" });
+            case "Moderna": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_moderna_png__WEBPACK_IMPORTED_MODULE_3__, className: "organismImage", draggable: "false" });
+            case "Sinovac": return react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_sinovac_png__WEBPACK_IMPORTED_MODULE_2__, className: "organismImage", draggable: "false" });
             default: return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null);
         }
     };
@@ -32970,9 +32963,30 @@ var Cell = react__WEBPACK_IMPORTED_MODULE_0__.memo(function (_a) {
             return null;
         }
     };
+    var drop = function (event) {
+        console.log("drop");
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        if (data == "pfizer") {
+            fetch("game/buy/pfizer?i=".concat(i, "&j=").concat(j));
+        }
+        else if (data == "sinovac") {
+            fetch("game/buy/sinovac?i=".concat(i, "&j=").concat(j));
+        }
+        else if (data == "moderna") {
+            fetch("game/buy/moderna?i=".concat(i, "&j=").concat(j));
+        }
+    };
+    var allowDrop = function (event) {
+        event.preventDefault();
+    };
+    var select = function (event) {
+        event.preventDefault();
+        fetch("game/select?i=".concat(i, "&j=").concat(j));
+    };
     console.log("rendering cell");
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "Cell", onDoubleClick: onClick },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "Cell", onDrop: drop, onDragOver: allowDrop, onTouchStart: select, onMouseDown: select },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "organism" },
                 cursor(),
                 render(),
@@ -33025,8 +33039,8 @@ function Gameplay() {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "gameplay" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Bar__WEBPACK_IMPORTED_MODULE_1__["default"], { openResetConfirmWindow: openResetConfirmWindow, openShopWindow: openShopWindow }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Canvas__WEBPACK_IMPORTED_MODULE_2__["default"], { clearAllWindows: clearAllWindows }),
-        showResetWindow && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ResetWindow__WEBPACK_IMPORTED_MODULE_4__["default"], { clearAllWindows: clearAllWindows }),
-        showShopWindow && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShopWindow__WEBPACK_IMPORTED_MODULE_5__["default"], { clearAllWindows: clearAllWindows })));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ResetWindow__WEBPACK_IMPORTED_MODULE_4__["default"], { show: showResetWindow, clearAllWindows: clearAllWindows }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShopWindow__WEBPACK_IMPORTED_MODULE_5__["default"], { show: showShopWindow, clearAllWindows: clearAllWindows })));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Gameplay);
 
@@ -33084,12 +33098,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ResetWindow(_a) {
-    var clearAllWindows = _a.clearAllWindows;
+    var show = _a.show, clearAllWindows = _a.clearAllWindows;
     var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
     var reset = function () {
         fetch("game/reset").then(function (response) { navigate("/"); }).catch(function (error) { console.log(error); });
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "reset-window" },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "reset-window", style: { visibility: show ? "visible" : "hidden" } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "reset-text" },
             "Are you sure to ",
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "reset"),
@@ -33292,12 +33306,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ShopWindow = function (_a) {
-    var clearAllWindows = _a.clearAllWindows;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "shop-window" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", src: _images_pfizer_png__WEBPACK_IMPORTED_MODULE_2__ }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", src: _images_moderna_png__WEBPACK_IMPORTED_MODULE_3__ }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", src: _images_sinovac_png__WEBPACK_IMPORTED_MODULE_4__ }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "cancel", src: _images_cancel_png__WEBPACK_IMPORTED_MODULE_5__, onClick: clearAllWindows })));
+    var show = _a.show, clearAllWindows = _a.clearAllWindows;
+    var drag = function (event) {
+        setTimeout(clearAllWindows, 10);
+        var img = new Image();
+        img.src = event.target.src;
+        event.dataTransfer.setDragImage(img, img.width / 2, img.height / 2);
+        event.dataTransfer.dropEffect = "move";
+        event.dataTransfer.effectAllowed = "move";
+        event.dataTransfer.setData("text", event.target.id);
+    };
+    var onTouchStart = function (event) {
+        event.target.classList.add("dragstart");
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "shop-window", className: "shop-window", style: { visibility: show ? "visible" : "hidden" } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", id: "pfizer", src: _images_pfizer_png__WEBPACK_IMPORTED_MODULE_2__, draggable: true, onDragStart: drag, onTouchStart: onTouchStart }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", id: "moderna", src: _images_moderna_png__WEBPACK_IMPORTED_MODULE_3__, draggable: true, onDragStart: drag }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibody", id: "sinovac", src: _images_sinovac_png__WEBPACK_IMPORTED_MODULE_4__, draggable: true, onDragStart: drag }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "cancel", src: _images_cancel_png__WEBPACK_IMPORTED_MODULE_5__, draggable: "false", onClick: clearAllWindows })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ShopWindow);
 

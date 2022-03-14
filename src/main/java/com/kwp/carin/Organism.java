@@ -46,7 +46,7 @@ public abstract class Organism {
         program = Program.getInstance(code);
         organisms.add(this);
         variables = new HashMap<>();
-        ready = true;
+        ready = false;
     }
 
     public int getHealth() {

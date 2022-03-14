@@ -20,8 +20,8 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
     }
 
     useEffect(() => {
-        //let interval = setInterval(fetchHumanbody, 250);
-        testHumanbody()
+        let interval = setInterval(fetchHumanbody, 250);
+        // testHumanbody()
 
         let humanbody = document.getElementById("humanbody")
         let canvas = document.getElementById("canvas")
@@ -148,7 +148,7 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
         canvas.addEventListener("touchend", (event) => { handleTouch(event, onPointerUp) })
         window.addEventListener("resize", update)
 
-        //return () => { clearInterval(interval) }
+        return () => { clearInterval(interval) }
     }, [])
 
     return (

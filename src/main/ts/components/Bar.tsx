@@ -11,7 +11,7 @@ import { useState } from "react";
 
 let canSend = true;
 
-function Bar({ openResetConfirmWindow }: { openResetConfirmWindow: () => void }) {
+function Bar({ openResetConfirmWindow, openShopWindow }: { openResetConfirmWindow: () => void, openShopWindow: () => void }) {
     const [antibodyCredit, setAntibodyCredit] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
 
@@ -66,7 +66,7 @@ function Bar({ openResetConfirmWindow }: { openResetConfirmWindow: () => void })
                     {antibodyCredit}
                 </div>
             </div>
-            <img className="shopButton" src={shopButton}></img>
+            <img className="shopButton" src={shopButton} onClick={openShopWindow}></img>
         </div>
         <div className="flex flex-row m-8 min-w-3/10 space-x-8">
             <div className="flex flex-row space-x-8">

@@ -1,18 +1,14 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import cancelButton from "./images/cancel.png";
 import confirmButton from "./images/confirmButton.png";
 import './ResetWindow.css';
 
-function ResetWindow() {
+function ResetWindow({ clearAllWindows }: { clearAllWindows: () => void }) {
     const navigate = useNavigate();
 
     const reset = () => {
         fetch("game/reset").then(response => { navigate("/") }).catch(error => { console.log(error) })
-    }
-
-    const cancel = () => {
-        document.getElementById('reset-window').style.display = 'none';
     }
 
     return (
@@ -20,7 +16,7 @@ function ResetWindow() {
             <div className="reset-text">Are you sure to <span>reset</span> the game</div>
             <div className="reset-buttons">
                 <img src={confirmButton} onClick={reset}></img>
-                <img src={cancelButton} onClick={cancel}></img>
+                <img src={cancelButton} onClick={clearAllWindows}></img>
             </div>
         </div>
     )

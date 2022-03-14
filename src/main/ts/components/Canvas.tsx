@@ -3,7 +3,7 @@ import "./Canvas.css"
 import OrganismProps from "./OrganismProps";
 import Cell from "./Cell";
 
-function Canvas() {
+function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
     const [cells, setCells] = useState<OrganismProps[][]>()
     const SCROLL_SENSITIVITY = -0.0005
 
@@ -34,8 +34,8 @@ function Canvas() {
         let focusPosition = { x: 0, y: 0 }
 
         let cameraOffset = { x: 0, y: 0 }
-        let isDragging = false
         let dragStart = { x: 0, y: 0 }
+        let isDragging = false
         let cameraOffsetLimit = { minX: 0, minY: 0, maxX: 0, maxY: 0 }
 
         let initialPinchDistance: any = null
@@ -72,14 +72,15 @@ function Canvas() {
 
         const onPointerDown = (event: any) => {
             isDragging = true
-            dragStart.x = getEventLocation(event).x / cameraZoom - cameraOffset.x
-            dragStart.y = getEventLocation(event).y / cameraZoom - cameraOffset.y
+            dragStart = getEventLocation(event)
         }
 
         const onPointerMove = (event: any) => {
             if (isDragging) {
-                cameraOffset.x = getEventLocation(event).x / cameraZoom - dragStart.x
-                cameraOffset.y = getEventLocation(event).y / cameraZoom - dragStart.y
+                let dragEnd = getEventLocation(event)
+                cameraOffset.x = cameraOffset.x + (dragEnd.x - dragStart.x)
+                cameraOffset.y = cameraOffset.y + (dragEnd.y - dragStart.y)
+                dragStart = dragEnd
                 update()
             }
         }
@@ -139,12 +140,12 @@ function Canvas() {
             adjustZoom(event.deltaY * SCROLL_SENSITIVITY, null)
         })
 
-        canvas.addEventListener("pointerdown", onPointerDown)
+        canvas.addEventListener("pointerdown", event => {onPointerDown(event); clearAllWindows()})
         canvas.addEventListener("pointermove", onPointerMove)
         canvas.addEventListener("pointerup", onPointerUp)
-        canvas.addEventListener("touchstart", (event: any) => { handleTouch(event, onPointerDown) })
-        canvas.addEventListener("touchmove", (event: any) => { handleTouch(event, onPointerMove) })
-        canvas.addEventListener("touchend", (event: any) => { handleTouch(event, onPointerUp) })
+        canvas.addEventListener("touchstart", (event) => { handleTouch(event, onPointerDown) })
+        canvas.addEventListener("touchmove", (event) => { handleTouch(event, onPointerMove) })
+        canvas.addEventListener("touchend", (event) => { handleTouch(event, onPointerUp) })
         window.addEventListener("resize", update)
 
         //return () => { clearInterval(interval) }

@@ -183,6 +183,7 @@ public class Game extends Thread {
                 if(DEBUG) System.out.println("Antibody left: " + Antibody.amount());
                 if(DEBUG) humanBody.print();
                 Organism.wakeAll();
+                //System.out.println(System.currentTimeMillis() - currentTime);
             }
         }
     }

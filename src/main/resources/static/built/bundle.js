@@ -54,7 +54,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: Short Stack;\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n}\r\n\r\n.flex-row {\r\n    flex-direction: row;\r\n}\r\n\r\n.min-w-3\\/10 {\r\n    min-width: 30%;\r\n}\r\n\r\n.m-8 {\r\n    margin: 2.0rem;\r\n}\r\n\r\n.space-x-8 > * + * {\r\n    margin-left: 2.0rem;\r\n}\r\n\r\n.Bar {\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 100%;\r\n    height: 12%;\r\n}\r\n\r\n.antibodyCreditIcon {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\n.antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    line-height: 89px;\r\n    left: 8.33%;\r\n    right: 80.31%;\r\n    top: 15%;\r\n    bottom: 17.5%;\r\n}\r\n\r\n.shopButton {\r\n    left: 26.35%;\r\n    right: 69.53%;\r\n    top: 5.83%;\r\n    bottom: 10.83%;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    left: 62.08%;\r\n    right: 33.49%;\r\n    top: 20%;\r\n    bottom: 15%;\r\n}\r\n\r\n.increaseSpdButton {\r\n    left: 82.19%;\r\n    right: 13.49%;\r\n    top: 20.83%;\r\n    bottom: 15%;\r\n}\r\n\r\n.pauseButton {\r\n    left: 72.14%;\r\n    right: 23.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n.replayButton {\r\n    left: 92.14%;\r\n    right: 3.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Bar.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,4CAA0C;AAC9C;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,sBAAsB;IACtB,WAAW;IACX,WAAW;AACf;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;IACf,iBAAiB;IACjB,WAAW;IACX,aAAa;IACb,QAAQ;IACR,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,QAAQ;IACR,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,WAAW;IACX,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,WAAW;IACX,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,WAAW;IACX,WAAW;AACf","sourcesContent":["@font-face {\r\n    font-family: Short Stack;\r\n    src: url('./fonts/ShortStack-Regular.ttf');\r\n}\r\n\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n}\r\n\r\n.flex-row {\r\n    flex-direction: row;\r\n}\r\n\r\n.min-w-3\\/10 {\r\n    min-width: 30%;\r\n}\r\n\r\n.m-8 {\r\n    margin: 2.0rem;\r\n}\r\n\r\n.space-x-8 > * + * {\r\n    margin-left: 2.0rem;\r\n}\r\n\r\n.Bar {\r\n    background-image: url(\"./images/bar.png\");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 100%;\r\n    height: 12%;\r\n}\r\n\r\n.antibodyCreditIcon {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\n.antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    line-height: 89px;\r\n    left: 8.33%;\r\n    right: 80.31%;\r\n    top: 15%;\r\n    bottom: 17.5%;\r\n}\r\n\r\n.shopButton {\r\n    left: 26.35%;\r\n    right: 69.53%;\r\n    top: 5.83%;\r\n    bottom: 10.83%;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    left: 62.08%;\r\n    right: 33.49%;\r\n    top: 20%;\r\n    bottom: 15%;\r\n}\r\n\r\n.increaseSpdButton {\r\n    left: 82.19%;\r\n    right: 13.49%;\r\n    top: 20.83%;\r\n    bottom: 15%;\r\n}\r\n\r\n.pauseButton {\r\n    left: 72.14%;\r\n    right: 23.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n.replayButton {\r\n    left: 92.14%;\r\n    right: 3.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: Short Stack;\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n}\r\n\r\n.flex-row {\r\n    flex-direction: row;\r\n}\r\n\r\n.min-w-3\\/10 {\r\n    min-width: 30%;\r\n}\r\n\r\n.m-8 {\r\n    margin: 2.0rem;\r\n}\r\n\r\n.space-x-8 > * + * {\r\n    margin-left: 2.0rem;\r\n}\r\n\r\n.Bar {\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 100%;\r\n    height: 12%;\r\n}\r\n\r\n.antibodyCreditIcon {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\n.antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    line-height: 89px;\r\n    left: 8.33%;\r\n    right: 80.31%;\r\n    top: 15%;\r\n    bottom: 17.5%;\r\n}\r\n\r\n.shopButton {\r\n    left: 26.35%;\r\n    right: 69.53%;\r\n    top: 5.83%;\r\n    bottom: 10.83%;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    left: 62.08%;\r\n    right: 33.49%;\r\n    top: 20%;\r\n    bottom: 15%;\r\n}\r\n\r\n.increaseSpdButton {\r\n    left: 82.19%;\r\n    right: 13.49%;\r\n    top: 20.83%;\r\n    bottom: 15%;\r\n}\r\n\r\n.pauseButton {\r\n    left: 72.14%;\r\n    right: 23.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n.replayButton {\r\n    left: 92.14%;\r\n    right: 3.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Bar.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,4CAA0C;AAC9C;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,sBAAsB;IACtB,WAAW;IACX,WAAW;AACf;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;IACf,iBAAiB;IACjB,WAAW;IACX,aAAa;IACb,QAAQ;IACR,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,QAAQ;IACR,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,WAAW;IACX,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,WAAW;IACX,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,WAAW;IACX,WAAW;AACf;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;IACf,QAAQ;IACR,SAAS;IACT,gCAAgC;AACpC","sourcesContent":["@font-face {\r\n    font-family: Short Stack;\r\n    src: url('./fonts/ShortStack-Regular.ttf');\r\n}\r\n\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n}\r\n\r\n.flex-row {\r\n    flex-direction: row;\r\n}\r\n\r\n.min-w-3\\/10 {\r\n    min-width: 30%;\r\n}\r\n\r\n.m-8 {\r\n    margin: 2.0rem;\r\n}\r\n\r\n.space-x-8 > * + * {\r\n    margin-left: 2.0rem;\r\n}\r\n\r\n.Bar {\r\n    background-image: url(\"./images/bar.png\");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 100%;\r\n    height: 12%;\r\n}\r\n\r\n.antibodyCreditIcon {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\n.antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    line-height: 89px;\r\n    left: 8.33%;\r\n    right: 80.31%;\r\n    top: 15%;\r\n    bottom: 17.5%;\r\n}\r\n\r\n.shopButton {\r\n    left: 26.35%;\r\n    right: 69.53%;\r\n    top: 5.83%;\r\n    bottom: 10.83%;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    left: 62.08%;\r\n    right: 33.49%;\r\n    top: 20%;\r\n    bottom: 15%;\r\n}\r\n\r\n.increaseSpdButton {\r\n    left: 82.19%;\r\n    right: 13.49%;\r\n    top: 20.83%;\r\n    bottom: 15%;\r\n}\r\n\r\n.pauseButton {\r\n    left: 72.14%;\r\n    right: 23.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n.replayButton {\r\n    left: 92.14%;\r\n    right: 3.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32689,6 +32689,7 @@ function Bar(_a) {
     var openResetConfirmWindow = _a.openResetConfirmWindow, openShopWindow = _a.openShopWindow;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0), antibodyCredit = _b[0], setAntibodyCredit = _b[1];
     var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true), isPlaying = _c[0], setIsPlaying = _c[1];
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), timer = _d[0], setTimer = _d[1];
     var fetchAntibodyCredit = function () {
         if (canSend) {
             canSend = false;
@@ -32701,20 +32702,49 @@ function Bar(_a) {
         }
     };
     var speedUp = function () {
-        fetch("game/increasespeed");
+        fetch("game/increasespeed").then(function (response) { return response.json(); }).then(function (data) {
+            showMessage("x" + data);
+        }).catch(function (error) {
+            console.log(error);
+        });
     };
     var speedDown = function () {
-        fetch("game/decreasespeed");
+        fetch("game/decreasespeed").then(function (response) { return response.json(); }).then(function (data) {
+            showMessage("x" + data);
+        }).catch(function (error) {
+            console.log(error);
+        });
     };
     var pause = function () {
-        fetch("game/pause").then(function (response) { return setIsPlaying(false); }).catch(function (error) { console.log(error); });
+        fetch("game/pause").then(function (response) {
+            setIsPlaying(false);
+            showMessage("paused");
+        }).catch(function (error) { console.log(error); });
     };
     var resume = function () {
-        fetch("game/resume").then(function (response) { return setIsPlaying(true); }).catch(function (error) { console.log(error); });
+        fetch("game/resume").then(function (response) {
+            setIsPlaying(true);
+            showMessage("resumed");
+        }).catch(function (error) { console.log(error); });
     };
-    var start = function () {
-        fetch("game/start").then(function (response) { return setIsPlaying(true); }).catch(function (error) { console.log(error); });
+    var showMessage = function (message) {
+        console.log("message: " + message);
+        var messageElement = document.getElementById("message");
+        if (messageElement) {
+        }
+        else {
+            messageElement = document.createElement("div");
+            messageElement.id = "message";
+            document.body.appendChild(messageElement);
+        }
+        messageElement.innerHTML = message;
+        clearTimeout(timer);
+        setTimer(setTimeout(function () {
+            messageElement.innerHTML = "";
+            console.log();
+        }, 1000));
     };
+    clearTimeout(window.setTimeout);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(function () {
             fetchAntibodyCredit();
@@ -32726,7 +32756,7 @@ function Bar(_a) {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "Bar flex" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row m-8 min-w-3/10 space-x-8" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row space-x-8" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibodyCreditIcon", src: _images_antibodyCreditIcon_png__WEBPACK_IMPORTED_MODULE_1__, onClick: start }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibodyCreditIcon", src: _images_antibodyCreditIcon_png__WEBPACK_IMPORTED_MODULE_1__ }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "antibodyCredit" }, antibodyCredit)),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "shopButton", src: _images_shopButton_png__WEBPACK_IMPORTED_MODULE_2__, onClick: openShopWindow })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row m-8 min-w-3/10 space-x-8" },

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Short Stack;
+    src: url('./components/fonts/ShortStack-Regular.ttf');
+}
+
 body, html {
     overflow: hidden; /* Hide scrollbars */
     -webkit-user-select: none; /* Safari */
@@ -26,4 +31,16 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#message {
+    position: absolute;
+    font-family: Short Stack;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

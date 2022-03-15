@@ -9,7 +9,7 @@ function Home() {
             <div className="home">
                 <div className="center">
                     <img src={gameName} className="center-p" />
-                    <h1>Click to start...</h1>
+                    <div className="clickme">Click to start...</div>
                 </div>
             </div>
         </Link>

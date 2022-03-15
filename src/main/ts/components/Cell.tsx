@@ -13,9 +13,10 @@ type CellProps = {
     organism: OrganismProps
     i: number;
     j: number;
+    showMessage: (message: string) => void;
 }
 
-const Cell = React.memo(({ organism, i, j }: CellProps) => {
+const Cell = React.memo(({ organism, i, j, showMessage }: CellProps) => {
 
     const render = () => {
         if (organism == null) return null;
@@ -56,7 +57,11 @@ const Cell = React.memo(({ organism, i, j }: CellProps) => {
             response = await fetch(`game/buy/moderna?i=${i}&j=${j}`);
         }
         const result = await response.json();
-        console.log(result);
+        if (result === 0) {
+            showMessage("You don't have enough antibody credit!");
+        } else if (result === -1) {
+            showMessage("You can't place the antibody here!");
+        }
     }
 
     const allowDrop = (event: any) => {
@@ -67,8 +72,6 @@ const Cell = React.memo(({ organism, i, j }: CellProps) => {
         event.preventDefault();
         fetch(`game/select?i=${i}&j=${j}`);
     }
-
-    console.log("rendering cell");
 
     return (
         <td>

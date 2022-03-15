@@ -13,11 +13,13 @@ function Gameplay() {
     const [showShopWindow, setShowShopWindow] = useState(false);
     const [win, setWin] = useState(false);
     const [lose, setLose] = useState(false);
+    const [disable, setDisable] = useState(false);
+    const [timer, setTimer] = useState<NodeJS.Timeout>();
 
     let navigate = useNavigate()
 
     const openResetConfirmWindow = () => {
-        console.log("Reset button clicked");
+        if (disable) return
         clearAllWindows();
         setShowResetWindow(true);
     }
@@ -28,7 +30,7 @@ function Gameplay() {
     }
 
     const openShopWindow = () => {
-        console.log("Shop button clicked");
+        if (disable) return
         clearAllWindows();
         setShowShopWindow(true);
     }
@@ -36,36 +38,59 @@ function Gameplay() {
     const fetchCheckWin = () => {
         fetch("game/check").then(response => response.json()).then(data => {
             if (data === 1) {
+                setDisable(true)
                 setWin(true)
-                setTimeout(() => {
-                    navigate("/")
-                    console.log("You win!")
-                }, 3500)
             } else if (data === 2) {
+                setDisable(true)
                 setLose(true)
-                setTimeout(() => {
-                    navigate("/")
-                    console.log("You lose!")
-                }, 3500)
             }
         }).catch(error => {
             console.log(error)
         })
     }
 
+    const showMessage = (message: string) => {
+        console.log("message: " + message)
+        let messageElement = document.getElementById("message")
+        if(messageElement) {
+
+        } else {
+            messageElement = document.createElement("div")
+            messageElement.id = "message"
+            document.body.appendChild(messageElement)
+        }
+        messageElement.innerHTML = message
+        clearTimeout(timer)
+        setTimer(setTimeout(() => {
+            messageElement.innerHTML = ""
+        }, 1000))
+    }
+
     useEffect(() => {
-        let interval = setInterval(fetchCheckWin, 250);
-        return () => clearInterval(interval);
+        let interval = setInterval(fetchCheckWin, 250)
+        return () => {
+            clearInterval(interval)
+            clearTimeout(timer)
+        }
     }, [])
+
+    useEffect(() => {
+        if (disable === true) {
+            setTimeout(() => {
+                navigate("/")
+                fetch("game/reset")
+            }, 4500)
+        }
+    }, [disable])
 
     return (
         <div className="gameplay">
-            <Bar openResetConfirmWindow={openResetConfirmWindow} openShopWindow={openShopWindow}/>
-            <Canvas clearAllWindows={clearAllWindows}/>
-            <ResetWindow show={showResetWindow} clearAllWindows={clearAllWindows}/>
-            <ShopWindow show={showShopWindow} clearAllWindows={clearAllWindows}/>
-            {win ? <img className="win" src={gameWin} draggable="false"/>: null}
-            {lose ? <img className="lose" src={gameOver} draggable="false"/>: null}
+            <Bar openResetConfirmWindow={openResetConfirmWindow} openShopWindow={openShopWindow} disable={disable} showMessage={showMessage}/>
+            <Canvas clearAllWindows={clearAllWindows} showMessage={showMessage}/>
+            <ResetWindow show={showResetWindow} clearAllWindows={clearAllWindows} />
+            <ShopWindow show={showShopWindow} clearAllWindows={clearAllWindows} />
+            {win ? <img className="win" src={gameWin} draggable="false" /> : null}
+            {lose ? <img className="lose" src={gameOver} draggable="false" /> : null}
         </div>
     )
 }

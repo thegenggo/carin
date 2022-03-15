@@ -2,9 +2,8 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 import "./Canvas.css"
 import OrganismProps from "./OrganismProps";
 import Cell from "./Cell";
-import { useNavigate } from "react-router-dom";
 
-function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
+function Canvas({ clearAllWindows, showMessage }: { clearAllWindows: () => void, showMessage: (message: string) => void }) {
     const [cells, setCells] = useState(<tbody></tbody>)
     const SCROLL_SENSITIVITY = -0.0005
 
@@ -14,7 +13,7 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
                 {data.map((row, i) => {
                     return <tr key={i}>
                         {row.map((organism, j) => {
-                            return <Cell key={j} organism={organism} i={i} j={j} />
+                            return <Cell key={j} organism={organism} showMessage={showMessage} i={i} j={j} />
                         })}
                     </tr>
                 })}
@@ -24,13 +23,8 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
         })
     }
 
-    const testHumanbody = () => {
-        // setCells(Array(100).fill(Array(100).fill(null)));
-    }
-
     useEffect(() => {
         let interval = setInterval(fetchHumanbody, 250);
-        // testHumanbody()
 
         let humanbody = document.getElementById("humanbody")
         let canvas = document.getElementById("canvas")
@@ -163,18 +157,8 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
     return (
         <div id="canvas">
             <table id="humanbody">
-                {/* {cells ? <tbody>
-                    {cells.map((row, i: number) =>
-                        <tr key={i}>
-                            {row.map((organism, j: number) =>
-                                <Cell key={j} organism={organism} i={i} j={j} />
-                            )}
-                        </tr>
-                    )}
-                </tbody> : null} */}
                 {cells ? cells : null}
             </table>
-            {/* {cells ? null : <div>Loading...</div>} */}
         </div>
     );
 }

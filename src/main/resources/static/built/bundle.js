@@ -16,12 +16,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./components/fonts/ShortStack-Regular.ttf */ "./src/main/ts/components/fonts/ShortStack-Regular.ttf"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/App.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB,EAAE,oBAAoB;IACtC,yBAAyB,EAAE,WAAW;IACtC,uBAAuB;IACvB,qBAAqB,EAAE,oBAAoB;IAC3C,iBAAiB,EAAE,oBAAoB;IACvC,SAAS;IACT,UAAU;IACV,SAAS;IACT,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,sBAAsB;IACtB,yBAAyB;IACzB,qBAAqB;IACrB,iBAAiB;AACrB","sourcesContent":["body, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: Short Stack;\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\nbody, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    text-align: center;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/App.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,4CAAqD;AACzD;;AAEA;IACI,gBAAgB,EAAE,oBAAoB;IACtC,yBAAyB,EAAE,WAAW;IACtC,uBAAuB;IACvB,qBAAqB,EAAE,oBAAoB;IAC3C,iBAAiB,EAAE,oBAAoB;IACvC,SAAS;IACT,UAAU;IACV,SAAS;IACT,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,sBAAsB;IACtB,yBAAyB;IACzB,qBAAqB;IACrB,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;IACf,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;AACpC","sourcesContent":["@font-face {\r\n    font-family: Short Stack;\r\n    src: url('./components/fonts/ShortStack-Regular.ttf');\r\n}\r\n\r\nbody, html {\r\n    overflow: hidden; /* Hide scrollbars */\r\n    -webkit-user-select: none; /* Safari */\r\n    -webkit-user-drag: none;\r\n    -ms-user-select: none; /* IE 10 and IE 11 */\r\n    user-select: none; /* Standard syntax */\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n#react {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.App {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nimg {\r\n    -moz-user-select: none;\r\n    -webkit-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    text-align: center;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -48,13 +53,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./fonts/ShortStack-Regular.ttf */ "./src/main/ts/components/fonts/ShortStack-Regular.ttf"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./images/bar.png */ "./src/main/ts/components/images/bar.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./images/bar.png */ "./src/main/ts/components/images/bar.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
-var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: Short Stack;\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.Bar {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 94%;\r\n    height: 11.5%;\r\n    padding-top: 0.25%;\r\n    padding-bottom: 0.25%;\r\n    padding-left: 3%;\r\n    padding-right: 3%;\r\n}\r\n\r\n.Bar .flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 30%;\r\n    height: 100%;\r\n}\r\n\r\n.Bar .left {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .left > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .right {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .right > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .antibodyCreditIcon {\r\n    width: 2.5vw;\r\n    height: 8.9vh;\r\n}\r\n\r\n.Bar .antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 7vh;\r\n    line-height: 89px;\r\n}\r\n\r\n.Bar .shopButton {\r\n    width: 4.1vw;\r\n    height: 9.26vh;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.increaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.pauseButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.resumeButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.replayButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Bar.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,4CAA0C;AAC9C;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,mBAAmB;IACnB,yDAAyC;IACzC,4BAA4B;IAC5B,sBAAsB;IACtB,UAAU;IACV,aAAa;IACb,kBAAkB;IAClB,qBAAqB;IACrB,gBAAgB;IAChB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,2BAA2B;IAC3B,mBAAmB;AACvB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,2BAA2B;IAC3B,mBAAmB;AACvB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,cAAc;AAClB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;IACf,QAAQ;IACR,SAAS;IACT,gCAAgC;AACpC","sourcesContent":["@font-face {\r\n    font-family: Short Stack;\r\n    src: url('./fonts/ShortStack-Regular.ttf');\r\n}\r\n\r\n.Bar {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n    background-image: url(\"./images/bar.png\");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 94%;\r\n    height: 11.5%;\r\n    padding-top: 0.25%;\r\n    padding-bottom: 0.25%;\r\n    padding-left: 3%;\r\n    padding-right: 3%;\r\n}\r\n\r\n.Bar .flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 30%;\r\n    height: 100%;\r\n}\r\n\r\n.Bar .left {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .left > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .right {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .right > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .antibodyCreditIcon {\r\n    width: 2.5vw;\r\n    height: 8.9vh;\r\n}\r\n\r\n.Bar .antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 7vh;\r\n    line-height: 89px;\r\n}\r\n\r\n.Bar .shopButton {\r\n    width: 4.1vw;\r\n    height: 9.26vh;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.increaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.pauseButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.resumeButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.replayButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Bar {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 94%;\r\n    height: 11.5%;\r\n    padding-top: 0.25%;\r\n    padding-bottom: 0.25%;\r\n    padding-left: 3%;\r\n    padding-right: 3%;\r\n}\r\n\r\n.Bar .flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 30%;\r\n    height: 100%;\r\n}\r\n\r\n.Bar .left {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .left > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .right {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .right > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .antibodyCreditIcon {\r\n    width: 2.5vw;\r\n    height: 8.9vh;\r\n}\r\n\r\n.Bar .antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 7vh;\r\n    line-height: 89px;\r\n}\r\n\r\n.Bar .shopButton {\r\n    width: 4.1vw;\r\n    height: 9.26vh;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.increaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.pauseButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.resumeButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.replayButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Bar.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,mBAAmB;IACnB,yDAAyC;IACzC,4BAA4B;IAC5B,sBAAsB;IACtB,UAAU;IACV,aAAa;IACb,kBAAkB;IAClB,qBAAqB;IACrB,gBAAgB;IAChB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,2BAA2B;IAC3B,mBAAmB;AACvB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,2BAA2B;IAC3B,mBAAmB;AACvB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,cAAc;AAClB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB","sourcesContent":[".Bar {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n    background-image: url(\"./images/bar.png\");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 94%;\r\n    height: 11.5%;\r\n    padding-top: 0.25%;\r\n    padding-bottom: 0.25%;\r\n    padding-left: 3%;\r\n    padding-right: 3%;\r\n}\r\n\r\n.Bar .flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 30%;\r\n    height: 100%;\r\n}\r\n\r\n.Bar .left {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .left > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .right {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .right > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .antibodyCreditIcon {\r\n    width: 2.5vw;\r\n    height: 8.9vh;\r\n}\r\n\r\n.Bar .antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 7vh;\r\n    line-height: 89px;\r\n}\r\n\r\n.Bar .shopButton {\r\n    width: 4.1vw;\r\n    height: 9.26vh;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.increaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.pauseButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.resumeButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.replayButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -168,7 +171,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".home{\r\n    height: 100%;\r\n    width: 100%;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.center{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-direction: column;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.center-p{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 47%;\r\n    width: 48%;\r\n}\r\n\r\n\r\n.underline{\r\n    text-decoration: none;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Home.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,WAAW;IACX,yDAAwC;AAC5C;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,sBAAsB;IACtB,YAAY;IACZ,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,WAAW;IACX,UAAU;AACd;;;AAGA;IACI,qBAAqB;AACzB","sourcesContent":[".home{\r\n    height: 100%;\r\n    width: 100%;\r\n    background-image: url(\"./images/BG.png\");\r\n}\r\n\r\n.center{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-direction: column;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.center-p{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 47%;\r\n    width: 48%;\r\n}\r\n\r\n\r\n.underline{\r\n    text-decoration: none;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".home{\r\n    height: 100%;\r\n    width: 100%;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.home .clickme {\r\n    position: absolute;\r\n    top: 68.52vh;\r\n    left: 33.96vw;\r\n    font-size: 6.67vh;\r\n    color: #fff;\r\n    font-family: Short Stack;\r\n    animation-name: clickme;\r\n    animation-duration: 1.5s;\r\n    animation-iteration-count: infinite;\r\n    transform-origin: center;\r\n}\r\n\r\n@keyframes clickme {\r\n    0% {\r\n        transform: scale(1);\r\n    }\r\n    50% {\r\n        transform: scale(0.75);\r\n    }\r\n    100% {\r\n        transform: scale(1);\r\n    }\r\n}\r\n\r\n.center{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-direction: column;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.center-p{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 47%;\r\n    width: 48%;\r\n}\r\n\r\n\r\n.underline{\r\n    text-decoration: none;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Home.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,WAAW;IACX,yDAAwC;AAC5C;;AAEA;IACI,kBAAkB;IAClB,YAAY;IACZ,aAAa;IACb,iBAAiB;IACjB,WAAW;IACX,wBAAwB;IACxB,uBAAuB;IACvB,wBAAwB;IACxB,mCAAmC;IACnC,wBAAwB;AAC5B;;AAEA;IACI;QACI,mBAAmB;IACvB;IACA;QACI,sBAAsB;IAC1B;IACA;QACI,mBAAmB;IACvB;AACJ;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,sBAAsB;IACtB,YAAY;IACZ,WAAW;AACf;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,WAAW;IACX,UAAU;AACd;;;AAGA;IACI,qBAAqB;AACzB","sourcesContent":[".home{\r\n    height: 100%;\r\n    width: 100%;\r\n    background-image: url(\"./images/BG.png\");\r\n}\r\n\r\n.home .clickme {\r\n    position: absolute;\r\n    top: 68.52vh;\r\n    left: 33.96vw;\r\n    font-size: 6.67vh;\r\n    color: #fff;\r\n    font-family: Short Stack;\r\n    animation-name: clickme;\r\n    animation-duration: 1.5s;\r\n    animation-iteration-count: infinite;\r\n    transform-origin: center;\r\n}\r\n\r\n@keyframes clickme {\r\n    0% {\r\n        transform: scale(1);\r\n    }\r\n    50% {\r\n        transform: scale(0.75);\r\n    }\r\n    100% {\r\n        transform: scale(1);\r\n    }\r\n}\r\n\r\n.center{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-direction: column;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.center-p{\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 47%;\r\n    width: 48%;\r\n}\r\n\r\n\r\n.underline{\r\n    text-decoration: none;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32686,10 +32689,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var canSend = true;
 function Bar(_a) {
-    var openResetConfirmWindow = _a.openResetConfirmWindow, openShopWindow = _a.openShopWindow;
+    var openResetConfirmWindow = _a.openResetConfirmWindow, openShopWindow = _a.openShopWindow, disable = _a.disable, showMessage = _a.showMessage;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0), antibodyCredit = _b[0], setAntibodyCredit = _b[1];
     var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true), isPlaying = _c[0], setIsPlaying = _c[1];
-    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), timer = _d[0], setTimer = _d[1];
     var fetchAntibodyCredit = function () {
         if (canSend) {
             canSend = false;
@@ -32702,6 +32704,8 @@ function Bar(_a) {
         }
     };
     var speedUp = function () {
+        if (disable)
+            return;
         fetch("game/increasespeed").then(function (response) { return response.json(); }).then(function (data) {
             showMessage("x" + data);
         }).catch(function (error) {
@@ -32709,6 +32713,8 @@ function Bar(_a) {
         });
     };
     var speedDown = function () {
+        if (disable)
+            return;
         fetch("game/decreasespeed").then(function (response) { return response.json(); }).then(function (data) {
             showMessage("x" + data);
         }).catch(function (error) {
@@ -32716,33 +32722,20 @@ function Bar(_a) {
         });
     };
     var pause = function () {
+        if (disable)
+            return;
         fetch("game/pause").then(function (response) {
             setIsPlaying(false);
             showMessage("paused");
         }).catch(function (error) { console.log(error); });
     };
     var resume = function () {
+        if (disable)
+            return;
         fetch("game/resume").then(function (response) {
             setIsPlaying(true);
             showMessage("resumed");
         }).catch(function (error) { console.log(error); });
-    };
-    var showMessage = function (message) {
-        console.log("message: " + message);
-        var messageElement = document.getElementById("message");
-        if (messageElement) {
-        }
-        else {
-            messageElement = document.createElement("div");
-            messageElement.id = "message";
-            document.body.appendChild(messageElement);
-        }
-        messageElement.innerHTML = message;
-        clearTimeout(timer);
-        setTimer(setTimeout(function () {
-            messageElement.innerHTML = "";
-            console.log();
-        }, 1000));
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(function () {
@@ -32788,26 +32781,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Canvas(_a) {
-    var clearAllWindows = _a.clearAllWindows;
+    var clearAllWindows = _a.clearAllWindows, showMessage = _a.showMessage;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null)), cells = _b[0], setCells = _b[1];
     var SCROLL_SENSITIVITY = -0.0005;
     var fetchHumanbody = function () {
         fetch("game/humanbody").then(function (response) { return response.json(); }).then(function (data) {
             setCells(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, data.map(function (row, i) {
                 return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: i }, row.map(function (organism, j) {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], { key: j, organism: organism, i: i, j: j });
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], { key: j, organism: organism, showMessage: showMessage, i: i, j: j });
                 }));
             })));
         }).catch(function (error) {
             console.log(error);
         });
     };
-    var testHumanbody = function () {
-        // setCells(Array(100).fill(Array(100).fill(null)));
-    };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(fetchHumanbody, 250);
-        // testHumanbody()
         var humanbody = document.getElementById("humanbody");
         var canvas = document.getElementById("canvas");
         var cameraZoom = 1;
@@ -32998,7 +32987,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 var Cell = react__WEBPACK_IMPORTED_MODULE_0__.memo(function (_a) {
-    var organism = _a.organism, i = _a.i, j = _a.j;
+    var organism = _a.organism, i = _a.i, j = _a.j, showMessage = _a.showMessage;
     var render = function () {
         if (organism == null)
             return null;
@@ -33054,7 +33043,12 @@ var Cell = react__WEBPACK_IMPORTED_MODULE_0__.memo(function (_a) {
                 case 6: return [4 /*yield*/, response.json()];
                 case 7:
                     result = _a.sent();
-                    console.log(result);
+                    if (result === 0) {
+                        showMessage("You don't have enough antibody credit!");
+                    }
+                    else if (result === -1) {
+                        showMessage("You can't place the antibody here!");
+                    }
                     return [2 /*return*/];
             }
         });
@@ -33066,7 +33060,6 @@ var Cell = react__WEBPACK_IMPORTED_MODULE_0__.memo(function (_a) {
         event.preventDefault();
         fetch("game/select?i=".concat(i, "&j=").concat(j));
     };
-    console.log("rendering cell");
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "Cell", onDrop: drop, onDragOver: allowDrop, onTouchStart: select, onMouseDown: select },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "organism" },
@@ -33112,9 +33105,12 @@ function Gameplay() {
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), showShopWindow = _b[0], setShowShopWindow = _b[1];
     var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), win = _c[0], setWin = _c[1];
     var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), lose = _d[0], setLose = _d[1];
+    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), disable = _e[0], setDisable = _e[1];
+    var _f = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), timer = _f[0], setTimer = _f[1];
     var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useNavigate)();
     var openResetConfirmWindow = function () {
-        console.log("Reset button clicked");
+        if (disable)
+            return;
         clearAllWindows();
         setShowResetWindow(true);
     };
@@ -33123,37 +33119,59 @@ function Gameplay() {
         setShowShopWindow(false);
     };
     var openShopWindow = function () {
-        console.log("Shop button clicked");
+        if (disable)
+            return;
         clearAllWindows();
         setShowShopWindow(true);
     };
     var fetchCheckWin = function () {
         fetch("game/check").then(function (response) { return response.json(); }).then(function (data) {
             if (data === 1) {
+                setDisable(true);
                 setWin(true);
-                setTimeout(function () {
-                    navigate("/");
-                    console.log("You win!");
-                }, 3500);
             }
             else if (data === 2) {
+                setDisable(true);
                 setLose(true);
-                setTimeout(function () {
-                    navigate("/");
-                    console.log("You lose!");
-                }, 3500);
             }
         }).catch(function (error) {
             console.log(error);
         });
     };
+    var showMessage = function (message) {
+        console.log("message: " + message);
+        var messageElement = document.getElementById("message");
+        if (messageElement) {
+        }
+        else {
+            messageElement = document.createElement("div");
+            messageElement.id = "message";
+            document.body.appendChild(messageElement);
+        }
+        messageElement.innerHTML = message;
+        clearTimeout(timer);
+        setTimer(setTimeout(function () {
+            messageElement.innerHTML = "";
+        }, 1000));
+    };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(fetchCheckWin, 250);
-        return function () { return clearInterval(interval); };
+        return function () {
+            clearInterval(interval);
+            clearTimeout(timer);
+        };
     }, []);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        if (disable === true) {
+            setTimeout(function () {
+                navigate("/");
+                fetch("game/reset");
+            }, 4500);
+        }
+    }, [disable]);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "gameplay" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Bar__WEBPACK_IMPORTED_MODULE_1__["default"], { openResetConfirmWindow: openResetConfirmWindow, openShopWindow: openShopWindow }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Canvas__WEBPACK_IMPORTED_MODULE_2__["default"], { clearAllWindows: clearAllWindows }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Bar__WEBPACK_IMPORTED_MODULE_1__["default"], { openResetConfirmWindow: openResetConfirmWindow, openShopWindow: openShopWindow, disable: disable, showMessage: showMessage }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Canvas__WEBPACK_IMPORTED_MODULE_2__["default"], { clearAllWindows: clearAllWindows, showMessage: showMessage }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ResetWindow__WEBPACK_IMPORTED_MODULE_4__["default"], { show: showResetWindow, clearAllWindows: clearAllWindows }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShopWindow__WEBPACK_IMPORTED_MODULE_5__["default"], { show: showShopWindow, clearAllWindows: clearAllWindows }),
         win ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "win", src: _images_gameWin_png__WEBPACK_IMPORTED_MODULE_7__, draggable: "false" }) : null,
@@ -33187,7 +33205,7 @@ function Home() {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "home" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "center" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _images_gameName_png__WEBPACK_IMPORTED_MODULE_1__, className: "center-p" }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Click to start...")))));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "clickme" }, "Click to start...")))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
 

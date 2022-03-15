@@ -11,10 +11,10 @@ import { useState } from "react";
 
 let canSend = true;
 
-function Bar({ openResetConfirmWindow, openShopWindow }: { openResetConfirmWindow: () => void, openShopWindow: () => void }) {
+function Bar({ openResetConfirmWindow, openShopWindow, disable, showMessage }: 
+    { openResetConfirmWindow: () => void, openShopWindow: () => void, disable: boolean, showMessage: (message: string) => void }) {
     const [antibodyCredit, setAntibodyCredit] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
-    const [timer, setTimer] = useState<NodeJS.Timeout>();
 
     const fetchAntibodyCredit = () => {
         if (canSend) {
@@ -29,6 +29,7 @@ function Bar({ openResetConfirmWindow, openShopWindow }: { openResetConfirmWindo
     }
 
     const speedUp = () => {
+        if (disable) return
         fetch("game/increasespeed").then(response => response.json()).then(data => {
             showMessage("x" + data)
         }).catch(error => {
@@ -37,6 +38,7 @@ function Bar({ openResetConfirmWindow, openShopWindow }: { openResetConfirmWindo
     }
 
     const speedDown = () => {
+        if (disable) return
         fetch("game/decreasespeed").then(response => response.json()).then(data => {
             showMessage("x" + data)
         }).catch(error => {
@@ -45,6 +47,7 @@ function Bar({ openResetConfirmWindow, openShopWindow }: { openResetConfirmWindo
     }
 
     const pause = () => {
+        if (disable) return
         fetch("game/pause").then(response => {
             setIsPlaying(false)
             showMessage("paused")
@@ -52,28 +55,11 @@ function Bar({ openResetConfirmWindow, openShopWindow }: { openResetConfirmWindo
     }
 
     const resume = () => {
+        if (disable) return
         fetch("game/resume").then(response => {
             setIsPlaying(true)
             showMessage("resumed")
         }).catch(error => { console.log(error) })
-    }
-
-    const showMessage = (message: string) => {
-        console.log("message: " + message)
-        let messageElement = document.getElementById("message")
-        if(messageElement) {
-
-        } else {
-            messageElement = document.createElement("div")
-            messageElement.id = "message"
-            document.body.appendChild(messageElement)
-        }
-        messageElement.innerHTML = message
-        clearTimeout(timer)
-        setTimer(setTimeout(() => {
-            messageElement.innerHTML = ""
-            console.log()
-        }, 1000))
     }
 
     useEffect(() => {

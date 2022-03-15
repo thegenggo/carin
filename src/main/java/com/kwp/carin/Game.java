@@ -47,7 +47,9 @@ public class Game extends Thread {
         return humanBody;
     }
 
-
+    /** @return 1 if buying success
+     *          -1 if target cell is not empty
+     *          0 if antibody credit not enough */
     public int buyAntibody(int i, int j, Antibody.Type type) {
         if (antibodyCredit >= antibodyPlacementCost) {
             Cell target = humanBody.getCell(i, j);
@@ -138,10 +140,10 @@ public class Game extends Thread {
     public int checkWin() {
         if (!started) return 0;
         if (Virus.amount() == 0) {
-            resetGame();
+            isPlaying = false;
             return 1; // antibody win
         } else if (Antibody.amount() == 0) {
-            resetGame();
+            isPlaying = false;
             return 2; // virus win
         } else {
             return 0; // no win

@@ -20,6 +20,8 @@ public class Configuration {
     private int virusAttackDamage, virusAttackGain;
     private int antibodyAttackDamage, antibodyKillGain;
     private int antibodyMoveCost;
+    private int antibodyCreditGain;
+
     private Configuration() {
         Path path = Paths.get("src/main/java/com/kwp/carin/configuration.txt");
         Charset charset = StandardCharsets.US_ASCII;
@@ -31,7 +33,8 @@ public class Configuration {
             virusAttackDamage = scanner.nextInt(); virusAttackGain = scanner.nextInt();
             antibodyAttackDamage = scanner.nextInt(); antibodyKillGain = scanner.nextInt();
             antibodyMoveCost = scanner.nextInt();
-            if (antibodyMoveCost > initialAntibodyCredit) System.out.println("Warning: Antibody Move Cost should be no more than the initial antibody credits");
+            antibodyCreditGain = scanner.nextInt();
+            if (antibodyMoveCost > initialAntibodyCredit) System.out.println("Warning: Antibody Move Cost should be no more than the initial antibody health");
         } catch (NoSuchFileException e) {
             System.out.println("No configuration file found. Using default configuration.");
             m = 10; n = 10;
@@ -41,6 +44,7 @@ public class Configuration {
             virusAttackDamage = 10; virusAttackGain = 5;
             antibodyAttackDamage = 10; antibodyKillGain = 5;
             antibodyMoveCost = 10;
+            antibodyCreditGain = 20;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,6 +92,10 @@ public class Configuration {
 
     public static int getAntibodyMoveCost() {
         return instance.antibodyMoveCost;
+    }
+
+    public static int getAntibodyCreditGain() {
+        return instance.antibodyCreditGain;
     }
 
     private static final Configuration instance = new Configuration();

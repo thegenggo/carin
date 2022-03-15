@@ -4,7 +4,7 @@
 }
 
 #reset-window {
-    display: none;
+    display: block;
     position: absolute;
     background: url("./images/comfirmWindow.png");
     width: 752px;

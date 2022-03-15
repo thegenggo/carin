@@ -26,6 +26,7 @@ public abstract class Antibody extends Organism {
         };
     }
 
+    private final int antibodyCreditGain;
     private final int killGain;
     private boolean selected;
 
@@ -34,6 +35,7 @@ public abstract class Antibody extends Organism {
         initialHealth = Configuration.getAntibodyHealth();
         attack = Configuration.getAntibodyAttackDamage();
         killGain = Configuration.getAntibodyKillGain();
+        antibodyCreditGain = Configuration.getAntibodyCreditGain();
         health = initialHealth;
         antibodies.add(this);
     }
@@ -56,7 +58,7 @@ public abstract class Antibody extends Organism {
         if (target.isDeath()) {
             health += killGain;
             if (target instanceof Virus) {
-                Game.getInstance().increaseAntibodyCredit(10);
+                Game.getInstance().increaseAntibodyCredit(antibodyCreditGain);
             }
         }
         ready = false;

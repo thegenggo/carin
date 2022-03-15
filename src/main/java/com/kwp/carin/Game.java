@@ -46,15 +46,19 @@ public class Game extends Thread {
         return humanBody;
     }
 
-    public void buyAntibody(int i, int j, Antibody.Type type) {
-        Cell target = humanBody.getCell(i, j);
-        if (antibodyCredit >= antibodyPlacementCost && target != null && target.isEmpty()) {
-            Antibody antibody = Antibody.getInstance(type);
-            antibodyCredit -= antibodyPlacementCost;
-            target.setOrganism(antibody);
-            antibody.setCell(target);
-            started = true;
+    public boolean buyAntibody(int i, int j, Antibody.Type type) {
+        if (antibodyCredit >= antibodyPlacementCost) {
+            Cell target = humanBody.getCell(i, j);
+            if (target != null && target.isEmpty()) {
+                Antibody antibody = Antibody.getInstance(type);
+                antibodyCredit -= antibodyPlacementCost;
+                target.setOrganism(antibody);
+                antibody.setCell(target);
+                started = true;
+                return true;
+            }
         }
+        return false;
     }
 
     public void selectAntibody(int i, int j) {
@@ -78,8 +82,17 @@ public class Game extends Thread {
                 selectedAntibody.setCell(target);
                 target.setOrganism(selectedAntibody);
                 selectedAntibody.receiveDamage(antibodyMoveCost);
-                selectedAntibody.setReady(false);
+                selectedAntibody.setSelected(false);
+                selectedAntibody = null;
             }
+        }
+    }
+
+    public void decideMove(int i, int j) {
+        if (selectedAntibody != null) {
+            moveSelectedAntibody(i, j);
+        } else {
+            selectAntibody(i, j);
         }
     }
 
@@ -170,6 +183,7 @@ public class Game extends Thread {
                 if(DEBUG) System.out.println("Antibody left: " + Antibody.amount());
                 if(DEBUG) humanBody.print();
                 Organism.wakeAll();
+                //System.out.println(System.currentTimeMillis() - currentTime);
             }
         }
     }

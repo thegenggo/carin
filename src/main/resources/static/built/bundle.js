@@ -54,7 +54,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: Short Stack;\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n}\r\n\r\n.flex-row {\r\n    flex-direction: row;\r\n}\r\n\r\n.min-w-3\\/10 {\r\n    min-width: 30%;\r\n}\r\n\r\n.m-8 {\r\n    margin: 2.0rem;\r\n}\r\n\r\n.space-x-8 > * + * {\r\n    margin-left: 2.0rem;\r\n}\r\n\r\n.Bar {\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 100%;\r\n    height: 12%;\r\n}\r\n\r\n.antibodyCreditIcon {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\n.antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    line-height: 89px;\r\n    left: 8.33%;\r\n    right: 80.31%;\r\n    top: 15%;\r\n    bottom: 17.5%;\r\n}\r\n\r\n.shopButton {\r\n    left: 26.35%;\r\n    right: 69.53%;\r\n    top: 5.83%;\r\n    bottom: 10.83%;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    left: 62.08%;\r\n    right: 33.49%;\r\n    top: 20%;\r\n    bottom: 15%;\r\n}\r\n\r\n.increaseSpdButton {\r\n    left: 82.19%;\r\n    right: 13.49%;\r\n    top: 20.83%;\r\n    bottom: 15%;\r\n}\r\n\r\n.pauseButton {\r\n    left: 72.14%;\r\n    right: 23.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n.replayButton {\r\n    left: 92.14%;\r\n    right: 3.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Bar.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,4CAA0C;AAC9C;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,sBAAsB;IACtB,WAAW;IACX,WAAW;AACf;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;IACf,iBAAiB;IACjB,WAAW;IACX,aAAa;IACb,QAAQ;IACR,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,QAAQ;IACR,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,WAAW;IACX,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,WAAW;IACX,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,WAAW;IACX,WAAW;AACf;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;IACf,QAAQ;IACR,SAAS;IACT,gCAAgC;AACpC","sourcesContent":["@font-face {\r\n    font-family: Short Stack;\r\n    src: url('./fonts/ShortStack-Regular.ttf');\r\n}\r\n\r\n.flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n}\r\n\r\n.flex-row {\r\n    flex-direction: row;\r\n}\r\n\r\n.min-w-3\\/10 {\r\n    min-width: 30%;\r\n}\r\n\r\n.m-8 {\r\n    margin: 2.0rem;\r\n}\r\n\r\n.space-x-8 > * + * {\r\n    margin-left: 2.0rem;\r\n}\r\n\r\n.Bar {\r\n    background-image: url(\"./images/bar.png\");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 100%;\r\n    height: 12%;\r\n}\r\n\r\n.antibodyCreditIcon {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\n.antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    line-height: 89px;\r\n    left: 8.33%;\r\n    right: 80.31%;\r\n    top: 15%;\r\n    bottom: 17.5%;\r\n}\r\n\r\n.shopButton {\r\n    left: 26.35%;\r\n    right: 69.53%;\r\n    top: 5.83%;\r\n    bottom: 10.83%;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    left: 62.08%;\r\n    right: 33.49%;\r\n    top: 20%;\r\n    bottom: 15%;\r\n}\r\n\r\n.increaseSpdButton {\r\n    left: 82.19%;\r\n    right: 13.49%;\r\n    top: 20.83%;\r\n    bottom: 15%;\r\n}\r\n\r\n.pauseButton {\r\n    left: 72.14%;\r\n    right: 23.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n.replayButton {\r\n    left: 92.14%;\r\n    right: 3.44%;\r\n    top: 19.17%;\r\n    bottom: 15%;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: Short Stack;\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.Bar {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 94%;\r\n    height: 11.5%;\r\n    padding-top: 0.25%;\r\n    padding-bottom: 0.25%;\r\n    padding-left: 3%;\r\n    padding-right: 3%;\r\n}\r\n\r\n.Bar .flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 30%;\r\n    height: 100%;\r\n}\r\n\r\n.Bar .left {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .left > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .right {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .right > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .antibodyCreditIcon {\r\n    width: 2.5vw;\r\n    height: 8.9vh;\r\n}\r\n\r\n.Bar .antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 7vh;\r\n    line-height: 89px;\r\n}\r\n\r\n.Bar .shopButton {\r\n    width: 4.1vw;\r\n    height: 9.26vh;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.increaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.pauseButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.resumeButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.replayButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Bar.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;IACxB,4CAA0C;AAC9C;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,mBAAmB;IACnB,yDAAyC;IACzC,4BAA4B;IAC5B,sBAAsB;IACtB,UAAU;IACV,aAAa;IACb,kBAAkB;IAClB,qBAAqB;IACrB,gBAAgB;IAChB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,UAAU;IACV,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,2BAA2B;IAC3B,mBAAmB;AACvB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,2BAA2B;IAC3B,mBAAmB;AACvB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,cAAc;AAClB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;IACf,QAAQ;IACR,SAAS;IACT,gCAAgC;AACpC","sourcesContent":["@font-face {\r\n    font-family: Short Stack;\r\n    src: url('./fonts/ShortStack-Regular.ttf');\r\n}\r\n\r\n.Bar {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n    background-image: url(\"./images/bar.png\");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    width: 94%;\r\n    height: 11.5%;\r\n    padding-top: 0.25%;\r\n    padding-bottom: 0.25%;\r\n    padding-left: 3%;\r\n    padding-right: 3%;\r\n}\r\n\r\n.Bar .flex {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 30%;\r\n    height: 100%;\r\n}\r\n\r\n.Bar .left {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .left > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .right {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n    flex-direction: row;\r\n}\r\n\r\n.Bar .right > * + * {\r\n    margin-left: 2%;\r\n}\r\n\r\n.Bar .antibodyCreditIcon {\r\n    width: 2.5vw;\r\n    height: 8.9vh;\r\n}\r\n\r\n.Bar .antibodyCredit {\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 7vh;\r\n    line-height: 89px;\r\n}\r\n\r\n.Bar .shopButton {\r\n    width: 4.1vw;\r\n    height: 9.26vh;\r\n}\r\n\r\n.decreaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.increaseSpdButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.pauseButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.resumeButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n.replayButton {\r\n    width: 4.4vw;\r\n    height: 7.3vh;\r\n}\r\n\r\n#message {\r\n    position: absolute;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: normal;\r\n    font-size: 72px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "table {\r\n    position: relative;\r\n    border-spacing: 0px;\r\n    border: 0px;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    left: 0px;\r\n    top: 0px;\r\n    transform-origin: top left;\r\n}\r\n\r\n#canvas {\r\n    width: 100%;\r\n    height: 88%;\r\n    overflow: hidden;\r\n}\r\n\r\ntd {\r\n    padding: 0%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Canvas.css"],"names":[],"mappings":"AAAA;IACI,kBAAkB;IAClB,mBAAmB;IACnB,WAAW;IACX,WAAW;IACX,YAAY;IACZ,SAAS;IACT,QAAQ;IACR,0BAA0B;AAC9B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;AACf","sourcesContent":["table {\r\n    position: relative;\r\n    border-spacing: 0px;\r\n    border: 0px;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    left: 0px;\r\n    top: 0px;\r\n    transform-origin: top left;\r\n}\r\n\r\n#canvas {\r\n    width: 100%;\r\n    height: 88%;\r\n    overflow: hidden;\r\n}\r\n\r\ntd {\r\n    padding: 0%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "table {\r\n    position: relative;\r\n    border-spacing: 0px;\r\n    border: 0px;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    left: 0px;\r\n    top: 0px;\r\n    transform-origin: top left;\r\n}\r\n\r\n#canvas {\r\n    width: 100%;\r\n    max-height: 100%;\r\n    overflow: hidden;\r\n}\r\n\r\ntd {\r\n    padding: 0%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Canvas.css"],"names":[],"mappings":"AAAA;IACI,kBAAkB;IAClB,mBAAmB;IACnB,WAAW;IACX,WAAW;IACX,YAAY;IACZ,SAAS;IACT,QAAQ;IACR,0BAA0B;AAC9B;;AAEA;IACI,WAAW;IACX,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,WAAW;AACf","sourcesContent":["table {\r\n    position: relative;\r\n    border-spacing: 0px;\r\n    border: 0px;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    left: 0px;\r\n    top: 0px;\r\n    transform-origin: top left;\r\n}\r\n\r\n#canvas {\r\n    width: 100%;\r\n    max-height: 100%;\r\n    overflow: hidden;\r\n}\r\n\r\ntd {\r\n    padding: 0%;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32744,7 +32744,6 @@ function Bar(_a) {
             console.log();
         }, 1000));
     };
-    clearTimeout(window.setTimeout);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(function () {
             fetchAntibodyCredit();
@@ -32753,19 +32752,19 @@ function Bar(_a) {
         setIsPlaying(true);
         return function () { clearInterval(interval); };
     }, []);
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "Bar flex" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row m-8 min-w-3/10 space-x-8" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row space-x-8" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibodyCreditIcon", src: _images_antibodyCreditIcon_png__WEBPACK_IMPORTED_MODULE_1__ }),
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "Bar" },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "left" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "antibodyCreditIcon", src: _images_antibodyCreditIcon_png__WEBPACK_IMPORTED_MODULE_1__, draggable: "false" }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "antibodyCredit" }, antibodyCredit)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "shopButton", src: _images_shopButton_png__WEBPACK_IMPORTED_MODULE_2__, onClick: openShopWindow })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row m-8 min-w-3/10 space-x-8" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex flex-row space-x-8" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "decreaseSpdButton", src: _images_decreaseSpdButton_png__WEBPACK_IMPORTED_MODULE_3__, onClick: speedDown }),
-                isPlaying ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "pauseButton", src: _images_pauseButton_png__WEBPACK_IMPORTED_MODULE_5__, onClick: pause })
-                    : react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "resumeButton", src: _images_resumeButton_png__WEBPACK_IMPORTED_MODULE_7__, onClick: resume }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "increaseSpdButton", src: _images_increaseSpdButton_png__WEBPACK_IMPORTED_MODULE_4__, onClick: speedUp })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "replayButton", src: _images_replayButton_png__WEBPACK_IMPORTED_MODULE_6__, onClick: openResetConfirmWindow }))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "shopButton", src: _images_shopButton_png__WEBPACK_IMPORTED_MODULE_2__, onClick: openShopWindow, draggable: "false" })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "right" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "decreaseSpdButton", src: _images_decreaseSpdButton_png__WEBPACK_IMPORTED_MODULE_3__, onClick: speedDown, draggable: "false" }),
+                isPlaying ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "pauseButton", src: _images_pauseButton_png__WEBPACK_IMPORTED_MODULE_5__, onClick: pause, draggable: "false" })
+                    : react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "resumeButton", src: _images_resumeButton_png__WEBPACK_IMPORTED_MODULE_7__, onClick: resume, draggable: "false" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "increaseSpdButton", src: _images_increaseSpdButton_png__WEBPACK_IMPORTED_MODULE_4__, onClick: speedUp, draggable: "false" })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "replayButton", src: _images_replayButton_png__WEBPACK_IMPORTED_MODULE_6__, onClick: openResetConfirmWindow, draggable: "false" }))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Bar);
 
@@ -32785,6 +32784,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Canvas_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Canvas.css */ "./src/main/ts/components/Canvas.css");
 /* harmony import */ var _Cell__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cell */ "./src/main/ts/components/Cell.tsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+
 
 
 
@@ -32792,6 +32793,7 @@ function Canvas(_a) {
     var clearAllWindows = _a.clearAllWindows;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null)), cells = _b[0], setCells = _b[1];
     var SCROLL_SENSITIVITY = -0.0005;
+    var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
     var fetchHumanbody = function () {
         fetch("game/humanbody").then(function (response) { return response.json(); }).then(function (data) {
             setCells(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, data.map(function (row, i) {
@@ -32803,11 +32805,24 @@ function Canvas(_a) {
             console.log(error);
         });
     };
+    var fetchCheckWin = function () {
+        fetch("game/check").then(function (response) { return response.json(); }).then(function (data) {
+            if (data === 1) {
+                navigate("/win");
+            }
+            else if (data === 2) {
+                navigate("/lose");
+            }
+        }).catch(function (error) {
+            console.log(error);
+        });
+    };
     var testHumanbody = function () {
         // setCells(Array(100).fill(Array(100).fill(null)));
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(fetchHumanbody, 250);
+        var interval2 = setInterval(fetchCheckWin, 250);
         // testHumanbody()
         var humanbody = document.getElementById("humanbody");
         var canvas = document.getElementById("canvas");
@@ -32924,7 +32939,7 @@ function Canvas(_a) {
         canvas.addEventListener("touchmove", function (event) { handleTouch(event, onPointerMove); });
         canvas.addEventListener("touchend", function (event) { handleTouch(event, onPointerUp); });
         window.addEventListener("resize", update);
-        return function () { clearInterval(interval); };
+        return function () { clearInterval(interval); clearInterval(interval2); };
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "canvas" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { id: "humanbody" }, cells ? cells : null)));
@@ -32953,6 +32968,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_gamma_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/gamma.png */ "./src/main/ts/components/images/gamma.png");
 /* harmony import */ var _Cell_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Cell.css */ "./src/main/ts/components/Cell.css");
 /* harmony import */ var _images_Polygon_1_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./images/Polygon 1.png */ "./src/main/ts/components/images/Polygon 1.png");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
 
@@ -32992,20 +33043,38 @@ var Cell = react__WEBPACK_IMPORTED_MODULE_0__.memo(function (_a) {
             return null;
         }
     };
-    var drop = function (event) {
-        console.log("drop");
-        event.preventDefault();
-        var data = event.dataTransfer.getData("text");
-        if (data == "pfizer") {
-            fetch("game/buy/pfizer?i=".concat(i, "&j=").concat(j));
-        }
-        else if (data == "sinovac") {
-            fetch("game/buy/sinovac?i=".concat(i, "&j=").concat(j));
-        }
-        else if (data == "moderna") {
-            fetch("game/buy/moderna?i=".concat(i, "&j=").concat(j));
-        }
-    };
+    var drop = function (event) { return __awaiter(void 0, void 0, void 0, function () {
+        var data, response, result;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    event.preventDefault();
+                    data = event.dataTransfer.getData("text");
+                    if (!(data == "pfizer")) return [3 /*break*/, 2];
+                    return [4 /*yield*/, fetch("game/buy/pfizer?i=".concat(i, "&j=").concat(j))];
+                case 1:
+                    response = _a.sent();
+                    return [3 /*break*/, 6];
+                case 2:
+                    if (!(data == "sinovac")) return [3 /*break*/, 4];
+                    return [4 /*yield*/, fetch("game/buy/sinovac?i=".concat(i, "&j=").concat(j))];
+                case 3:
+                    response = _a.sent();
+                    return [3 /*break*/, 6];
+                case 4:
+                    if (!(data == "moderna")) return [3 /*break*/, 6];
+                    return [4 /*yield*/, fetch("game/buy/moderna?i=".concat(i, "&j=").concat(j))];
+                case 5:
+                    response = _a.sent();
+                    _a.label = 6;
+                case 6: return [4 /*yield*/, response.json()];
+                case 7:
+                    result = _a.sent();
+                    console.log(result);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     var allowDrop = function (event) {
         event.preventDefault();
     };

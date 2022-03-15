@@ -44,17 +44,19 @@ const Cell = React.memo(({ organism, i, j }: CellProps) => {
         }
     }
 
-    const drop = (event: any) => {
-        console.log("drop")
+    const drop = async (event: any) => {
         event.preventDefault();
         const data = event.dataTransfer.getData("text");
+        let response
         if (data == "pfizer") {
-            fetch(`game/buy/pfizer?i=${i}&j=${j}`);
+            response = await fetch(`game/buy/pfizer?i=${i}&j=${j}`)
         } else if (data == "sinovac") {
-            fetch(`game/buy/sinovac?i=${i}&j=${j}`);
+            response = await fetch(`game/buy/sinovac?i=${i}&j=${j}`);
         } else if (data == "moderna") {
-            fetch(`game/buy/moderna?i=${i}&j=${j}`);
+            response = await fetch(`game/buy/moderna?i=${i}&j=${j}`);
         }
+        const result = await response.json();
+        console.log(result);
     }
 
     const allowDrop = (event: any) => {

@@ -11,7 +11,7 @@ table {
 
 #canvas {
     width: 100%;
-    height: 88%;
+    max-height: 100%;
     overflow: hidden;
 }
 

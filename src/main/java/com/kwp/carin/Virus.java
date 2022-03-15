@@ -8,6 +8,7 @@ import java.util.LinkedList;
 
 public abstract class Virus extends Organism {
     private static final LinkedList<Virus> viruses = new LinkedList<>();
+    private static int spawned = 0;
 
     public static int amount() {
         return viruses.size();
@@ -15,6 +16,11 @@ public abstract class Virus extends Organism {
 
     public static void reset() {
         viruses.clear();
+        spawned = 0;
+    }
+
+    public static int getSpawned() {
+        return spawned;
     }
 
     private final int attackGain;
@@ -26,6 +32,7 @@ public abstract class Virus extends Organism {
         attackGain = Configuration.getVirusAttackGain();
         health = initialHealth;
         viruses.add(this);
+        spawned++;
     }
 
     public boolean shoot(Direction direction) {

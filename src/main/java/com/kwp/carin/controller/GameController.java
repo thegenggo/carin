@@ -62,17 +62,17 @@ public class GameController {
     }
 
     @RequestMapping("/buy/pfizer")
-    public void buyPfizer(@RequestParam int i, @RequestParam int j) {
-        game.buyAntibody(i, j, Antibody.Type.Pfizer);
+    public int buyPfizer(@RequestParam int i, @RequestParam int j) {
+        return game.buyAntibody(i, j, Antibody.Type.Pfizer);
     }
 
     @RequestMapping("/buy/moderna")
-    public boolean buyMorderna(@RequestParam int i, @RequestParam int j) {
+    public int buyMorderna(@RequestParam int i, @RequestParam int j) {
         return game.buyAntibody(i, j, Antibody.Type.Moderna);
     }
 
     @RequestMapping("/buy/sinovac")
-    public boolean buySinovac(@RequestParam int i, @RequestParam int j) {
+    public int buySinovac(@RequestParam int i, @RequestParam int j) {
         return game.buyAntibody(i, j, Antibody.Type.Sinovac);
     }
 
@@ -120,5 +120,13 @@ public class GameController {
     @RequestMapping("/move")
     public void move(@RequestParam int i, @RequestParam int j) {
         game.moveSelectedAntibody(i, j);
+    }
+
+    /** @return 1 when antibody win
+     *          2 when virus win
+     *          0 when no win */
+    @RequestMapping("/check")
+    public int check() {
+        return game.checkWin();
     }
 }

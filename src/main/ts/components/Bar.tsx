@@ -87,24 +87,24 @@ function Bar({ openResetConfirmWindow, openShopWindow }: { openResetConfirmWindo
         return () => { clearInterval(interval) }
     }, []);
 
-    return (<div className="Bar flex" >
-        <div className="flex flex-row m-8 min-w-3/10 space-x-8">
-            <div className="flex flex-row space-x-8">
-                <img className="antibodyCreditIcon" src={antibodyCreditIcon}></img>
+    return (<div className="Bar" >
+        <div className="flex">
+            <div className="left">
+                <img className="antibodyCreditIcon" src={antibodyCreditIcon} draggable="false"></img>
                 <div className="antibodyCredit">
                     {antibodyCredit}
                 </div>
             </div>
-            <img className="shopButton" src={shopButton} onClick={openShopWindow}></img>
+            <img className="shopButton" src={shopButton} onClick={openShopWindow} draggable="false"></img>
         </div>
-        <div className="flex flex-row m-8 min-w-3/10 space-x-8">
-            <div className="flex flex-row space-x-8">
-                <img className="decreaseSpdButton" src={decreaseSpdButton} onClick={speedDown}></img>
-                {isPlaying ? <img className="pauseButton" src={pauseButton} onClick={pause}></img>
-                    : <img className="resumeButton" src={resumeButton} onClick={resume}></img>}
-                <img className="increaseSpdButton" src={increaseSpdButton} onClick={speedUp}></img>
+        <div className="flex">
+            <div className="right">
+                <img className="decreaseSpdButton" src={decreaseSpdButton} onClick={speedDown} draggable="false"></img>
+                {isPlaying ? <img className="pauseButton" src={pauseButton} onClick={pause} draggable="false"></img>
+                    : <img className="resumeButton" src={resumeButton} onClick={resume} draggable="false"></img>}
+                <img className="increaseSpdButton" src={increaseSpdButton} onClick={speedUp} draggable="false"></img>
             </div>
-            <img className="replayButton" src={replayButton} onClick={openResetConfirmWindow}></img>
+            <img className="replayButton" src={replayButton} onClick={openResetConfirmWindow} draggable="false"></img>
         </div>
     </div>
     );

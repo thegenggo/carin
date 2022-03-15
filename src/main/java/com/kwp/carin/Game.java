@@ -26,6 +26,7 @@ public class Game extends Thread {
     private final float[] SPEED_RANGE = {0.5f, 1.0f, 1.5f, 2.0f};
     private int currentSpeedIndex;
     private final boolean DEBUG = false;
+    private final int maximunVirusSpawn = 1;
 
     private Game() {
         humanBody = HumanBody.getInstance();
@@ -46,7 +47,8 @@ public class Game extends Thread {
         return humanBody;
     }
 
-    public boolean buyAntibody(int i, int j, Antibody.Type type) {
+
+    public int buyAntibody(int i, int j, Antibody.Type type) {
         if (antibodyCredit >= antibodyPlacementCost) {
             Cell target = humanBody.getCell(i, j);
             if (target != null && target.isEmpty()) {
@@ -55,10 +57,12 @@ public class Game extends Thread {
                 target.setOrganism(antibody);
                 antibody.setCell(target);
                 started = true;
-                return true;
+                return 1;
+            } else {
+                return -1;
             }
         }
-        return false;
+        return 0;
     }
 
     public void selectAntibody(int i, int j) {
@@ -97,7 +101,7 @@ public class Game extends Thread {
     }
 
     private void spawnVirus() {
-        if (CarinRandom.nextFloat() < virusSpawnRate) {
+        if (/*Virus.getSpawned() < maximunVirusSpawn &&*/ CarinRandom.nextFloat() < virusSpawnRate) {
             LinkedList<Cell> emptyCells = humanBody.getEmptyCells();
             if (emptyCells.size() > 0) {
                 Virus virus = Virus.getRandomVirus();
@@ -129,6 +133,19 @@ public class Game extends Thread {
 
     public boolean isGameOver() {
         return  (Virus.amount() == 0 || Antibody.amount() == 0) && started;
+    }
+
+    public int checkWin() {
+        if (!started) return 0;
+        if (Virus.amount() == 0) {
+            resetGame();
+            return 1; // antibody win
+        } else if (Antibody.amount() == 0) {
+            resetGame();
+            return 2; // virus win
+        } else {
+            return 0; // no win
+        }
     }
 
     public void startGame() {

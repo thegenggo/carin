@@ -3,87 +3,93 @@
     src: url('./fonts/ShortStack-Regular.ttf');
 }
 
-.flex {
+.Bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-}
-
-.flex-row {
-    flex-direction: row;
-}
-
-.min-w-3\/10 {
-    min-width: 30%;
-}
-
-.m-8 {
-    margin: 2.0rem;
-}
-
-.space-x-8 > * + * {
-    margin-left: 2.0rem;
-}
-
-.Bar {
     background-image: url("./images/bar.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 12%;
+    width: 94%;
+    height: 11.5%;
+    padding-top: 0.25%;
+    padding-bottom: 0.25%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
-.antibodyCreditIcon {
-    margin: 0px;
-    padding: 0px;
+.Bar .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    height: 100%;
 }
 
-.antibodyCredit {
+.Bar .left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.Bar .left > * + * {
+    margin-left: 2%;
+}
+
+.Bar .right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.Bar .right > * + * {
+    margin-left: 2%;
+}
+
+.Bar .antibodyCreditIcon {
+    width: 2.5vw;
+    height: 8.9vh;
+}
+
+.Bar .antibodyCredit {
     font-family: Short Stack;
     font-style: normal;
     font-weight: normal;
-    font-size: 72px;
+    font-size: 7vh;
     line-height: 89px;
-    left: 8.33%;
-    right: 80.31%;
-    top: 15%;
-    bottom: 17.5%;
 }
 
-.shopButton {
-    left: 26.35%;
-    right: 69.53%;
-    top: 5.83%;
-    bottom: 10.83%;
+.Bar .shopButton {
+    width: 4.1vw;
+    height: 9.26vh;
 }
 
 .decreaseSpdButton {
-    left: 62.08%;
-    right: 33.49%;
-    top: 20%;
-    bottom: 15%;
+    width: 4.4vw;
+    height: 7.3vh;
 }
 
 .increaseSpdButton {
-    left: 82.19%;
-    right: 13.49%;
-    top: 20.83%;
-    bottom: 15%;
+    width: 4.4vw;
+    height: 7.3vh;
 }
 
 .pauseButton {
-    left: 72.14%;
-    right: 23.44%;
-    top: 19.17%;
-    bottom: 15%;
+    width: 4.4vw;
+    height: 7.3vh;
+}
+
+.resumeButton {
+    width: 4.4vw;
+    height: 7.3vh;
 }
 
 .replayButton {
-    left: 92.14%;
-    right: 3.44%;
-    top: 19.17%;
-    bottom: 15%;
+    width: 4.4vw;
+    height: 7.3vh;
 }
 
 #message {

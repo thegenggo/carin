@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
     const [cells, setCells] = useState(<tbody></tbody>)
     const SCROLL_SENSITIVITY = -0.0005
-    let navigate = useNavigate()
 
     const fetchHumanbody = () => {
         fetch("game/humanbody").then(response => response.json()).then((data: OrganismProps[][]) => {
@@ -25,25 +24,12 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
         })
     }
 
-    const fetchCheckWin = () => {
-        fetch("game/check").then(response => response.json()).then(data => {
-            if (data === 1) {
-                navigate("/win")
-            } else if (data === 2) {
-                navigate("/lose")
-            }
-        }).catch(error => {
-            console.log(error)
-        })
-    }
-
     const testHumanbody = () => {
         // setCells(Array(100).fill(Array(100).fill(null)));
     }
 
     useEffect(() => {
         let interval = setInterval(fetchHumanbody, 250);
-        let interval2 = setInterval(fetchCheckWin, 250);
         // testHumanbody()
 
         let humanbody = document.getElementById("humanbody")
@@ -171,7 +157,7 @@ function Canvas({ clearAllWindows }: { clearAllWindows: () => void }) {
         canvas.addEventListener("touchend", (event) => { handleTouch(event, onPointerUp) })
         window.addEventListener("resize", update)
 
-        return () => { clearInterval(interval); clearInterval(interval2) }
+        return () => { clearInterval(interval) }
     }, [])
 
     return (

@@ -137,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gameplay {\r\n    width: 100%;\r\n    height: 100%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Gameplay.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,YAAY;AAChB","sourcesContent":[".gameplay {\r\n    width: 100%;\r\n    height: 100%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".gameplay {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.gameplay .win {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    width: 65.62%;\r\n    height: 66.67%;\r\n    animation-name: win;\r\n    animation-duration: 1.5s;\r\n}\r\n\r\n@keyframes win {\r\n    0% {\r\n        width: 0%;\r\n        height: 0%;\r\n    }\r\n    100% {\r\n        width: 65.62%;\r\n        height: 66.67%;\r\n    }\r\n}\r\n\r\n.gameplay .lose {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    width: 66.67%;\r\n    height: 74.07%;\r\n    animation-name: lose;\r\n    animation-duration: 1.5s;\r\n}\r\n\r\n@keyframes lose {\r\n    0% {\r\n        width: 0%;\r\n        height: 0%;\r\n    }\r\n    100% {\r\n        width: 66.67%;\r\n        height: 74.07%;\r\n    }\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Gameplay.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,aAAa;IACb,cAAc;IACd,mBAAmB;IACnB,wBAAwB;AAC5B;;AAEA;IACI;QACI,SAAS;QACT,UAAU;IACd;IACA;QACI,aAAa;QACb,cAAc;IAClB;AACJ;;AAEA;IACI,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,aAAa;IACb,cAAc;IACd,oBAAoB;IACpB,wBAAwB;AAC5B;;AAEA;IACI;QACI,SAAS;QACT,UAAU;IACd;IACA;QACI,aAAa;QACb,cAAc;IAClB;AACJ","sourcesContent":[".gameplay {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.gameplay .win {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    width: 65.62%;\r\n    height: 66.67%;\r\n    animation-name: win;\r\n    animation-duration: 1.5s;\r\n}\r\n\r\n@keyframes win {\r\n    0% {\r\n        width: 0%;\r\n        height: 0%;\r\n    }\r\n    100% {\r\n        width: 65.62%;\r\n        height: 66.67%;\r\n    }\r\n}\r\n\r\n.gameplay .lose {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    width: 66.67%;\r\n    height: 74.07%;\r\n    animation-name: lose;\r\n    animation-duration: 1.5s;\r\n}\r\n\r\n@keyframes lose {\r\n    0% {\r\n        width: 0%;\r\n        height: 0%;\r\n    }\r\n    100% {\r\n        width: 66.67%;\r\n        height: 74.07%;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32784,8 +32784,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Canvas_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Canvas.css */ "./src/main/ts/components/Canvas.css");
 /* harmony import */ var _Cell__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cell */ "./src/main/ts/components/Cell.tsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-
 
 
 
@@ -32793,7 +32791,6 @@ function Canvas(_a) {
     var clearAllWindows = _a.clearAllWindows;
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null)), cells = _b[0], setCells = _b[1];
     var SCROLL_SENSITIVITY = -0.0005;
-    var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
     var fetchHumanbody = function () {
         fetch("game/humanbody").then(function (response) { return response.json(); }).then(function (data) {
             setCells(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, data.map(function (row, i) {
@@ -32805,24 +32802,11 @@ function Canvas(_a) {
             console.log(error);
         });
     };
-    var fetchCheckWin = function () {
-        fetch("game/check").then(function (response) { return response.json(); }).then(function (data) {
-            if (data === 1) {
-                navigate("/win");
-            }
-            else if (data === 2) {
-                navigate("/lose");
-            }
-        }).catch(function (error) {
-            console.log(error);
-        });
-    };
     var testHumanbody = function () {
         // setCells(Array(100).fill(Array(100).fill(null)));
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(fetchHumanbody, 250);
-        var interval2 = setInterval(fetchCheckWin, 250);
         // testHumanbody()
         var humanbody = document.getElementById("humanbody");
         var canvas = document.getElementById("canvas");
@@ -32939,7 +32923,7 @@ function Canvas(_a) {
         canvas.addEventListener("touchmove", function (event) { handleTouch(event, onPointerMove); });
         canvas.addEventListener("touchend", function (event) { handleTouch(event, onPointerUp); });
         window.addEventListener("resize", update);
-        return function () { clearInterval(interval); clearInterval(interval2); };
+        return function () { clearInterval(interval); };
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "canvas" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { id: "humanbody" }, cells ? cells : null)));
@@ -33111,6 +33095,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Gameplay_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Gameplay.css */ "./src/main/ts/components/Gameplay.css");
 /* harmony import */ var _ResetWindow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ResetWindow */ "./src/main/ts/components/ResetWindow.tsx");
 /* harmony import */ var _ShopWindow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ShopWindow */ "./src/main/ts/components/ShopWindow.tsx");
+/* harmony import */ var _images_gameOver_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/gameOver.png */ "./src/main/ts/components/images/gameOver.png");
+/* harmony import */ var _images_gameWin_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./images/gameWin.png */ "./src/main/ts/components/images/gameWin.png");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+
+
+
 
 
 
@@ -33118,8 +33108,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Gameplay() {
-    var _a = react__WEBPACK_IMPORTED_MODULE_0__.useState(false), showResetWindow = _a[0], setShowResetWindow = _a[1];
-    var _b = react__WEBPACK_IMPORTED_MODULE_0__.useState(false), showShopWindow = _b[0], setShowShopWindow = _b[1];
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), showResetWindow = _a[0], setShowResetWindow = _a[1];
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), showShopWindow = _b[0], setShowShopWindow = _b[1];
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), win = _c[0], setWin = _c[1];
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), lose = _d[0], setLose = _d[1];
+    var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useNavigate)();
     var openResetConfirmWindow = function () {
         console.log("Reset button clicked");
         clearAllWindows();
@@ -33134,11 +33127,37 @@ function Gameplay() {
         clearAllWindows();
         setShowShopWindow(true);
     };
+    var fetchCheckWin = function () {
+        fetch("game/check").then(function (response) { return response.json(); }).then(function (data) {
+            if (data === 1) {
+                setWin(true);
+                setTimeout(function () {
+                    navigate("/");
+                    console.log("You win!");
+                }, 3500);
+            }
+            else if (data === 2) {
+                setLose(true);
+                setTimeout(function () {
+                    navigate("/");
+                    console.log("You lose!");
+                }, 3500);
+            }
+        }).catch(function (error) {
+            console.log(error);
+        });
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        var interval = setInterval(fetchCheckWin, 250);
+        return function () { return clearInterval(interval); };
+    }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "gameplay" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Bar__WEBPACK_IMPORTED_MODULE_1__["default"], { openResetConfirmWindow: openResetConfirmWindow, openShopWindow: openShopWindow }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Canvas__WEBPACK_IMPORTED_MODULE_2__["default"], { clearAllWindows: clearAllWindows }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ResetWindow__WEBPACK_IMPORTED_MODULE_4__["default"], { show: showResetWindow, clearAllWindows: clearAllWindows }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShopWindow__WEBPACK_IMPORTED_MODULE_5__["default"], { show: showShopWindow, clearAllWindows: clearAllWindows })));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ShopWindow__WEBPACK_IMPORTED_MODULE_5__["default"], { show: showShopWindow, clearAllWindows: clearAllWindows }),
+        win ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "win", src: _images_gameWin_png__WEBPACK_IMPORTED_MODULE_7__, draggable: "false" }) : null,
+        lose ? react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "lose", src: _images_gameOver_png__WEBPACK_IMPORTED_MODULE_6__, draggable: "false" }) : null));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Gameplay);
 
@@ -33592,6 +33611,26 @@ module.exports = __webpack_require__.p + "images/decreaseSpdButton.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "images/gameName.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/components/images/gameOver.png":
+/*!****************************************************!*\
+  !*** ./src/main/ts/components/images/gameOver.png ***!
+  \****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/gameOver.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/components/images/gameWin.png":
+/*!***************************************************!*\
+  !*** ./src/main/ts/components/images/gameWin.png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/gameWin.png";
 
 /***/ }),
 

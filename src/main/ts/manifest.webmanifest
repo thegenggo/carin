@@ -6,11 +6,6 @@
       "src": "/built/images/pfizer.png",
       "sizes": "165x165",
       "type": "image/png"
-    },
-    {
-      "src": "/built/images/gameIcon.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg"
     }
   ],
   "start_url": "/",

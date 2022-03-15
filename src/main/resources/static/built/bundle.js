@@ -32631,8 +32631,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SetGeneticCodePage */ "./src/main/ts/components/SetGeneticCodePage.tsx");
 /* harmony import */ var _components_SetupPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/SetupPage */ "./src/main/ts/components/SetupPage.tsx");
 /* harmony import */ var _components_Gameplay__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Gameplay */ "./src/main/ts/components/Gameplay.tsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Home */ "./src/main/ts/components/Home.tsx");
+/* harmony import */ var _components_images_gameIcon_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/images/gameIcon.png */ "./src/main/ts/components/images/gameIcon.png");
+
 
 
 
@@ -32642,16 +32644,16 @@ __webpack_require__.r(__webpack_exports__);
 
 function App() {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "App" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Home__WEBPACK_IMPORTED_MODULE_5__["default"], null) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetupPage__WEBPACK_IMPORTED_MODULE_3__["default"], null) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/pfizer", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "pfizer" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/moderna", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "moderna" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/sinovac", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "sinovac" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/alpha", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "alpha" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/beta", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "beta" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "setup/gamma", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "gamma" }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, { path: "play", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Gameplay__WEBPACK_IMPORTED_MODULE_4__["default"], null) }))));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Home__WEBPACK_IMPORTED_MODULE_5__["default"], null) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "setup", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetupPage__WEBPACK_IMPORTED_MODULE_3__["default"], null) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "setup/pfizer", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "pfizer" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "setup/moderna", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "moderna" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "setup/sinovac", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "sinovac" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "setup/alpha", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "alpha" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "setup/beta", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "beta" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "setup/gamma", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SetGeneticCodePage__WEBPACK_IMPORTED_MODULE_2__["default"], { type: "gamma" }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "play", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Gameplay__WEBPACK_IMPORTED_MODULE_4__["default"], null) }))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -33619,6 +33621,16 @@ module.exports = __webpack_require__.p + "images/confirmButton.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "images/decreaseSpdButton.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/components/images/gameIcon.png":
+/*!****************************************************!*\
+  !*** ./src/main/ts/components/images/gameIcon.png ***!
+  \****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/gameIcon.png";
 
 /***/ }),
 

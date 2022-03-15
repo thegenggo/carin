@@ -6,7 +6,8 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.join(__dirname, 'src/main/resources/static/built'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    clean: true
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],

@@ -5,6 +5,7 @@ import SetupPage from './components/SetupPage';
 import Gameplay from './components/Gameplay';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home'
+import './components/images/gameIcon.png'
 
 function App(): JSX.Element {
     return (

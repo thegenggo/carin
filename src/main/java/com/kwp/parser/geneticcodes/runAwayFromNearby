@@ -1,0 +1,11 @@
+nearbyLoc = nearby
+while (nearbyLoc) {
+    if (nearbyLoc % 10 - 7) then move right
+    else if (nearbyLoc % 10 - 6) then move upleft
+    else if (nearbyLoc % 10 - 5) then move up
+    else if (nearbyLoc % 10 - 4) then move upright
+    else if (nearbyLoc % 10 - 3) then move left
+    else if (nearbyLoc % 10 - 2) then move downleft
+    else if (nearbyLoc % 10 - 1) then move left
+    else move downright
+}

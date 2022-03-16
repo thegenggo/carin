@@ -52,6 +52,7 @@ function Canvas({ clearAllWindows, showMessage }: { clearAllWindows: () => void,
         }
 
         const adjustZoom = (zoomAmount: number, zoomFactor: number) => {
+            if (humanbody.clientHeight < canvas.clientHeight || humanbody.clientWidth < canvas.clientWidth) return
             if (!isDragging) {
                 minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight)
                 let oldCameraZoom = cameraZoom
@@ -81,7 +82,9 @@ function Canvas({ clearAllWindows, showMessage }: { clearAllWindows: () => void,
         const onPointerMove = (event: any) => {
             if (isDragging) {
                 let dragEnd = getEventLocation(event)
+                if (humanbody.clientWidth > canvas.clientWidth)
                 cameraOffset.x = cameraOffset.x + (dragEnd.x - dragStart.x)
+                if (humanbody.clientHeight > canvas.clientHeight)
                 cameraOffset.y = cameraOffset.y + (dragEnd.y - dragStart.y)
                 dragStart = dragEnd
                 update()
@@ -127,12 +130,13 @@ function Canvas({ clearAllWindows, showMessage }: { clearAllWindows: () => void,
                 cameraOffsetLimit.minX = canvas.clientWidth - humanbody.clientWidth * cameraZoom;
                 cameraOffsetLimit.minY = canvas.clientHeight - humanbody.clientHeight * cameraZoom;
 
+                cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX)
                 cameraOffset.x = Math.min(cameraOffset.x, cameraOffsetLimit.maxX)
                 cameraOffset.y = Math.min(cameraOffset.y, cameraOffsetLimit.maxY)
-                cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX)
                 cameraOffset.y = Math.max(cameraOffset.y, cameraOffsetLimit.minY)
 
                 humanbody.style.transform = `translate(${cameraOffset.x}px, ${cameraOffset.y}px) scale(${cameraZoom})`
+                console.log(cameraOffset.x + " " + cameraOffset.y + " " + cameraZoom)
             };
         }
 

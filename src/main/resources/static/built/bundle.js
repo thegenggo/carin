@@ -83,7 +83,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "table {\r\n    position: relative;\r\n    border-spacing: 0px;\r\n    border: 0px;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    left: 0px;\r\n    top: 0px;\r\n    transform-origin: top left;\r\n}\r\n\r\n#canvas {\r\n    width: 100%;\r\n    max-height: 100%;\r\n    overflow: hidden;\r\n}\r\n\r\ntd {\r\n    padding: 0%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Canvas.css"],"names":[],"mappings":"AAAA;IACI,kBAAkB;IAClB,mBAAmB;IACnB,WAAW;IACX,WAAW;IACX,YAAY;IACZ,SAAS;IACT,QAAQ;IACR,0BAA0B;AAC9B;;AAEA;IACI,WAAW;IACX,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,WAAW;AACf","sourcesContent":["table {\r\n    position: relative;\r\n    border-spacing: 0px;\r\n    border: 0px;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    left: 0px;\r\n    top: 0px;\r\n    transform-origin: top left;\r\n}\r\n\r\n#canvas {\r\n    width: 100%;\r\n    max-height: 100%;\r\n    overflow: hidden;\r\n}\r\n\r\ntd {\r\n    padding: 0%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "table {\r\n    position: relative;\r\n    border-spacing: 0px;\r\n    border: 0px;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    left: 0px;\r\n    top: 0px;\r\n    transform-origin: top left;\r\n}\r\n\r\n#canvas {\r\n    width: 100%;\r\n    height: 88%;\r\n    overflow: hidden;\r\n}\r\n\r\ntd {\r\n    padding: 0%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Canvas.css"],"names":[],"mappings":"AAAA;IACI,kBAAkB;IAClB,mBAAmB;IACnB,WAAW;IACX,WAAW;IACX,YAAY;IACZ,SAAS;IACT,QAAQ;IACR,0BAA0B;AAC9B;;AAEA;IACI,WAAW;IACX,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;AACf","sourcesContent":["table {\r\n    position: relative;\r\n    border-spacing: 0px;\r\n    border: 0px;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    left: 0px;\r\n    top: 0px;\r\n    transform-origin: top left;\r\n}\r\n\r\n#canvas {\r\n    width: 100%;\r\n    height: 88%;\r\n    overflow: hidden;\r\n}\r\n\r\ntd {\r\n    padding: 0%;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32821,6 +32821,8 @@ function Canvas(_a) {
             }
         };
         var adjustZoom = function (zoomAmount, zoomFactor) {
+            if (humanbody.clientHeight < canvas.clientHeight || humanbody.clientWidth < canvas.clientWidth)
+                return;
             if (!isDragging) {
                 minZoom = Math.max(canvas.clientWidth / humanbody.clientWidth, canvas.clientHeight / humanbody.clientHeight);
                 var oldCameraZoom = cameraZoom;
@@ -32854,8 +32856,10 @@ function Canvas(_a) {
         var onPointerMove = function (event) {
             if (isDragging) {
                 var dragEnd = getEventLocation(event);
-                cameraOffset.x = cameraOffset.x + (dragEnd.x - dragStart.x);
-                cameraOffset.y = cameraOffset.y + (dragEnd.y - dragStart.y);
+                if (humanbody.clientWidth > canvas.clientWidth)
+                    cameraOffset.x = cameraOffset.x + (dragEnd.x - dragStart.x);
+                if (humanbody.clientHeight > canvas.clientHeight)
+                    cameraOffset.y = cameraOffset.y + (dragEnd.y - dragStart.y);
                 dragStart = dragEnd;
                 update();
             }
@@ -32893,11 +32897,12 @@ function Canvas(_a) {
             if (humanbody && canvas) {
                 cameraOffsetLimit.minX = canvas.clientWidth - humanbody.clientWidth * cameraZoom;
                 cameraOffsetLimit.minY = canvas.clientHeight - humanbody.clientHeight * cameraZoom;
+                cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX);
                 cameraOffset.x = Math.min(cameraOffset.x, cameraOffsetLimit.maxX);
                 cameraOffset.y = Math.min(cameraOffset.y, cameraOffsetLimit.maxY);
-                cameraOffset.x = Math.max(cameraOffset.x, cameraOffsetLimit.minX);
                 cameraOffset.y = Math.max(cameraOffset.y, cameraOffsetLimit.minY);
                 humanbody.style.transform = "translate(".concat(cameraOffset.x, "px, ").concat(cameraOffset.y, "px) scale(").concat(cameraZoom, ")");
+                console.log(cameraOffset.x + " " + cameraOffset.y + " " + cameraZoom);
             }
             ;
         };

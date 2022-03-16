@@ -111,10 +111,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./images/cell.png */ "./src/main/ts/components/images/cell.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./images/Untitled18 1.png */ "./src/main/ts/components/images/Untitled18 1.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#Cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.health {\r\n    position: relative;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: 900;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    top: -10%;\r\n    color: green;\r\n}\r\n\r\n.organism {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.organismImage {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.cursor {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: -15%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Cell.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,SAAS;IACT,UAAU;IACV,YAAY;IACZ,aAAa;IACb,yDAA0C;AAC9C;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,gBAAgB;IAChB,eAAe;IACf,kBAAkB;IAClB,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;IAClB,mBAAmB;AACvB","sourcesContent":["#Cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(\"./images/cell.png\");\r\n}\r\n\r\n.health {\r\n    position: relative;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: 900;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    top: -10%;\r\n    color: green;\r\n}\r\n\r\n.organism {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.organismImage {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.cursor {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: -15%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#Cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}\r\n\r\n.orphan-cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n}\r\n\r\n.health {\r\n    position: relative;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: 900;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    top: -10%;\r\n    color: green;\r\n}\r\n\r\n.organism {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.organismImage {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.cursor {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: -15%;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/components/Cell.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,SAAS;IACT,UAAU;IACV,YAAY;IACZ,aAAa;IACb,yDAA0C;AAC9C;;AAEA;IACI,SAAS;IACT,SAAS;IACT,UAAU;IACV,YAAY;IACZ,aAAa;IACb,yDAAkD;AACtD;;AAEA;IACI,kBAAkB;IAClB,wBAAwB;IACxB,kBAAkB;IAClB,gBAAgB;IAChB,eAAe;IACf,kBAAkB;IAClB,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;IAClB,mBAAmB;AACvB","sourcesContent":["#Cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(\"./images/cell.png\");\r\n}\r\n\r\n.orphan-cell {\r\n    margin: 0;\r\n    border: 0;\r\n    padding: 0;\r\n    width: 192px;\r\n    height: 192px;\r\n    background-image: url(\"./images/Untitled18 1.png\");\r\n}\r\n\r\n.health {\r\n    position: relative;\r\n    font-family: Short Stack;\r\n    font-style: normal;\r\n    font-weight: 900;\r\n    font-size: 2rem;\r\n    text-align: center;\r\n    top: -10%;\r\n    color: green;\r\n}\r\n\r\n.organism {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.organismImage {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.cursor {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: -15%;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32784,18 +32786,53 @@ __webpack_require__.r(__webpack_exports__);
 
 function Canvas(_a) {
     var clearAllWindows = _a.clearAllWindows, showMessage = _a.showMessage;
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null)), cells = _b[0], setCells = _b[1];
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, Array(5).fill(0).map(function (_, rowIndex) { return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: rowIndex }, Array(10).fill(0).map(function (_, colIndex) { return react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { key: colIndex },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "orphan-cell" })); })); }))), cells = _b[0], setCells = _b[1];
     var SCROLL_SENSITIVITY = -0.0005;
     var fetchHumanbody = function () {
         fetch("game/humanbody").then(function (response) { return response.json(); }).then(function (data) {
-            setCells(react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, data.map(function (row, i) {
-                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: i }, row.map(function (organism, j) {
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], { key: j, organism: organism, showMessage: showMessage, i: i, j: j });
-                }));
-            })));
+            setCells(createCells(data));
         }).catch(function (error) {
             console.log(error);
         });
+    };
+    var createCells = function (data) {
+        var top = 0;
+        var bottom = 0;
+        var orphanCell = react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "orphan-cell" }));
+        var orphanRowCell = react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, Array(data[0].length).fill(orphanCell));
+        var topOrphanCell = [];
+        var bottomOrphanCell = [];
+        if (data.length < 5) {
+            top = Math.round((5 - data.length) / 2);
+            bottom = 5 - data.length - top;
+            topOrphanCell = Array(top).fill(orphanRowCell);
+            bottomOrphanCell = Array(bottom).fill(orphanRowCell);
+        }
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null,
+            topOrphanCell,
+            data.map(function (row, i) {
+                var left = 0;
+                var right = 0;
+                var orphanCell = react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "orphan-cell" }));
+                var leftOrphanCell = [];
+                var rightOrphanCell = [];
+                if (row.length < 10) {
+                    left = Math.round((10 - row.length) / 2);
+                    right = 10 - row.length - left;
+                    leftOrphanCell = Array(left).fill(orphanCell);
+                    rightOrphanCell = Array(right).fill(orphanCell);
+                }
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: i },
+                    leftOrphanCell,
+                    row.map(function (organism, j) {
+                        return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], { key: j, organism: organism, showMessage: showMessage, i: i, j: j });
+                    }),
+                    rightOrphanCell);
+            }),
+            bottomOrphanCell);
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         var interval = setInterval(fetchHumanbody, 250);
@@ -33516,6 +33553,16 @@ module.exports = __webpack_require__.p + "images/BG.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "images/Polygon 1.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/components/images/Untitled18 1.png":
+/*!********************************************************!*\
+  !*** ./src/main/ts/components/images/Untitled18 1.png ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/Untitled18 1.png";
 
 /***/ }),
 

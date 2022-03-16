@@ -4,23 +4,58 @@ import OrganismProps from "./OrganismProps";
 import Cell from "./Cell";
 
 function Canvas({ clearAllWindows, showMessage }: { clearAllWindows: () => void, showMessage: (message: string) => void }) {
-    const [cells, setCells] = useState(<tbody></tbody>)
+    const [cells, setCells] = useState(<tbody>
+        {Array(5).fill(0).map((_, rowIndex) => <tr key={rowIndex}>
+            {Array(10).fill(0).map((_, colIndex) => <td key={colIndex}><div className="orphan-cell"></div></td>)}
+        </tr>)}
+    </tbody>)
     const SCROLL_SENSITIVITY = -0.0005
 
     const fetchHumanbody = () => {
         fetch("game/humanbody").then(response => response.json()).then((data: OrganismProps[][]) => {
-            setCells(<tbody>
-                {data.map((row, i) => {
-                    return <tr key={i}>
-                        {row.map((organism, j) => {
-                            return <Cell key={j} organism={organism} showMessage={showMessage} i={i} j={j} />
-                        })}
-                    </tr>
-                })}
-            </tbody>)
+            setCells(createCells(data))
         }).catch(error => {
             console.log(error)
         })
+    }
+
+    const createCells = (data: OrganismProps[][]) => {
+        let top: number = 0
+        let bottom: number = 0
+        let orphanCell = <td><div className="orphan-cell"></div></td>
+        let orphanRowCell = <tr>{Array(data[0].length).fill(orphanCell)}</tr>
+        let topOrphanCell: any[] = []
+        let bottomOrphanCell: any[] = []
+        if (data.length < 5) {
+            top = Math.round((5 - data.length) / 2)
+            bottom = 5 - data.length - top
+            topOrphanCell = Array(top).fill(orphanRowCell)
+            bottomOrphanCell = Array(bottom).fill(orphanRowCell)
+        }
+        return <tbody>
+            {topOrphanCell}
+            {data.map((row, i) => {
+                let left: number = 0
+                let right: number = 0
+                let orphanCell = <td><div className="orphan-cell"></div></td>
+                let leftOrphanCell: any[] = []
+                let rightOrphanCell: any[] = []
+                if (row.length < 10) {
+                    left = Math.round((10 - row.length) / 2)
+                    right = 10 - row.length - left
+                    leftOrphanCell = Array(left).fill(orphanCell)
+                    rightOrphanCell = Array(right).fill(orphanCell)
+                }
+                return <tr key={i}>
+                    {leftOrphanCell}
+                    {row.map((organism, j) => {
+                        return <Cell key={j} organism={organism} showMessage={showMessage} i={i} j={j} />
+                    })}
+                    {rightOrphanCell}
+                </tr>
+            })}
+            {bottomOrphanCell}
+        </tbody>
     }
 
     useEffect(() => {
@@ -83,9 +118,9 @@ function Canvas({ clearAllWindows, showMessage }: { clearAllWindows: () => void,
             if (isDragging) {
                 let dragEnd = getEventLocation(event)
                 if (humanbody.clientWidth > canvas.clientWidth)
-                cameraOffset.x = cameraOffset.x + (dragEnd.x - dragStart.x)
+                    cameraOffset.x = cameraOffset.x + (dragEnd.x - dragStart.x)
                 if (humanbody.clientHeight > canvas.clientHeight)
-                cameraOffset.y = cameraOffset.y + (dragEnd.y - dragStart.y)
+                    cameraOffset.y = cameraOffset.y + (dragEnd.y - dragStart.y)
                 dragStart = dragEnd
                 update()
             }

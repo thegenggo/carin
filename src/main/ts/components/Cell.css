@@ -7,6 +7,15 @@
     background-image: url("./images/cell.png");
 }
 
+.orphan-cell {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 192px;
+    height: 192px;
+    background-image: url("./images/Untitled18 1.png");
+}
+
 .health {
     position: relative;
     font-family: Short Stack;

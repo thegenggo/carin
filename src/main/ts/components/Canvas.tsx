@@ -23,7 +23,7 @@ function Canvas({ clearAllWindows, showMessage }: { clearAllWindows: () => void,
         let top: number = 0
         let bottom: number = 0
         let orphanCell = <td><div className="orphan-cell"></div></td>
-        let orphanRowCell = <tr>{Array(data[0].length).fill(orphanCell)}</tr>
+        let orphanRowCell = <tr>{data[0].length > 10 ? Array(data[0].length).fill(orphanCell):Array(10).fill(orphanCell) }</tr>
         let topOrphanCell: any[] = []
         let bottomOrphanCell: any[] = []
         if (data.length < 5) {

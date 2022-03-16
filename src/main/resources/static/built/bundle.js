@@ -32801,7 +32801,7 @@ function Canvas(_a) {
         var bottom = 0;
         var orphanCell = react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null,
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "orphan-cell" }));
-        var orphanRowCell = react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, Array(data[0].length).fill(orphanCell));
+        var orphanRowCell = react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, data[0].length > 10 ? Array(data[0].length).fill(orphanCell) : Array(10).fill(orphanCell));
         var topOrphanCell = [];
         var bottomOrphanCell = [];
         if (data.length < 5) {

@@ -1,0 +1,5 @@
+t = t + 1
+if(t % 4 -2) then move down
+else if (t % 4 - 1) then move right
+else if (t % 4 ) then move up
+else move left

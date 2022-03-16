@@ -2,7 +2,9 @@ package com.kwp.carin;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kwp.parser.GeneticCode;
+import com.kwp.parser.Parser;
 import com.kwp.parser.Program;
+import com.kwp.parser.SyntaxError;
 import com.kwp.util.Direction;
 import com.kwp.util.Pair;
 
@@ -43,7 +45,11 @@ public abstract class Organism {
     protected boolean ready;
 
     public Organism(GeneticCode code) {
-        program = Program.getInstance(code);
+        try {
+            program = Parser.parse(code);
+        } catch (SyntaxError e) {
+            e.printStackTrace();
+        }
         organisms.add(this);
         variables = new HashMap<>();
         ready = false;

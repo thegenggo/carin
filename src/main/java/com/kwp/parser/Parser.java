@@ -8,31 +8,33 @@ import java.util.Set;
 
 public class Parser {
     private final Tokenizer tokenizer;
+    private final GeneticCode code;
     private static final Set<String> reservedWords = new HashSet<>();
 
-    public Parser(String input) {
-        tokenizer = new Tokenizer(input);
-        String[] reservedWordsArrays = {"antibody", "down", "downleft", "downright", "else", "if",
-                "left", "move", "nearby", "right", "shoot", "then", "up", "upleft", "upright", "virus", "while"};
-        Collections.addAll(reservedWords, reservedWordsArrays);
+    private Parser(GeneticCode code) {
+        this.tokenizer = new Tokenizer(code.getCode());
+        this.code = code;
+        if (reservedWords.isEmpty()) {
+            String[] reservedWordsArrays = {"antibody", "down", "downleft", "downright", "else", "if",
+                    "left", "move", "nearby", "right", "shoot", "then", "up", "upleft", "upright", "virus", "while"};
+            Collections.addAll(reservedWords, reservedWordsArrays);
+        }
     }
 
-    public Program parse() {
-        Program program;
-        try {
-            program = parseProgram();
-        } catch (SyntaxError e) {
-            return null;
+    public static Program parse(GeneticCode code) throws SyntaxError {
+        if (Program.contain(code)) {
+            return Program.getInstance(code);
         }
-        if (!tokenizer.hasNext()) {
-            return program;
-        } else {
-            return null;
+        try {
+            return new Parser(code).parseProgram();
+        } catch (SyntaxError e) {
+            Program.remove(code);
+            throw e;
         }
     }
 
     private Program parseProgram() throws SyntaxError {
-        Program program = new Program();
+        Program program = Program.getInstance(code);
         while (tokenizer.hasNext()) {
             program.addStatement(parseStatement());
         }
@@ -66,7 +68,7 @@ public class Parser {
         return new AssignmentStatement(name, expression);
     }
 
-    private Statement parseActionCommand() {
+    private Statement parseActionCommand() throws SyntaxError {
         if (tokenizer.peek("move")) {
             return parseMoveCommand();
         } else {
@@ -74,16 +76,24 @@ public class Parser {
         }
     }
 
-    private Statement parseMoveCommand() {
+    private Statement parseMoveCommand() throws SyntaxError {
         tokenizer.consume();
-        Direction direction = Direction.valueOf(tokenizer.consume());
-        return new Command("move", direction);
+        try {
+            Direction direction = Direction.valueOf(tokenizer.consume());
+            return new Command("move", direction);
+        } catch (Exception e) {
+            throw new SyntaxError("Expected: direction at line " + tokenizer.getLineNumber());
+        }
     }
 
-    private Statement parseAttackCommand() {
+    private Statement parseAttackCommand() throws SyntaxError {
         tokenizer.consume();
-        Direction direction = Direction.valueOf(tokenizer.consume());
-        return new Command("shoot", direction);
+        try {
+            Direction direction = Direction.valueOf(tokenizer.consume());
+            return new Command("shoot", direction);
+        } catch (Exception e) {
+            throw new SyntaxError("Expected: direction at line " + tokenizer.getLineNumber());
+        }
     }
 
     private Statement parseBlockStatement() throws SyntaxError {
@@ -160,22 +170,27 @@ public class Parser {
             tokenizer.consume(")");
             return result;
         } else if (Character.isLetter(tokenizer.peek().charAt(0))) {
-            if (Parser.reservedWords.contains(tokenizer.peek())) throw new SyntaxError("Error: " + tokenizer.peek() + " is a reserved word");
+            if (Parser.reservedWords.contains(tokenizer.peek()))
+                throw new SyntaxError("Error: " + tokenizer.peek() + " is a reserved word");
             return new Identifier(tokenizer.consume());
         } else if (Character.isDigit(tokenizer.peek().charAt(0))) {
             return new Number(Integer.parseInt(tokenizer.consume()));
         } else {
-            throw new SyntaxError("Error: Expected a number or a variable");
+            throw new SyntaxError("Expected: a number or a variable at line " + tokenizer.getLineNumber());
         }
     }
 
-    private Expression parseSensorExpression() {
+    private Expression parseSensorExpression() throws SyntaxError {
         if (tokenizer.peek("virus")) {
             return new SensorExpression(tokenizer.consume());
         } else if (tokenizer.peek("antibody")) {
             return new SensorExpression(tokenizer.consume());
         } else {
-            return new SensorExpression(tokenizer.consume(), Direction.valueOf(tokenizer.consume()));
+            try {
+                return new SensorExpression(tokenizer.consume(), Direction.valueOf(tokenizer.consume()));
+            } catch (Exception e) {
+                throw new SyntaxError("Expected: direction at line " + tokenizer.getLineNumber());
+            }
         }
     }
 }

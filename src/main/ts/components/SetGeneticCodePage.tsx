@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './SetGeneticCodePage.css';
 import backButton from './images/backButton.png';
 import applyButton from './images/applyButton.png';
@@ -9,7 +9,7 @@ import alpha from './images/alpha.png';
 import beta from './images/beta.png';
 import gamma from './images/gamma.png';
 import okButton from './images/okButton 1.png';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -19,23 +19,34 @@ function SetGeneticCodePage({ type }: { type: string }) {
         let textarea = document.getElementById("geneticcode") as HTMLTextAreaElement;
         let geneticCode = textarea.value;
 
-        fetch(`/game/setgeneticcode/${type}`, { body: geneticCode, method: "POST" }).then(response => {
-            return response.json();
-        }).then((data: boolean) => {
-            if (data === true) {
-                document.getElementById("successWindow").style.display = "flex";
-            }
-            else {
-                document.getElementById("failWindow").style.display = "flex";
-            }
+        if (geneticCode.length === 0) {
+            createMessageBox("Please enter a genetic code");
+            return;
+        }
+
+        fetch(`/game/setgeneticcode/${type}`, { body: geneticCode, method: "PUT" }).then(response => {
+            return response.text();
+        }).then((data: string) => {
+            createMessageBox(data);
         }).catch(error => {
-            console.log(error);
+            createMessageBox(error);
         });
     }
 
-    const ok = () => {
-        document.getElementById("successWindow").style.display = "none";
-        document.getElementById("failWindow").style.display = "none";
+    const createMessageBox = (data: string) => {
+        let messageBox: HTMLElement = document.createElement("div");
+        let message: HTMLElement = document.createElement("div");
+        let okButtonElement: HTMLImageElement = document.createElement("img");
+        okButtonElement.src = okButton;
+        okButtonElement.className = "okButton";
+        okButtonElement.addEventListener("click", () => {
+            messageBox.remove();
+        });
+        message.innerHTML = data;
+        messageBox.id = "messageBox";
+        messageBox.appendChild(message);
+        messageBox.appendChild(okButtonElement);
+        document.getElementById("setGeneticCodePage").append(messageBox);
     }
 
     const TypeImage = () => {
@@ -57,8 +68,40 @@ function SetGeneticCodePage({ type }: { type: string }) {
         }
     }
 
+    const tab = (event: any) => {
+        let textarea = event.target
+
+        if (event.keyCode === 9) {
+            event.preventDefault()
+
+            textarea.setRangeText(
+                '  ',
+                textarea.selectionStart,
+                textarea.selectionStart,
+                'end'
+            )
+        }
+    }
+
+    useEffect(() => {
+        let textarea = document.getElementById("geneticcode") as HTMLTextAreaElement;
+
+        textarea.addEventListener('keydown', (e) => {
+            if (e.keyCode === 9) {
+                e.preventDefault()
+
+                textarea.setRangeText(
+                    '  ',
+                    textarea.selectionStart,
+                    textarea.selectionStart,
+                    'end'
+                )
+            }
+        })
+    }, []);
+
     return (
-        <div className="setGeneticCodePage">
+        <div className="setGeneticCodePage" id="setGeneticCodePage">
             <div className="flex">
                 <div className="flex row1">
                     <div className="empty"></div>
@@ -70,21 +113,13 @@ function SetGeneticCodePage({ type }: { type: string }) {
                     <div className="organismPortrait">
                         {TypeImage()}
                     </div>
-                    <textarea spellCheck="false" id="geneticcode" placeholder="Enter genetic code..." rows={20} cols={50}></textarea>
+                    <textarea spellCheck="false" id="geneticcode" placeholder="Enter genetic code..." rows={20} cols={50} onKeyDown={tab}></textarea>
                 </div>
             </div>
             <Link to="/setup">
                 <img src={backButton} className="backButton" ></img>
             </Link>
             <img src={applyButton} className="applyButton" onClick={apply}></img>
-            <div id="successWindow">
-                <div>Success</div>
-                <img src={okButton} className="okButton" onClick={ok}></img>
-            </div>
-            <div id="failWindow">
-                <div>Fail</div>
-                <img src={okButton} className="okButton" onClick={ok}></img>
-            </div>
         </div >
     )
 }

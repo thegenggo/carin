@@ -2,15 +2,14 @@ package com.kwp.carin;
 
 import com.kwp.parser.GeneticCode;
 import com.kwp.parser.Parser;
+import com.kwp.parser.SyntaxError;
 
 public class Gamma extends Virus {
     protected static GeneticCode geneticCode = GeneticCode.getVirusDefault();
 
-    public static boolean setGeneticCode(GeneticCode code) {
-        Parser parser = new Parser(code.getCode());
-        if (parser.parse() == null) return false;
+    public static void setGeneticCode(GeneticCode code) throws SyntaxError {
+        Parser.parse(code);
         geneticCode = code;
-        return true;
     }
 
     private Gamma(GeneticCode code) {

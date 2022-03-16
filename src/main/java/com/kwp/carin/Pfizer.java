@@ -2,15 +2,15 @@ package com.kwp.carin;
 
 import com.kwp.parser.GeneticCode;
 import com.kwp.parser.Parser;
+import com.kwp.parser.Program;
+import com.kwp.parser.SyntaxError;
 
 public class Pfizer extends Antibody {
     private static GeneticCode geneticCode = GeneticCode.getAntibodyDefault();
 
-    public static boolean setGeneticCode(GeneticCode code) {
-        Parser parser = new Parser(code.getCode());
-        if (parser.parse() == null) return false;
+    public static void setGeneticCode(GeneticCode code) throws SyntaxError {
+        Program program = Parser.parse(code);
         geneticCode = code;
-        return true;
     }
 
     private Pfizer(GeneticCode code) {

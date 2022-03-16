@@ -2,12 +2,24 @@ package com.kwp.carin.controller;
 
 import com.kwp.carin.*;
 import com.kwp.parser.GeneticCode;
+import com.kwp.parser.SyntaxError;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/game")
 public class GameController {
     private final Game game = Game.getInstance();
+    public static class StringResponse {
+        private final String response;
+
+        public StringResponse(String response) {
+            this.response = response;
+        }
+
+        public String getResponse() {
+            return response;
+        }
+    }
 
     @RequestMapping("/start")
     public void start() {
@@ -77,39 +89,70 @@ public class GameController {
     }
 
     @RequestMapping("/setgeneticcode/alpha")
-    public boolean setGeneticCodeAlpha(@RequestBody String code) {
-        GeneticCode geneticCode = new GeneticCode(code);
-        return Alpha.setGeneticCode(geneticCode);
+    public String setGeneticCodeAlpha(@RequestBody String code) {
+        try {
+            GeneticCode geneticCode = new GeneticCode(code);
+            Alpha.setGeneticCode(geneticCode);
+            return "success";
+        } catch (SyntaxError e) {
+            return e.getMessage();
+        }
     }
 
     @RequestMapping("/setgeneticcode/beta")
-    public boolean setGeneticCodeBeta(@RequestBody String code) {
-        GeneticCode geneticCode = new GeneticCode(code);
-        return Beta.setGeneticCode(geneticCode);
+    public String setGeneticCodeBeta(@RequestBody String code) {
+        try {
+            GeneticCode geneticCode = new GeneticCode(code);
+            Beta.setGeneticCode(geneticCode);
+            return "success";
+        } catch (SyntaxError e) {
+            return e.getMessage();
+        }
     }
 
     @RequestMapping("/setgeneticcode/gamma")
-    public boolean setGeneticCodeGamma(@RequestBody String code) {
-        GeneticCode geneticCode = new GeneticCode(code);
-        return Gamma.setGeneticCode(geneticCode);
+    public String setGeneticCodeGamma(@RequestBody String code) {
+        try {
+            GeneticCode geneticCode = new GeneticCode(code);
+            Gamma.setGeneticCode(geneticCode);
+            return "success";
+        } catch (SyntaxError e) {
+            return e.getMessage();
+        }
     }
 
     @RequestMapping("/setgeneticcode/pfizer")
-    public boolean setGeneticCodePfizer(@RequestBody String code) {
-        GeneticCode geneticCode = new GeneticCode(code);
-        return Pfizer.setGeneticCode(geneticCode);
+    public String setGeneticCodePfizer(@RequestBody String code) {
+        System.out.println(code);
+        try {
+            GeneticCode geneticCode = new GeneticCode(code);
+            Pfizer.setGeneticCode(geneticCode);
+            return "success";
+        } catch (SyntaxError e) {
+            return e.getMessage();
+        }
     }
 
     @RequestMapping("/setgeneticcode/moderna")
-    public boolean setGeneticCodeModerna(@RequestBody String code) {
-        GeneticCode geneticCode = new GeneticCode(code);
-        return Moderna.setGeneticCode(geneticCode);
+    public String setGeneticCodeModerna(@RequestBody String code) {
+        try {
+            GeneticCode geneticCode = new GeneticCode(code);
+            Moderna.setGeneticCode(geneticCode);
+            return "success";
+        } catch (SyntaxError e) {
+            return e.getMessage();
+        }
     }
 
     @RequestMapping("/setgeneticcode/sinovac")
-    public boolean setGeneticCodeSinovac(@RequestBody String code) {
-        GeneticCode geneticCode = new GeneticCode(code);
-        return Sinovac.setGeneticCode(geneticCode);
+    public String setGeneticCodeSinovac(@RequestBody String code) {
+        try {
+            GeneticCode geneticCode = new GeneticCode(code);
+            Sinovac.setGeneticCode(geneticCode);
+            return "success";
+        } catch (SyntaxError e) {
+            return e.getMessage();
+        }
     }
 
     @RequestMapping("/select")

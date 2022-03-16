@@ -4,9 +4,11 @@ public class Tokenizer {
     private final String source;
     private String next;
     private int position;
+    private int lineNumber;
 
     public Tokenizer(String source) {
         this.source = source;
+        this.lineNumber = 1;
         computeNext();
     }
 
@@ -25,8 +27,12 @@ public class Tokenizer {
     }
 
     public String consume(String expected) throws SyntaxError {
-        if (!expected.equals(next)) throw new SyntaxError("Expected " + expected + " but found " + next);
+        if (!expected.equals(next)) throw new SyntaxError("Expected: " + expected + " at line " + lineNumber);
         return consume();
+    }
+
+    public int getLineNumber() {
+        return lineNumber;
     }
 
     public boolean hasNext() {
@@ -34,7 +40,10 @@ public class Tokenizer {
     }
 
     private void computeNext() {
-        while (position < source.length() && Character.isWhitespace(source.charAt(position))) position++;
+        while (position < source.length() && Character.isWhitespace(source.charAt(position))) {
+            if (source.charAt(position) == '\n') lineNumber++;
+            position++;
+        }
         if (position >= source.length()) { next = null; return; }
         StringBuilder stringBuilder = new StringBuilder();
         char character = source.charAt(position);
@@ -56,12 +65,13 @@ public class Tokenizer {
     }
 
     private boolean isOperator(char character) {
-        return character == '+' || character == '-' || character == '*' || character == '/' || character == '%' || character == '=';
+        return character == '+' || character == '-' || character == '*' || character == '/' || character == '%' || character == '=' || character == '^';
     }
 
     private boolean isPunctuation(char character) {
         return character == '(' || character == ')' || character == '{' || character == '}';
     }
+
     public static void main(String[] args) {
         Tokenizer tokenizer = new Tokenizer("t = t + 1\n" +
                 "virusLoc = virus\n" +
